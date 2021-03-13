@@ -5,6 +5,8 @@
  */
 package view;
 
+import controller.MedicoController;
+import funcionarios.Medico;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.io.IOException;
@@ -16,6 +18,7 @@ import javax.swing.JOptionPane;
  * @author HARDWARE
  */
 public class TelaEditarMedico extends javax.swing.JFrame {
+    MedicoController medController = new MedicoController();
 
     /**
      * Creates new form cadastrar_medico
@@ -23,6 +26,21 @@ public class TelaEditarMedico extends javax.swing.JFrame {
     public TelaEditarMedico() throws IOException {
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+    }
+    
+    public void preencherDados(String cpf){
+        Medico med = new Medico();
+        med = medController.getMedico(cpf);
+        CampoCPF.setText(med.getCpf());
+        CampoEndereco.setText(med.getEndereco());
+        CampoIdentity.setText(med.getIdentity());
+        CampoNome.setText(med.getNome());
+        CampoSenha.setText(med.getSenha());
+        CampoSobrenome.setText(med.getSobrenome());
+        CampoTelefone.setText(med.getTelefone());
+        CampoEsp.setText(med.getEspecialidade());
+        CampoRG.setText(med.getRG());
+        CampoDep.setText(med.getDepartamento());
     }
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -60,7 +78,7 @@ public class TelaEditarMedico extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
-        CampoDepart = new javax.swing.JTextField();
+        CampoDep = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         CampoSobrenome = new javax.swing.JTextField();
 
@@ -243,12 +261,12 @@ public class TelaEditarMedico extends javax.swing.JFrame {
         jLabel14.setText("Departamento:");
         jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, 150, -1));
 
-        CampoDepart.addActionListener(new java.awt.event.ActionListener() {
+        CampoDep.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoDepartActionPerformed(evt);
+                CampoDepActionPerformed(evt);
             }
         });
-        jPanel2.add(CampoDepart, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 230, 183, 30));
+        jPanel2.add(CampoDep, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 230, 183, 30));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(102, 153, 255));
@@ -290,7 +308,17 @@ public class TelaEditarMedico extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+        String sexo = "";
+        if(CheckMasculino.isSelected()){
+            sexo = "M";
+        }else if(CheckFeminino.isSelected()){
+            sexo = "F";
+        }else {
+            JOptionPane.showMessageDialog(null, "Selecione um Sexo!");
+        }
+        medController.editarMedico(CampoIdentity.getText(), CampoNome.getText(),
+                CampoSobrenome.getText(), CampoEndereco.getText(), CampoTelefone.getText(), CampoCPF.getText(),
+                CampoSenha.getText(), sexo, CampoRG.getText(), CampoEsp.getText(), CampoDep.getText());  
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void CheckFemininoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckFemininoActionPerformed
@@ -301,9 +329,9 @@ public class TelaEditarMedico extends javax.swing.JFrame {
         
     }//GEN-LAST:event_CheckMasculinoActionPerformed
 
-    private void CampoDepartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoDepartActionPerformed
+    private void CampoDepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoDepActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CampoDepartActionPerformed
+    }//GEN-LAST:event_CampoDepActionPerformed
 
     /**
      * @param args the command line arguments
@@ -353,7 +381,7 @@ public class TelaEditarMedico extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CampoCPF;
-    private javax.swing.JTextField CampoDepart;
+    private javax.swing.JTextField CampoDep;
     private javax.swing.JTextField CampoEndereco;
     private javax.swing.JTextField CampoEsp;
     private javax.swing.JTextField CampoIdentity;

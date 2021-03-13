@@ -5,6 +5,8 @@
  */
 package view;
 
+import controller.RecepcionistaController;
+import funcionarios.Recepcionista;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,13 +18,24 @@ import javax.swing.JOptionPane;
  * @author HARDWARE
  */
 public class TelaVisualizarRecep extends javax.swing.JFrame {
-
+    RecepcionistaController recepController = new RecepcionistaController();
     /**
      * Creates new form tela_Sec
      */
     public TelaVisualizarRecep() throws IOException {
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+    }
+    
+    public void preencherDados(String cpf){
+        Recepcionista recep = new Recepcionista();
+        recep = recepController.getRecepcionista(cpf);
+        CampoIdentity.setText(recep.getIdentity()); 
+        CampoNome.setText(recep.getNome());
+        CampoCPF.setText(recep.getCpf());
+        CampoRG.setText(recep.getRG());
+        CampoTelefone.setText(recep.getTelefone());
+        CampoEndereco.setText(recep.getEndereco()); 
     }
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

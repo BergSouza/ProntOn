@@ -5,6 +5,8 @@
  */
 package view;
 
+import Paciente.Paciente;
+import controller.PacienteController;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,6 +18,8 @@ import javax.swing.JOptionPane;
  * @author HARDWARE
  */
 public class TelaVisualizarPaciente extends javax.swing.JFrame {
+    
+    PacienteController pacienteController = new PacienteController();
 
     /**
      * Creates new form tela_Sec
@@ -24,6 +28,19 @@ public class TelaVisualizarPaciente extends javax.swing.JFrame {
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
        
+    }
+    
+    public void preencherDados(String cpf){
+        Paciente pac = new Paciente();
+        pac = pacienteController.getPaciente(cpf);
+        
+        CampoCPF.setText(pac.getCpf());
+        CampoEndereco.setText(pac.getEndereco());
+        CampoIdentity.setText(pac.getIdentity());
+        CampoNome.setText(pac.getNome());
+        CampoRG.setText(pac.getRG());
+        CampoTelefone.setText(pac.getTelefone());
+        Nasc1.setText(pac.getDataNasc());
     }
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -53,7 +70,7 @@ public class TelaVisualizarPaciente extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        CampoTelefone1 = new javax.swing.JTextField();
+        Nasc1 = new javax.swing.JTextField();
 
         campoid.setEditable(false);
 
@@ -202,7 +219,7 @@ public class TelaVisualizarPaciente extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -215,13 +232,13 @@ public class TelaVisualizarPaciente extends javax.swing.JFrame {
         jLabel8.setText("Data Nasc:");
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, -1));
 
-        CampoTelefone1.setEditable(false);
-        CampoTelefone1.addActionListener(new java.awt.event.ActionListener() {
+        Nasc1.setEditable(false);
+        Nasc1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoTelefone1ActionPerformed(evt);
+                Nasc1ActionPerformed(evt);
             }
         });
-        jPanel2.add(CampoTelefone1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 248, 28));
+        jPanel2.add(Nasc1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 248, 28));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -273,9 +290,9 @@ public class TelaVisualizarPaciente extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void CampoTelefone1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoTelefone1ActionPerformed
+    private void Nasc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nasc1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CampoTelefone1ActionPerformed
+    }//GEN-LAST:event_Nasc1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -386,9 +403,9 @@ public class TelaVisualizarPaciente extends javax.swing.JFrame {
     private javax.swing.JTextField CampoNome;
     private javax.swing.JTextField CampoRG;
     private javax.swing.JTextField CampoTelefone;
-    private javax.swing.JTextField CampoTelefone1;
     private javax.swing.JCheckBox CheckFeminino;
     private javax.swing.JCheckBox CheckMasculino;
+    private javax.swing.JTextField Nasc1;
     private javax.swing.JTextField campoid;
     private javax.swing.JTextField identityy;
     private javax.swing.JButton jButton2;

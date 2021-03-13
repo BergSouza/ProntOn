@@ -5,6 +5,7 @@
  */
 package view;
 
+import controller.PacienteController;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.logging.Level;
@@ -17,7 +18,9 @@ import javax.swing.JOptionPane;
  * @author HARDWARE
  */
 public class TelaCadastrarPaciente extends javax.swing.JFrame {
-
+    
+    PacienteController pacienteController = new PacienteController();
+    
     /**
      * Creates new form tela_Sec
      */
@@ -54,9 +57,9 @@ public class TelaCadastrarPaciente extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
-        CampoEndereco1 = new javax.swing.JTextField();
-        CampoEndereco2 = new javax.swing.JTextField();
-        CampoEndereco3 = new javax.swing.JTextField();
+        Nasc03 = new javax.swing.JTextField();
+        Nasc01 = new javax.swing.JTextField();
+        Nasc02 = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
 
@@ -214,7 +217,7 @@ public class TelaCadastrarPaciente extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -229,26 +232,26 @@ public class TelaCadastrarPaciente extends javax.swing.JFrame {
         jLabel12.setText("/");
         jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, 20, 30));
 
-        CampoEndereco1.addActionListener(new java.awt.event.ActionListener() {
+        Nasc03.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoEndereco1ActionPerformed(evt);
+                Nasc03ActionPerformed(evt);
             }
         });
-        jPanel2.add(CampoEndereco1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, 40, 26));
+        jPanel2.add(Nasc03, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, 40, 26));
 
-        CampoEndereco2.addActionListener(new java.awt.event.ActionListener() {
+        Nasc01.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoEndereco2ActionPerformed(evt);
+                Nasc01ActionPerformed(evt);
             }
         });
-        jPanel2.add(CampoEndereco2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 40, 26));
+        jPanel2.add(Nasc01, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 40, 26));
 
-        CampoEndereco3.addActionListener(new java.awt.event.ActionListener() {
+        Nasc02.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoEndereco3ActionPerformed(evt);
+                Nasc02ActionPerformed(evt);
             }
         });
-        jPanel2.add(CampoEndereco3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 40, 26));
+        jPanel2.add(Nasc02, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 40, 26));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(102, 153, 255));
@@ -308,24 +311,35 @@ public class TelaCadastrarPaciente extends javax.swing.JFrame {
     }//GEN-LAST:event_CheckFemininoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String sexo = "";
+        if(CheckMasculino.isSelected()){
+            sexo = "M";
+        }else if(CheckFeminino.isSelected()){
+            sexo = "F";
+        }else {
+            JOptionPane.showMessageDialog(null, "Selecione um Sexo!");
+        }
+        String dataNasc = Nasc01.getText() +"/"+ Nasc02.getText() +"/"+ Nasc03.getText();
         
+        pacienteController.addPaciente(CampoIdentity.getText(), CampoNome.getText(), CampoCPF.getText()
+        , CampoRG.getText(), CampoTelefone.getText(), CampoEndereco.getText(), sexo, dataNasc, CampoSenha.getText());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void CampoEndereco1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoEndereco1ActionPerformed
+    private void Nasc03ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nasc03ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CampoEndereco1ActionPerformed
+    }//GEN-LAST:event_Nasc03ActionPerformed
 
-    private void CampoEndereco2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoEndereco2ActionPerformed
+    private void Nasc01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nasc01ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CampoEndereco2ActionPerformed
+    }//GEN-LAST:event_Nasc01ActionPerformed
 
-    private void CampoEndereco3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoEndereco3ActionPerformed
+    private void Nasc02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nasc02ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CampoEndereco3ActionPerformed
+    }//GEN-LAST:event_Nasc02ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -384,9 +398,6 @@ public class TelaCadastrarPaciente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CampoCPF;
     private javax.swing.JTextField CampoEndereco;
-    private javax.swing.JTextField CampoEndereco1;
-    private javax.swing.JTextField CampoEndereco2;
-    private javax.swing.JTextField CampoEndereco3;
     private javax.swing.JTextField CampoIdentity;
     private javax.swing.JTextField CampoNome;
     private javax.swing.JTextField CampoRG;
@@ -394,6 +405,9 @@ public class TelaCadastrarPaciente extends javax.swing.JFrame {
     private javax.swing.JTextField CampoTelefone;
     private javax.swing.JCheckBox CheckFeminino;
     private javax.swing.JCheckBox CheckMasculino;
+    private javax.swing.JTextField Nasc01;
+    private javax.swing.JTextField Nasc02;
+    private javax.swing.JTextField Nasc03;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;

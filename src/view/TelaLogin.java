@@ -25,6 +25,14 @@ public class TelaLogin extends javax.swing.JFrame {
         initComponents();
     }
     
+    public void logar(){
+        String login = Identity.getText();
+        String senhaLogin = senha.getText();
+        
+        
+        //parte do TORTO, fazer conexao
+    }
+    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -33,11 +41,11 @@ public class TelaLogin extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        CampoA = new javax.swing.JTextField();
+        Identity = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jbtn_Logar = new javax.swing.JButton();
-        CampoPass = new javax.swing.JPasswordField();
+        senha = new javax.swing.JPasswordField();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -85,7 +93,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Login");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 91, 80));
-        jPanel1.add(CampoA, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 180, 28));
+        jPanel1.add(Identity, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 180, 28));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -107,7 +115,7 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jbtn_Logar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 180, 41));
-        jPanel1.add(CampoPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 180, 31));
+        jPanel1.add(senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 180, 31));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 220, 350));
 
@@ -177,7 +185,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Direitos Reservados - ProntOn 2021");
-        jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel6MouseClicked(evt);
@@ -201,7 +209,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jbtn_LogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_LogarActionPerformed
-        
+        logar();
     }//GEN-LAST:event_jbtn_LogarActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
@@ -253,8 +261,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField CampoA;
-    private javax.swing.JPasswordField CampoPass;
+    private javax.swing.JTextField Identity;
     private javax.swing.JTextPane PainelAjuda;
     private javax.swing.JTextPane PainelNovidades;
     private javax.swing.JButton jButton1;
@@ -273,6 +280,7 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton jbtn_Logar;
+    private javax.swing.JPasswordField senha;
     private javax.swing.JLabel txtNovidades;
     private javax.swing.JLabel txtVersao;
     // End of variables declaration//GEN-END:variables

@@ -5,6 +5,8 @@
  */
 package view;
 
+import Paciente.Paciente;
+import controller.PacienteController;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.logging.Level;
@@ -17,6 +19,8 @@ import javax.swing.JOptionPane;
  * @author HARDWARE
  */
 public class TelaEditarPaciente extends javax.swing.JFrame {
+    
+    PacienteController pacienteController = new PacienteController();
 
     /**
      * Creates new form tela_Sec
@@ -24,6 +28,20 @@ public class TelaEditarPaciente extends javax.swing.JFrame {
     public TelaEditarPaciente() throws IOException {
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+    }
+    
+    public void preencherDados(String cpf){
+        Paciente pac = new Paciente();
+        pac = pacienteController.getPaciente(cpf);
+        
+        CampoCPF.setText(pac.getCpf());
+        CampoEndereco.setText(pac.getEndereco());
+        CampoIdentity.setText(pac.getIdentity());
+        CampoNome.setText(pac.getNome());
+        CampoRG.setText(pac.getRG());
+        CampoSenha.setText(pac.getSenha());
+        CampoTelefone.setText(pac.getTelefone());
+        Nasc1.setText(pac.getDataNasc());
     }
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -57,11 +75,7 @@ public class TelaEditarPaciente extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
-        CampoEndereco1 = new javax.swing.JTextField();
-        CampoEndereco2 = new javax.swing.JTextField();
-        jLabel14 = new javax.swing.JLabel();
-        CampoEndereco3 = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
+        Nasc1 = new javax.swing.JTextField();
 
         campoid.setEditable(false);
 
@@ -221,7 +235,7 @@ public class TelaEditarPaciente extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -235,38 +249,12 @@ public class TelaEditarPaciente extends javax.swing.JFrame {
         jLabel13.setText("Data de Nasc:");
         jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, 30));
 
-        CampoEndereco1.addActionListener(new java.awt.event.ActionListener() {
+        Nasc1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoEndereco1ActionPerformed(evt);
+                Nasc1ActionPerformed(evt);
             }
         });
-        jPanel2.add(CampoEndereco1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, 40, 26));
-
-        CampoEndereco2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoEndereco2ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(CampoEndereco2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 40, 26));
-
-        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(102, 153, 255));
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("/");
-        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 20, 30));
-
-        CampoEndereco3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoEndereco3ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(CampoEndereco3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 40, 26));
-
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(102, 153, 255));
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("/");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, 20, 30));
+        jPanel2.add(Nasc1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 90, 26));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -315,24 +303,26 @@ public class TelaEditarPaciente extends javax.swing.JFrame {
     }//GEN-LAST:event_CheckFemininoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String sexo = "";
+        if(CheckMasculino.isSelected()){
+            sexo = "M";
+        }else if(CheckFeminino.isSelected()){
+            sexo = "F";
+        }else {
+            JOptionPane.showMessageDialog(null, "Selecione um Sexo!");
+        }
         
+        pacienteController.editarPaciente(CampoIdentity.getText(), CampoNome.getText(), CampoCPF.getText()
+        , CampoRG.getText(), CampoTelefone.getText(), CampoEndereco.getText(), sexo, Nasc1.getText(), CampoSenha.getText());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void CampoEndereco1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoEndereco1ActionPerformed
+    private void Nasc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nasc1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CampoEndereco1ActionPerformed
-
-    private void CampoEndereco2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoEndereco2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CampoEndereco2ActionPerformed
-
-    private void CampoEndereco3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoEndereco3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CampoEndereco3ActionPerformed
+    }//GEN-LAST:event_Nasc1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -407,9 +397,6 @@ public class TelaEditarPaciente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CampoCPF;
     private javax.swing.JTextField CampoEndereco;
-    private javax.swing.JTextField CampoEndereco1;
-    private javax.swing.JTextField CampoEndereco2;
-    private javax.swing.JTextField CampoEndereco3;
     private javax.swing.JTextField CampoIdentity;
     private javax.swing.JTextField CampoNome;
     private javax.swing.JTextField CampoRG;
@@ -417,6 +404,7 @@ public class TelaEditarPaciente extends javax.swing.JFrame {
     private javax.swing.JTextField CampoTelefone;
     private javax.swing.JCheckBox CheckFeminino;
     private javax.swing.JCheckBox CheckMasculino;
+    private javax.swing.JTextField Nasc1;
     private javax.swing.JTextField campoid;
     private javax.swing.JTextField cpff;
     private javax.swing.JTextField identityy;
@@ -424,9 +412,7 @@ public class TelaEditarPaciente extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

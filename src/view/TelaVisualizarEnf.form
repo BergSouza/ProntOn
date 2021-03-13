@@ -207,7 +207,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JTextField" name="CampoCNPJ">
+        <Component class="javax.swing.JTextField" name="CampoCPF">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>

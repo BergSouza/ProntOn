@@ -5,6 +5,8 @@
  */
 package view;
 
+import controller.RecepcionistaController;
+import funcionarios.Recepcionista;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.logging.Level;
@@ -17,7 +19,7 @@ import javax.swing.JOptionPane;
  * @author HARDWARE
  */
 public class TelaEditarRecep extends javax.swing.JFrame {
-
+    RecepcionistaController recepController = new RecepcionistaController();
     /**
      * Creates new form tela_Sec
      */
@@ -25,7 +27,17 @@ public class TelaEditarRecep extends javax.swing.JFrame {
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
     }
-    
+    public void preencherDados(String cpf){
+        Recepcionista recep = new Recepcionista();
+        recep = recepController.getRecepcionista(cpf);
+        CampoIdentity.setText(recep.getIdentity()); 
+        CampoNome.setText(recep.getNome());
+        CampoCPF.setText(recep.getCpf());
+        CampoRG.setText(recep.getRG());
+        CampoTelefone.setText(recep.getTelefone());
+        CampoEndereco.setText(recep.getEndereco()); 
+        CampoSenha.setText(recep.getSenha());
+    }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -271,7 +283,16 @@ public class TelaEditarRecep extends javax.swing.JFrame {
     }//GEN-LAST:event_CheckFemininoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+        String sexo = "";
+        if(CheckMasculino.isSelected()){
+            sexo = "M";
+        }else if(CheckFeminino.isSelected()){
+            sexo = "F";
+        }else {
+            JOptionPane.showMessageDialog(null, "Selecione um Sexo!");
+        }       
+        recepController.editarRecep(CampoIdentity.getText(), CampoNome.getText(), CampoCPF.getText(),
+                CampoRG.getText(), CampoTelefone.getText(), CampoEndereco.getText(), sexo, CampoSenha.getText());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

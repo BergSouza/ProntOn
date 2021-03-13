@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package view;
+import controller.EnfermController;
+import funcionarios.Enfermeiro;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.io.IOException;
@@ -14,6 +16,8 @@ import javax.swing.JOptionPane;
  * @author HARDWARE
  */
 public class TelaVisualizarEnf extends javax.swing.JFrame {
+    
+    EnfermController enfermController = new EnfermController();
 
     /**
      * Creates new form cadastrar_convenios
@@ -21,6 +25,18 @@ public class TelaVisualizarEnf extends javax.swing.JFrame {
     public TelaVisualizarEnf() throws IOException {
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+    }
+    
+    public void preencherDados(String cpf){
+        Enfermeiro enferm = new Enfermeiro();
+        enferm = enfermController.getEnferm(cpf);
+        CampoCPF.setText(enferm.getCpf());
+        CampoEndereco.setText(enferm.getEndereco());
+        CampoIdentity.setText(enferm.getIdentity());
+        CampoNome.setText(enferm.getNome());
+        CampoSenha.setText(enferm.getSenha());
+        CampoSobrenome.setText(enferm.getSobrenome());
+        CampoTelefone.setText(enferm.getTelefone());
     }
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -37,7 +53,7 @@ public class TelaVisualizarEnf extends javax.swing.JFrame {
         CampoEndereco = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         CampoTelefone = new javax.swing.JTextField();
-        CampoCNPJ = new javax.swing.JTextField();
+        CampoCPF = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         CampoSobrenome = new javax.swing.JTextField();
         CampoSenha = new javax.swing.JTextField();
@@ -123,8 +139,8 @@ public class TelaVisualizarEnf extends javax.swing.JFrame {
         });
         jPanel3.add(CampoTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 247, 30));
 
-        CampoCNPJ.setEditable(false);
-        jPanel3.add(CampoCNPJ, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 247, 30));
+        CampoCPF.setEditable(false);
+        jPanel3.add(CampoCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 247, 30));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(102, 153, 255));
@@ -286,7 +302,7 @@ public class TelaVisualizarEnf extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField CampoCNPJ;
+    private javax.swing.JTextField CampoCPF;
     private javax.swing.JTextField CampoEndereco;
     private javax.swing.JTextField CampoIdentity;
     private javax.swing.JTextField CampoNome;

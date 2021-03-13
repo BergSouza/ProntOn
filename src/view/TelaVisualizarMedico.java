@@ -5,6 +5,8 @@
  */
 package view;
 
+import controller.MedicoController;
+import funcionarios.Medico;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.io.IOException;
@@ -15,13 +17,28 @@ import javax.swing.JOptionPane;
  * @author HARDWARE
  */
 public class TelaVisualizarMedico extends javax.swing.JFrame {
-
+    
+    MedicoController medController = new MedicoController();
     /**
      * Creates new form cadastrar_medico
      */
     public TelaVisualizarMedico() throws IOException {
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+    }
+    
+    public void preencherDados(String cpf){
+        Medico med = new Medico();
+        med = medController.getMedico(cpf);
+        CampoCPF.setText(med.getCpf());
+        CampoEndereco.setText(med.getEndereco());
+        CampoIdentity.setText(med.getIdentity());
+        CampoNome.setText(med.getNome());
+        CampoSobrenome.setText(med.getSobrenome());
+        CampoTelefone.setText(med.getTelefone());
+        CampoEsp.setText(med.getEspecialidade());
+        CampoRG.setText(med.getRG());
+        CampoDep.setText(med.getDepartamento());
     }
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -42,7 +59,7 @@ public class TelaVisualizarMedico extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         CampoRG = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        CampoCRM = new javax.swing.JTextField();
+        CampoEsp = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -55,7 +72,7 @@ public class TelaVisualizarMedico extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
-        CampoEndereco1 = new javax.swing.JTextField();
+        CampoDep = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         CampoSobrenome = new javax.swing.JTextField();
 
@@ -128,13 +145,13 @@ public class TelaVisualizarMedico extends javax.swing.JFrame {
         jLabel5.setText("Especialidade:");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, 130, -1));
 
-        CampoCRM.setEditable(false);
-        CampoCRM.addActionListener(new java.awt.event.ActionListener() {
+        CampoEsp.setEditable(false);
+        CampoEsp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoCRMActionPerformed(evt);
+                CampoEspActionPerformed(evt);
             }
         });
-        jPanel2.add(CampoCRM, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 50, 183, 30));
+        jPanel2.add(CampoEsp, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 50, 183, 30));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(102, 153, 255));
@@ -223,13 +240,13 @@ public class TelaVisualizarMedico extends javax.swing.JFrame {
         jLabel10.setText("Departamento:");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 200, 140, 30));
 
-        CampoEndereco1.setEditable(false);
-        CampoEndereco1.addActionListener(new java.awt.event.ActionListener() {
+        CampoDep.setEditable(false);
+        CampoDep.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoEndereco1ActionPerformed(evt);
+                CampoDepActionPerformed(evt);
             }
         });
-        jPanel2.add(CampoEndereco1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 200, 183, 30));
+        jPanel2.add(CampoDep, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 200, 183, 30));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(102, 153, 255));
@@ -248,9 +265,9 @@ public class TelaVisualizarMedico extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoCPFActionPerformed
 
-    private void CampoCRMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoCRMActionPerformed
+    private void CampoEspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoEspActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CampoCRMActionPerformed
+    }//GEN-LAST:event_CampoEspActionPerformed
 
     private void CampoTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoTelefoneActionPerformed
         // TODO add your handling code here:
@@ -276,9 +293,9 @@ public class TelaVisualizarMedico extends javax.swing.JFrame {
         CheckFeminino.setSelected(false);
     }//GEN-LAST:event_CheckMasculinoActionPerformed
 
-    private void CampoEndereco1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoEndereco1ActionPerformed
+    private void CampoDepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoDepActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CampoEndereco1ActionPerformed
+    }//GEN-LAST:event_CampoDepActionPerformed
 
     /**
      * @param args the command line arguments
@@ -336,9 +353,9 @@ public class TelaVisualizarMedico extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CampoCPF;
-    private javax.swing.JTextField CampoCRM;
+    private javax.swing.JTextField CampoDep;
     private javax.swing.JTextField CampoEndereco;
-    private javax.swing.JTextField CampoEndereco1;
+    private javax.swing.JTextField CampoEsp;
     private javax.swing.JTextField CampoIdentity;
     private javax.swing.JTextField CampoNome;
     private javax.swing.JTextField CampoRG;

@@ -5,6 +5,7 @@
  */
 package view;
 
+import controller.RecepcionistaController;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.logging.Level;
@@ -17,7 +18,8 @@ import javax.swing.JOptionPane;
  * @author HARDWARE
  */
 public class TelaCadastrarRecep extends javax.swing.JFrame {
-
+    
+    RecepcionistaController recepController = new RecepcionistaController();
     /**
      * Creates new form tela_Sec
      */
@@ -264,7 +266,16 @@ public class TelaCadastrarRecep extends javax.swing.JFrame {
     }//GEN-LAST:event_CheckFemininoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+        String sexo = "";
+        if(CheckMasculino.isSelected()){
+            sexo = "M";
+        }else if(CheckFeminino.isSelected()){
+            sexo = "F";
+        }else {
+            JOptionPane.showMessageDialog(null, "Selecione um Sexo!");
+        }       
+        recepController.addRecep(CampoIdentity.getText(), CampoNome.getText(), CampoCPF.getText(),
+                CampoRG.getText(), CampoTelefone.getText(), CampoEndereco.getText(), sexo, CampoSenha.getText());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

@@ -5,6 +5,7 @@
  */
 package view;
 
+import controller.MedicoController;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.io.IOException;
@@ -16,6 +17,8 @@ import javax.swing.JOptionPane;
  * @author HARDWARE
  */
 public class TelaCadastrarMedico extends javax.swing.JFrame {
+    
+    MedicoController medicoController = new MedicoController();
 
     /**
      * Creates new form cadastrar_medico
@@ -209,7 +212,7 @@ public class TelaCadastrarMedico extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(102, 153, 255));
-        jButton1.setText("Salvar\n");
+        jButton1.setText("Cadastrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -277,6 +280,17 @@ public class TelaCadastrarMedico extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String sexo = "";
+        if(CheckMasculino.isSelected()){
+            sexo = "M";
+        }else if(CheckFeminino.isSelected()){
+            sexo = "F";
+        }else {
+            JOptionPane.showMessageDialog(null, "Selecione um Sexo!");
+        }
+        medicoController.addMedico(CampoIdentity.getText(), CampoNome.getText(),
+                CampoSobrenome.getText(), CampoEndereco.getText(), CampoTelefone.getText(), CampoCPF.getText(),
+                CampoSenha.getText(), sexo, CampoRG.getText(), CampoEsp.getText(), CampoDep.getText());  
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

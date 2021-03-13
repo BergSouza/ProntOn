@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
  * @author HARDWARE
  */
 public class TelaCadastrarConsulta extends javax.swing.JFrame {
+    
 
     /**
      * Creates new form cadastrar_medico

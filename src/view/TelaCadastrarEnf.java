@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package view;
+import controller.EnfermController;
 import java.io.IOException;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -12,6 +13,8 @@ import javax.swing.JOptionPane;
  * @author HARDWARE
  */
 public class TelaCadastrarEnf extends javax.swing.JFrame {
+    
+    EnfermController enfermController = new EnfermController();
 
     /**
      * Creates new form cadastrar_convenios
@@ -37,7 +40,7 @@ public class TelaCadastrarEnf extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         CampoTelefone = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        CampoCNPJ = new javax.swing.JTextField();
+        CampoCPF = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         CampoSobrenome = new javax.swing.JTextField();
         CampoSenha = new javax.swing.JTextField();
@@ -45,8 +48,8 @@ public class TelaCadastrarEnf extends javax.swing.JFrame {
         CampoIdentity = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
+        CheckFeminino = new javax.swing.JCheckBox();
+        CheckMasculino = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro Convênio");
@@ -133,7 +136,7 @@ public class TelaCadastrarEnf extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(102, 153, 255));
         jLabel5.setText("Sexo:*");
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, 90, 30));
-        jPanel3.add(CampoCNPJ, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 247, 30));
+        jPanel3.add(CampoCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 247, 30));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(102, 153, 255));
@@ -170,13 +173,13 @@ public class TelaCadastrarEnf extends javax.swing.JFrame {
         jLabel9.setText("Senha:*");
         jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 90, -1));
 
-        jCheckBox1.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox1.setText("Feminino");
-        jPanel3.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 370, -1, -1));
+        CheckFeminino.setBackground(new java.awt.Color(255, 255, 255));
+        CheckFeminino.setText("Feminino");
+        jPanel3.add(CheckFeminino, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 370, -1, -1));
 
-        jCheckBox2.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox2.setText("Masculino");
-        jPanel3.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, -1, -1));
+        CheckMasculino.setBackground(new java.awt.Color(255, 255, 255));
+        CheckMasculino.setText("Masculino");
+        jPanel3.add(CheckMasculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, -1, -1));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 480, 420));
 
@@ -196,7 +199,16 @@ public class TelaCadastrarEnf extends javax.swing.JFrame {
     }//GEN-LAST:event_CampoTelefoneActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+        String sexo = "";
+        if(CheckMasculino.isSelected()){
+            sexo = "M";
+        }else if(CheckFeminino.isSelected()){
+            sexo = "F";
+        }else {
+            JOptionPane.showMessageDialog(null, "Selecione um Sexo!");
+        }
+        enfermController.addEnferm(CampoIdentity.getText(), CampoNome.getText(),
+                CampoSobrenome.getText(), CampoEndereco.getText(), CampoTelefone.getText(), CampoCPF.getText(), CampoSenha.getText(), sexo);        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -257,17 +269,17 @@ public class TelaCadastrarEnf extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField CampoCNPJ;
+    private javax.swing.JTextField CampoCPF;
     private javax.swing.JTextField CampoEndereco;
     private javax.swing.JTextField CampoIdentity;
     private javax.swing.JTextField CampoNome;
     private javax.swing.JTextField CampoSenha;
     private javax.swing.JTextField CampoSobrenome;
     private javax.swing.JTextField CampoTelefone;
+    private javax.swing.JCheckBox CheckFeminino;
+    private javax.swing.JCheckBox CheckMasculino;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
