@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Paciente;
+package util.classes.pessoa;
 
 /**
  *
  * @author cleit
  */
-public class Paciente {
-    private String identity;
+public class Pessoa {
+    
     private String nome;
     private String sobrenome;
     private String endereco;
@@ -20,9 +20,10 @@ public class Paciente {
     private String sexo;
     private String RG;
     private String dataNasc;
+    
+    public Pessoa (){}
 
-    public Paciente(String identity, String nome, String sobrenome, String endereco, String telefone, String cpf, String senha, String sexo, String RG, String dataNasc) {
-        this.identity = identity;
+    public Pessoa(String nome, String sobrenome, String endereco, String telefone, String cpf, String senha, String sexo, String RG, String dataNasc) {
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.endereco = endereco;
@@ -32,52 +33,6 @@ public class Paciente {
         this.sexo = sexo;
         this.RG = RG;
         this.dataNasc = dataNasc;
-    }
-    
-    public Paciente(){}
-
-    public String getIdentity() {
-        return identity;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public String getSobrenome() {
-        return sobrenome;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public String getSexo() {
-        return sexo;
-    }
-
-    public String getRG() {
-        return RG;
-    }
-
-    public String getDataNasc() {
-        return dataNasc;
-    }
-
-    public void setIdentity(String identity) {
-        this.identity = identity;
     }
 
     public void setNome(String nome) {
@@ -115,7 +70,42 @@ public class Paciente {
     public void setDataNasc(String dataNasc) {
         this.dataNasc = dataNasc;
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public String getRG() {
+        return RG;
+    }
+
+    public String getDataNasc() {
+        return dataNasc;
+    }
     
-    
-    
+   
 }

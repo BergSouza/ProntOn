@@ -37,17 +37,12 @@ public class TelaVisualizarConsulta extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         CampoRG = new javax.swing.JTextField();
-        CheckMasculino = new javax.swing.JCheckBox();
-        CheckFeminino = new javax.swing.JCheckBox();
         CampoHorario = new javax.swing.JTextField();
         CampoNome = new javax.swing.JTextField();
-        CampoDataN = new javax.swing.JTextField();
         CampoDataC = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         CampoNomeMed = new javax.swing.JTextField();
@@ -91,17 +86,11 @@ public class TelaVisualizarConsulta extends javax.swing.JFrame {
         jLabel2.setText("Nome do Paciente:");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 190, -1));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(102, 153, 255));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Data de Nascimento:");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 200, 30));
-
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 153, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Prontuário:");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 210, 30));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 210, 30));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(102, 153, 255));
@@ -112,13 +101,7 @@ public class TelaVisualizarConsulta extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(102, 153, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Horário:");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 230, 100, 30));
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(102, 153, 255));
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("Sexo:");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, 70, 50));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 180, 100, 30));
 
         CampoRG.setEditable(false);
         CampoRG.addActionListener(new java.awt.event.ActionListener() {
@@ -128,41 +111,14 @@ public class TelaVisualizarConsulta extends javax.swing.JFrame {
         });
         jPanel2.add(CampoRG, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, 180, 30));
 
-        CheckMasculino.setBackground(new java.awt.Color(255, 255, 255));
-        CheckMasculino.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        CheckMasculino.setForeground(new java.awt.Color(102, 153, 255));
-        CheckMasculino.setText("Masculino\n");
-        CheckMasculino.setEnabled(false);
-        CheckMasculino.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CheckMasculinoActionPerformed(evt);
-            }
-        });
-        jPanel2.add(CheckMasculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, -1, 50));
-
-        CheckFeminino.setBackground(new java.awt.Color(255, 255, 255));
-        CheckFeminino.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        CheckFeminino.setForeground(new java.awt.Color(102, 153, 255));
-        CheckFeminino.setText("Feminino\n");
-        CheckFeminino.setEnabled(false);
-        CheckFeminino.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CheckFemininoActionPerformed(evt);
-            }
-        });
-        jPanel2.add(CheckFeminino, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 160, -1, 50));
-
         CampoHorario.setEditable(false);
-        jPanel2.add(CampoHorario, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 230, 130, 30));
+        jPanel2.add(CampoHorario, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 180, 130, 30));
 
         CampoNome.setEditable(false);
         jPanel2.add(CampoNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 210, 30));
 
-        CampoDataN.setEnabled(false);
-        jPanel2.add(CampoDataN, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 210, 30));
-
         CampoDataC.setEnabled(false);
-        jPanel2.add(CampoDataC, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 210, 30));
+        jPanel2.add(CampoDataC, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 210, 30));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 153, 255));
@@ -176,16 +132,16 @@ public class TelaVisualizarConsulta extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(102, 153, 255));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Data da Consulta:");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 210, 30));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 210, 30));
 
         campoProntuario.setEditable(false);
         campoProntuario.setColumns(20);
         campoProntuario.setRows(5);
         jScrollPane1.setViewportView(campoProntuario);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, 510, 150));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 510, 150));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 710, 440));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 710, 400));
 
         jPanel3.setBackground(new java.awt.Color(102, 153, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -201,7 +157,7 @@ public class TelaVisualizarConsulta extends javax.swing.JFrame {
         });
         jPanel3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 20, 110, 40));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, 710, 80));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 710, 120));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -213,14 +169,6 @@ public class TelaVisualizarConsulta extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void CheckFemininoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckFemininoActionPerformed
-        
-    }//GEN-LAST:event_CheckFemininoActionPerformed
-
-    private void CheckMasculinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckMasculinoActionPerformed
-        
-    }//GEN-LAST:event_CheckMasculinoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -294,13 +242,10 @@ public class TelaVisualizarConsulta extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CampoDataC;
-    private javax.swing.JTextField CampoDataN;
     private javax.swing.JTextField CampoHorario;
     private javax.swing.JTextField CampoNome;
     private javax.swing.JTextField CampoNomeMed;
     private javax.swing.JTextField CampoRG;
-    private javax.swing.JCheckBox CheckFeminino;
-    private javax.swing.JCheckBox CheckMasculino;
     private javax.swing.JTextArea campoProntuario;
     private javax.swing.JTextField campoidd;
     private javax.swing.JButton jButton2;
@@ -310,13 +255,11 @@ public class TelaVisualizarConsulta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

@@ -63,7 +63,16 @@ public class TelaCadastrarConsulta extends javax.swing.JFrame {
         }
     }
     
-    public void lerLinhaMed(){
+    public void lerLinhaTabela(){
+        
+        int linhaMed = TabelaMed.getSelectedRow();
+        int linhaPac = TabelaPac.getSelectedRow();
+        String medNome = TabelaMed.getValueAt(linhaMed, 0).toString();
+        String pacNome = TabelaPac.getValueAt(linhaPac, 0).toString();
+        String pacRG = TabelaPac.getValueAt(linhaPac, 2).toString();
+        String data = dia.getSelectedItem().toString() + "/" + mes.getSelectedItem().toString() + "/"+ ano.getSelectedItem().toString();
+        String horario = hora.getSelectedItem().toString() + ":" + minuto.getSelectedItem().toString();
+        
         
     }
     
@@ -87,12 +96,12 @@ public class TelaCadastrarConsulta extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        mes = new javax.swing.JLabel();
-        SelectMinuto = new javax.swing.JComboBox<>();
+        Jlabel = new javax.swing.JLabel();
+        minuto = new javax.swing.JComboBox<>();
         dia = new javax.swing.JComboBox<>();
-        SelectCMes = new javax.swing.JComboBox<>();
+        mes = new javax.swing.JComboBox<>();
         ano = new javax.swing.JComboBox<>();
-        SelectHora = new javax.swing.JComboBox<>();
+        hora = new javax.swing.JComboBox<>();
         ScrollTab = new javax.swing.JScrollPane();
         TabelaMed = new javax.swing.JTable();
         jLabel10 = new javax.swing.JLabel();
@@ -203,41 +212,41 @@ public class TelaCadastrarConsulta extends javax.swing.JFrame {
         jLabel15.setText("/");
         jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 60, 40));
 
-        mes.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        mes.setForeground(new java.awt.Color(102, 153, 255));
-        mes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        mes.setText("/");
-        jPanel2.add(mes, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, 60, 40));
+        Jlabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        Jlabel.setForeground(new java.awt.Color(102, 153, 255));
+        Jlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Jlabel.setText("/");
+        jPanel2.add(Jlabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, 60, 40));
 
-        SelectMinuto.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        SelectMinuto.setForeground(new java.awt.Color(102, 153, 255));
-        SelectMinuto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59" }));
-        jPanel2.add(SelectMinuto, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 240, 50, 30));
+        minuto.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        minuto.setForeground(new java.awt.Color(102, 153, 255));
+        minuto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59" }));
+        jPanel2.add(minuto, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 240, 50, 30));
 
         dia.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         dia.setForeground(new java.awt.Color(102, 153, 255));
         dia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
         jPanel2.add(dia, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, 50, 30));
 
-        SelectCMes.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        SelectCMes.setForeground(new java.awt.Color(102, 153, 255));
-        SelectCMes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "11", "12" }));
-        SelectCMes.addActionListener(new java.awt.event.ActionListener() {
+        mes.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        mes.setForeground(new java.awt.Color(102, 153, 255));
+        mes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "11", "12" }));
+        mes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SelectCMesActionPerformed(evt);
+                mesActionPerformed(evt);
             }
         });
-        jPanel2.add(SelectCMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, 50, 30));
+        jPanel2.add(mes, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, 50, 30));
 
         ano.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         ano.setForeground(new java.awt.Color(102, 153, 255));
         ano.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2018", "2019", "2020", "2021", "2022", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "2035" }));
         jPanel2.add(ano, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 240, 70, 30));
 
-        SelectHora.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        SelectHora.setForeground(new java.awt.Color(102, 153, 255));
-        SelectHora.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23" }));
-        jPanel2.add(SelectHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 240, 50, 30));
+        hora.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        hora.setForeground(new java.awt.Color(102, 153, 255));
+        hora.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23" }));
+        jPanel2.add(hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 240, 50, 30));
 
         TabelaMed.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -296,12 +305,12 @@ public class TelaCadastrarConsulta extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+        lerLinhaTabela();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void SelectCMesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelectCMesActionPerformed
+    private void mesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_SelectCMesActionPerformed
+    }//GEN-LAST:event_mesActionPerformed
 
     private void btnPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisaActionPerformed
         
@@ -355,17 +364,16 @@ public class TelaCadastrarConsulta extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CampoPesquisa;
+    private javax.swing.JLabel Jlabel;
     private javax.swing.JScrollPane ScrollTab;
     private javax.swing.JScrollPane ScrollTab1;
-    private javax.swing.JComboBox<String> SelectCMes;
-    private javax.swing.JComboBox<String> SelectHora;
-    private javax.swing.JComboBox<String> SelectMinuto;
     private javax.swing.JTable TabelaMed;
     private javax.swing.JTable TabelaPac;
     private javax.swing.JComboBox<String> ano;
     private javax.swing.JButton btnPesquisa;
     private javax.swing.JComboBox<String> criterioPesquisa1;
     private javax.swing.JComboBox<String> dia;
+    private javax.swing.JComboBox<String> hora;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JCheckBox jCheckBox1;
@@ -381,6 +389,7 @@ public class TelaCadastrarConsulta extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JLabel mes;
+    private javax.swing.JComboBox<String> mes;
+    private javax.swing.JComboBox<String> minuto;
     // End of variables declaration//GEN-END:variables
 }
