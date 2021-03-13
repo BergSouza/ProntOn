@@ -36,8 +36,6 @@ public class TelaCadastrarPaciente extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        CampoIdentity = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         CampoNome = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -81,77 +79,71 @@ public class TelaCadastrarPaciente extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(102, 153, 255));
-        jLabel10.setText("Identity:*");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
-        jPanel2.add(CampoIdentity, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 248, 30));
-
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 153, 255));
-        jLabel1.setText("Nome:*");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, 32));
+        jLabel1.setText("Nome:");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, -1, 32));
 
         CampoNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoNomeActionPerformed(evt);
             }
         });
-        jPanel2.add(CampoNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 248, 27));
+        jPanel2.add(CampoNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 248, 27));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 153, 255));
-        jLabel2.setText("CPF:*");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, -1, -1));
+        jLabel2.setText("CPF:");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, -1, -1));
 
         CampoCPF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoCPFActionPerformed(evt);
             }
         });
-        jPanel2.add(CampoCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 248, 29));
+        jPanel2.add(CampoCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 248, 29));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 153, 255));
-        jLabel3.setText("RG:*");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, -1, -1));
+        jLabel3.setText("RG:");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, -1, -1));
 
         CampoRG.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoRGActionPerformed(evt);
             }
         });
-        jPanel2.add(CampoRG, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 248, 28));
+        jPanel2.add(CampoRG, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 248, 28));
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 153, 255));
         jLabel4.setText("Telefone:");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, -1, -1));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, -1, -1));
 
         CampoTelefone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoTelefoneActionPerformed(evt);
             }
         });
-        jPanel2.add(CampoTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 248, 28));
+        jPanel2.add(CampoTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 248, 28));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 153, 255));
         jLabel5.setText("Endereço:");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, -1, -1));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, -1, -1));
 
         CampoEndereco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoEnderecoActionPerformed(evt);
             }
         });
-        jPanel2.add(CampoEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 248, 26));
+        jPanel2.add(CampoEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 248, 26));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(102, 153, 255));
-        jLabel7.setText("Sexo:*");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, -1, -1));
+        jLabel7.setText("Sexo:");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, -1));
 
         CheckMasculino.setBackground(new java.awt.Color(255, 255, 255));
         CheckMasculino.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -162,7 +154,7 @@ public class TelaCadastrarPaciente extends javax.swing.JFrame {
                 CheckMasculinoActionPerformed(evt);
             }
         });
-        jPanel2.add(CheckMasculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 290, 100, -1));
+        jPanel2.add(CheckMasculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 100, -1));
 
         CheckFeminino.setBackground(new java.awt.Color(255, 255, 255));
         CheckFeminino.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -173,13 +165,13 @@ public class TelaCadastrarPaciente extends javax.swing.JFrame {
                 CheckFemininoActionPerformed(evt);
             }
         });
-        jPanel2.add(CheckFeminino, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, -1, -1));
+        jPanel2.add(CheckFeminino, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(102, 153, 255));
-        jLabel8.setText("Senha:*");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, -1, -1));
-        jPanel2.add(CampoSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, 248, 30));
+        jLabel8.setText("Senha:");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, -1, -1));
+        jPanel2.add(CampoSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 248, 30));
 
         jPanel3.setBackground(new java.awt.Color(102, 153, 255));
 
@@ -224,45 +216,45 @@ public class TelaCadastrarPaciente extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 490, 60));
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 490, 60));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(102, 153, 255));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("/");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, 20, 30));
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, 20, 30));
 
         Nasc03.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Nasc03ActionPerformed(evt);
             }
         });
-        jPanel2.add(Nasc03, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, 40, 26));
+        jPanel2.add(Nasc03, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 40, 26));
 
         Nasc01.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Nasc01ActionPerformed(evt);
             }
         });
-        jPanel2.add(Nasc01, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 40, 26));
+        jPanel2.add(Nasc01, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 40, 26));
 
         Nasc02.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Nasc02ActionPerformed(evt);
             }
         });
-        jPanel2.add(Nasc02, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 40, 26));
+        jPanel2.add(Nasc02, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 40, 26));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(102, 153, 255));
-        jLabel13.setText("Data de Nasc:*");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 322, -1, 30));
+        jLabel13.setText("Data de Nasc:");
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, 30));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(102, 153, 255));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText("/");
-        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 20, 30));
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 20, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -321,7 +313,7 @@ public class TelaCadastrarPaciente extends javax.swing.JFrame {
         }
         String dataNasc = Nasc01.getText() +"/"+ Nasc02.getText() +"/"+ Nasc03.getText();
         
-        pacienteController.addPaciente(CampoIdentity.getText(), CampoNome.getText(), CampoCPF.getText()
+        pacienteController.addPaciente(CampoNome.getText(), CampoCPF.getText()
         , CampoRG.getText(), CampoTelefone.getText(), CampoEndereco.getText(), sexo, dataNasc, CampoSenha.getText());
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -398,7 +390,6 @@ public class TelaCadastrarPaciente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CampoCPF;
     private javax.swing.JTextField CampoEndereco;
-    private javax.swing.JTextField CampoIdentity;
     private javax.swing.JTextField CampoNome;
     private javax.swing.JTextField CampoRG;
     private javax.swing.JPasswordField CampoSenha;
@@ -411,7 +402,6 @@ public class TelaCadastrarPaciente extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
