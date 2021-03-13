@@ -32,7 +32,6 @@ public class TelaVisualizarEnf extends javax.swing.JFrame {
         enferm = enfermController.getEnferm(cpf);
         CampoCPF.setText(enferm.getCpf());
         CampoEndereco.setText(enferm.getEndereco());
-        CampoIdentity.setText(enferm.getIdentity());
         CampoNome.setText(enferm.getNome());
         CampoSenha.setText(enferm.getSenha());
         CampoSobrenome.setText(enferm.getSobrenome());
@@ -48,8 +47,6 @@ public class TelaVisualizarEnf extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         CampoNome = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -61,13 +58,13 @@ public class TelaVisualizarEnf extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         CampoSobrenome = new javax.swing.JTextField();
         CampoSenha = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        CampoIdentity = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         CheckMasculino = new javax.swing.JCheckBox();
         CheckFeminino = new javax.swing.JCheckBox();
+        jPanel2 = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro Convênio");
@@ -86,6 +83,106 @@ public class TelaVisualizarEnf extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 70));
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        CampoNome.setEditable(false);
+        CampoNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampoNomeActionPerformed(evt);
+            }
+        });
+        jPanel3.add(CampoNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 250, 30));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 153, 255));
+        jLabel2.setText("Nome:");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(102, 153, 255));
+        jLabel4.setText("Endereço:");
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
+
+        CampoEndereco.setEditable(false);
+        CampoEndereco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampoEnderecoActionPerformed(evt);
+            }
+        });
+        jPanel3.add(CampoEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 247, 30));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 153, 255));
+        jLabel3.setText("Telefone:");
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
+
+        CampoTelefone.setEditable(false);
+        CampoTelefone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampoTelefoneActionPerformed(evt);
+            }
+        });
+        jPanel3.add(CampoTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 247, 30));
+
+        CampoCPF.setEditable(false);
+        jPanel3.add(CampoCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 247, 30));
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(102, 153, 255));
+        jLabel7.setText("Sobrenome:");
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, 30));
+
+        CampoSobrenome.setEditable(false);
+        CampoSobrenome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampoSobrenomeActionPerformed(evt);
+            }
+        });
+        jPanel3.add(CampoSobrenome, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 250, 30));
+
+        CampoSenha.setEditable(false);
+        jPanel3.add(CampoSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 247, 30));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(102, 153, 255));
+        jLabel8.setText("CPF:");
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, 70, -1));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(102, 153, 255));
+        jLabel9.setText("Senha:");
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 90, -1));
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(102, 153, 255));
+        jLabel11.setText("Sexo:");
+        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, -1, -1));
+
+        CheckMasculino.setBackground(new java.awt.Color(255, 255, 255));
+        CheckMasculino.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        CheckMasculino.setForeground(new java.awt.Color(102, 153, 255));
+        CheckMasculino.setText("Masculino ");
+        CheckMasculino.setEnabled(false);
+        CheckMasculino.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CheckMasculinoActionPerformed(evt);
+            }
+        });
+        jPanel3.add(CheckMasculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 100, -1));
+
+        CheckFeminino.setBackground(new java.awt.Color(255, 255, 255));
+        CheckFeminino.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        CheckFeminino.setForeground(new java.awt.Color(102, 153, 255));
+        CheckFeminino.setText("Feminino");
+        CheckFeminino.setEnabled(false);
+        CheckFeminino.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CheckFemininoActionPerformed(evt);
+            }
+        });
+        jPanel3.add(CheckFeminino, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, -1, -1));
+
         jPanel2.setBackground(new java.awt.Color(102, 153, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -99,120 +196,7 @@ public class TelaVisualizarEnf extends javax.swing.JFrame {
         });
         jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, 120, 40));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 490, 480, 70));
-
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        CampoNome.setEditable(false);
-        CampoNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoNomeActionPerformed(evt);
-            }
-        });
-        jPanel3.add(CampoNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 250, 30));
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(102, 153, 255));
-        jLabel2.setText("Nome:*");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(102, 153, 255));
-        jLabel4.setText("Endereço:");
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, -1));
-
-        CampoEndereco.setEditable(false);
-        CampoEndereco.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoEnderecoActionPerformed(evt);
-            }
-        });
-        jPanel3.add(CampoEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 247, 30));
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(102, 153, 255));
-        jLabel3.setText("Telefone:");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, -1, -1));
-
-        CampoTelefone.setEditable(false);
-        CampoTelefone.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoTelefoneActionPerformed(evt);
-            }
-        });
-        jPanel3.add(CampoTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 247, 30));
-
-        CampoCPF.setEditable(false);
-        jPanel3.add(CampoCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 247, 30));
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(102, 153, 255));
-        jLabel7.setText("Sobrenome:*");
-        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, 30));
-
-        CampoSobrenome.setEditable(false);
-        CampoSobrenome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoSobrenomeActionPerformed(evt);
-            }
-        });
-        jPanel3.add(CampoSobrenome, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 250, 30));
-
-        CampoSenha.setEditable(false);
-        jPanel3.add(CampoSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, 247, 30));
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(102, 153, 255));
-        jLabel6.setText("Identity:*");
-        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, -1));
-
-        CampoIdentity.setEditable(false);
-        CampoIdentity.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoIdentityActionPerformed(evt);
-            }
-        });
-        jPanel3.add(CampoIdentity, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 250, 30));
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(102, 153, 255));
-        jLabel8.setText("CPF:*");
-        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 70, -1));
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(102, 153, 255));
-        jLabel9.setText("Senha:*");
-        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 90, -1));
-
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(102, 153, 255));
-        jLabel11.setText("Sexo:");
-        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, -1, -1));
-
-        CheckMasculino.setBackground(new java.awt.Color(255, 255, 255));
-        CheckMasculino.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        CheckMasculino.setForeground(new java.awt.Color(102, 153, 255));
-        CheckMasculino.setText("Masculino ");
-        CheckMasculino.setEnabled(false);
-        CheckMasculino.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CheckMasculinoActionPerformed(evt);
-            }
-        });
-        jPanel3.add(CheckMasculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, 100, -1));
-
-        CheckFeminino.setBackground(new java.awt.Color(255, 255, 255));
-        CheckFeminino.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        CheckFeminino.setForeground(new java.awt.Color(102, 153, 255));
-        CheckFeminino.setText("Feminino");
-        CheckFeminino.setEnabled(false);
-        CheckFeminino.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CheckFemininoActionPerformed(evt);
-            }
-        });
-        jPanel3.add(CheckFeminino, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, -1, -1));
+        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 480, 70));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 480, 420));
 
@@ -238,10 +222,6 @@ public class TelaVisualizarEnf extends javax.swing.JFrame {
     private void CampoSobrenomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoSobrenomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoSobrenomeActionPerformed
-
-    private void CampoIdentityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoIdentityActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CampoIdentityActionPerformed
 
     private void CheckMasculinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckMasculinoActionPerformed
 
@@ -308,7 +288,6 @@ public class TelaVisualizarEnf extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CampoCPF;
     private javax.swing.JTextField CampoEndereco;
-    private javax.swing.JTextField CampoIdentity;
     private javax.swing.JTextField CampoNome;
     private javax.swing.JTextField CampoSenha;
     private javax.swing.JTextField CampoSobrenome;
@@ -321,7 +300,6 @@ public class TelaVisualizarEnf extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

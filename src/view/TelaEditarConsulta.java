@@ -43,7 +43,6 @@ public class TelaEditarConsulta extends javax.swing.JFrame {
          
          for(Medico med : medicoController.gerarTabela()){
              modeloMedico.addRow(new Object[]{
-                med.getIdentity(),
                 med.getNome(),
                 med.getCpf(),
                 med.getRG(),
@@ -57,7 +56,6 @@ public class TelaEditarConsulta extends javax.swing.JFrame {
         modeloPaciente.setNumRows(0);
         for(Paciente pac : pacienteController.gerarTabela()){
             modeloPaciente.addRow(new Object[]{
-                pac.getIdentity(),
                 pac.getNome(),
                 pac.getCpf(),
                 pac.getRG(),
@@ -143,8 +141,7 @@ public class TelaEditarConsulta extends javax.swing.JFrame {
 
         criterioPesquisa1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         criterioPesquisa1.setForeground(new java.awt.Color(102, 153, 255));
-        criterioPesquisa1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Nome", "CPF", "RG", "Telefone" }));
-        criterioPesquisa1.setSelectedIndex(1);
+        criterioPesquisa1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"Nome", "CPF", "RG", "Telefone" }));
         criterioPesquisa1.setBorder(null);
         criterioPesquisa1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         criterioPesquisa1.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
@@ -255,11 +252,11 @@ public class TelaEditarConsulta extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Nome", "CPF", "RG", "Telefone"
+                "Nome", "CPF", "RG", "Telefone"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -299,11 +296,11 @@ public class TelaEditarConsulta extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Nome", "CPF", "RG", "Telefone"
+                "Nome", "CPF", "RG", "Telefone"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {

@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -174,7 +175,7 @@ public class TelaRecepcionista extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "ID Consulta", "Nome do Paciente", "Médico", "Data de Nascimento", "Data", "Horário"
+                "Nome do Paciente", "CPF", "Médico", "Data de Nascimento", "Data", "Horário"
             }
         ));
         jScrollPane1.setViewportView(Tabela3);
@@ -500,8 +501,7 @@ public class TelaRecepcionista extends javax.swing.JFrame {
         criterioPesquisa1.setBackground(new java.awt.Color(102, 153, 255));
         criterioPesquisa1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         criterioPesquisa1.setForeground(new java.awt.Color(255, 255, 255));
-        criterioPesquisa1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Nome", "CPF", "RG", "Telefone" }));
-        criterioPesquisa1.setSelectedIndex(1);
+        criterioPesquisa1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nome", "CPF", "RG", "Telefone" }));
         criterioPesquisa1.setBorder(null);
         criterioPesquisa1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         criterioPesquisa1.setLightWeightPopupEnabled(false);

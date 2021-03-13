@@ -175,7 +175,7 @@ public class TelaPaciente extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "ID Consulta", "Data", "Horário"
+                "CPF", "Data", "Horário"
             }
         ));
         jScrollPane1.setViewportView(Tabela);

@@ -33,8 +33,7 @@ public class TelaEditarMedico extends javax.swing.JFrame {
         Medico med = new Medico();
         med = medController.getMedico(cpf);
         CampoCPF.setText(med.getCpf());
-        CampoEndereco.setText(med.getEndereco());
-        CampoIdentity.setText(med.getIdentity());
+        CampoEndereco.setText(med.getEndereco());    
         CampoNome.setText(med.getNome());
         CampoSenha.setText(med.getSenha());
         CampoSobrenome.setText(med.getSobrenome());
@@ -54,7 +53,6 @@ public class TelaEditarMedico extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
         campoid = new javax.swing.JTextField();
-        identityy = new javax.swing.JTextField();
         cpff = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -77,8 +75,6 @@ public class TelaEditarMedico extends javax.swing.JFrame {
         CheckMasculino = new javax.swing.JCheckBox();
         CheckFeminino = new javax.swing.JCheckBox();
         CampoSenha = new javax.swing.JPasswordField();
-        jLabel12 = new javax.swing.JLabel();
-        CampoIdentity = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
@@ -92,8 +88,6 @@ public class TelaEditarMedico extends javax.swing.JFrame {
         jCheckBox1.setText("jCheckBox1");
 
         campoid.setText("jTextField1");
-
-        identityy.setText("jTextField1");
 
         cpff.setText("jTextField1");
 
@@ -119,34 +113,34 @@ public class TelaEditarMedico extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 153, 255));
         jLabel2.setText("Nome:");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, -1));
-        jPanel2.add(CampoNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 183, 30));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
+        jPanel2.add(CampoNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 183, 30));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 153, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("CPF:");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 60, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 60, -1));
 
         CampoCPF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoCPFActionPerformed(evt);
             }
         });
-        jPanel2.add(CampoCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 183, 30));
+        jPanel2.add(CampoCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 183, 30));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 153, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("RG:");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 50, -1));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 50, -1));
 
         CampoRG.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoRGActionPerformed(evt);
             }
         });
-        jPanel2.add(CampoRG, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 183, 30));
+        jPanel2.add(CampoRG, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 183, 30));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 153, 255));
@@ -227,12 +221,6 @@ public class TelaEditarMedico extends javax.swing.JFrame {
         });
         jPanel2.add(CampoSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 180, 186, 30));
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(102, 153, 255));
-        jLabel12.setText("Identity:");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
-        jPanel2.add(CampoIdentity, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 180, 30));
-
         jPanel3.setBackground(new java.awt.Color(102, 153, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -276,8 +264,8 @@ public class TelaEditarMedico extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(102, 153, 255));
         jLabel13.setText("Sobrenome:");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, 30));
-        jPanel2.add(CampoSobrenome, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 183, 30));
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, 30));
+        jPanel2.add(CampoSobrenome, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 183, 30));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 710, 390));
 
@@ -321,7 +309,7 @@ public class TelaEditarMedico extends javax.swing.JFrame {
         }else {
             JOptionPane.showMessageDialog(null, "Selecione um Sexo!");
         }
-        medController.editarMedico(CampoIdentity.getText(), CampoNome.getText(),
+        medController.editarMedico(CampoNome.getText(),
                 CampoSobrenome.getText(), CampoEndereco.getText(), CampoTelefone.getText(), CampoCPF.getText(),
                 CampoSenha.getText(), sexo, CampoRG.getText(), CampoEsp.getText(), CampoDep.getText());  
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -389,7 +377,6 @@ public class TelaEditarMedico extends javax.swing.JFrame {
     private javax.swing.JTextField CampoDep;
     private javax.swing.JTextField CampoEndereco;
     private javax.swing.JTextField CampoEsp;
-    private javax.swing.JTextField CampoIdentity;
     private javax.swing.JTextField CampoNome;
     private javax.swing.JTextField CampoRG;
     private javax.swing.JPasswordField CampoSenha;
@@ -399,14 +386,12 @@ public class TelaEditarMedico extends javax.swing.JFrame {
     private javax.swing.JCheckBox CheckMasculino;
     private javax.swing.JTextField campoid;
     private javax.swing.JTextField cpff;
-    private javax.swing.JTextField identityy;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;

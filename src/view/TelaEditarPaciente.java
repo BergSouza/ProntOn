@@ -37,7 +37,6 @@ public class TelaEditarPaciente extends javax.swing.JFrame {
         
         CampoCPF.setText(pac.getCpf());
         CampoEndereco.setText(pac.getEndereco());
-        CampoIdentity.setText(pac.getIdentity());
         CampoNome.setText(pac.getNome());
         CampoRG.setText(pac.getRG());
         CampoSenha.setText(pac.getSenha());
@@ -53,14 +52,11 @@ public class TelaEditarPaciente extends javax.swing.JFrame {
     private void initComponents() {
 
         campoid = new javax.swing.JTextField();
-        identityy = new javax.swing.JTextField();
         cpff = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        CampoIdentity = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         CampoNome = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -84,8 +80,6 @@ public class TelaEditarPaciente extends javax.swing.JFrame {
 
         campoid.setEditable(false);
 
-        identityy.setText("jTextField1");
-
         cpff.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -104,77 +98,71 @@ public class TelaEditarPaciente extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(102, 153, 255));
-        jLabel10.setText("Identity:");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
-        jPanel2.add(CampoIdentity, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 248, 30));
-
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 153, 255));
         jLabel1.setText("Nome:");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, 32));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, -1, 32));
 
         CampoNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoNomeActionPerformed(evt);
             }
         });
-        jPanel2.add(CampoNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 248, 27));
+        jPanel2.add(CampoNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 248, 27));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 153, 255));
         jLabel2.setText("CPF:");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, -1, -1));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, -1, -1));
 
         CampoCPF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoCPFActionPerformed(evt);
             }
         });
-        jPanel2.add(CampoCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 248, 29));
+        jPanel2.add(CampoCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 248, 29));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 153, 255));
         jLabel3.setText("RG:");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, -1, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, -1, -1));
 
         CampoRG.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoRGActionPerformed(evt);
             }
         });
-        jPanel2.add(CampoRG, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 248, 28));
+        jPanel2.add(CampoRG, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 248, 28));
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 153, 255));
         jLabel4.setText("Telefone:");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, -1, -1));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
 
         CampoTelefone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoTelefoneActionPerformed(evt);
             }
         });
-        jPanel2.add(CampoTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 248, 28));
+        jPanel2.add(CampoTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 248, 28));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 153, 255));
         jLabel5.setText("Endereço:");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, -1, -1));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, -1));
 
         CampoEndereco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoEnderecoActionPerformed(evt);
             }
         });
-        jPanel2.add(CampoEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 248, 26));
+        jPanel2.add(CampoEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 248, 26));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(102, 153, 255));
         jLabel7.setText("Sexo:");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, -1, -1));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, -1));
 
         CheckMasculino.setBackground(new java.awt.Color(255, 255, 255));
         CheckMasculino.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -185,7 +173,7 @@ public class TelaEditarPaciente extends javax.swing.JFrame {
                 CheckMasculinoActionPerformed(evt);
             }
         });
-        jPanel2.add(CheckMasculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 290, 100, -1));
+        jPanel2.add(CheckMasculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 100, -1));
 
         CheckFeminino.setBackground(new java.awt.Color(255, 255, 255));
         CheckFeminino.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -196,13 +184,13 @@ public class TelaEditarPaciente extends javax.swing.JFrame {
                 CheckFemininoActionPerformed(evt);
             }
         });
-        jPanel2.add(CheckFeminino, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, -1, -1));
+        jPanel2.add(CheckFeminino, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(102, 153, 255));
         jLabel8.setText("Senha:");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, 70, -1));
-        jPanel2.add(CampoSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, 248, 30));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 70, -1));
+        jPanel2.add(CampoSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 248, 30));
 
         jPanel3.setBackground(new java.awt.Color(102, 153, 255));
 
@@ -247,19 +235,19 @@ public class TelaEditarPaciente extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 490, 60));
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 490, 60));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(102, 153, 255));
         jLabel13.setText("Data de Nasc:");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, 30));
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, 30));
 
         Nasc1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Nasc1ActionPerformed(evt);
             }
         });
-        jPanel2.add(Nasc1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 90, 26));
+        jPanel2.add(Nasc1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 90, 26));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -317,7 +305,7 @@ public class TelaEditarPaciente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Selecione um Sexo!");
         }
         
-        pacienteController.editarPaciente(CampoIdentity.getText(), CampoNome.getText(), CampoCPF.getText()
+        pacienteController.editarPaciente(CampoNome.getText(), CampoCPF.getText()
         , CampoRG.getText(), CampoTelefone.getText(), CampoEndereco.getText(), sexo, Nasc1.getText(), CampoSenha.getText());
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -402,7 +390,6 @@ public class TelaEditarPaciente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CampoCPF;
     private javax.swing.JTextField CampoEndereco;
-    private javax.swing.JTextField CampoIdentity;
     private javax.swing.JTextField CampoNome;
     private javax.swing.JTextField CampoRG;
     private javax.swing.JPasswordField CampoSenha;
@@ -412,11 +399,9 @@ public class TelaEditarPaciente extends javax.swing.JFrame {
     private javax.swing.JTextField Nasc1;
     private javax.swing.JTextField campoid;
     private javax.swing.JTextField cpff;
-    private javax.swing.JTextField identityy;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

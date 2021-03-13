@@ -30,7 +30,6 @@ public class TelaVisualizarRecep extends javax.swing.JFrame {
     public void preencherDados(String cpf){
         Recepcionista recep = new Recepcionista();
         recep = recepController.getRecepcionista(cpf);
-        CampoIdentity.setText(recep.getIdentity()); 
         CampoNome.setText(recep.getNome());
         CampoCPF.setText(recep.getCpf());
         CampoRG.setText(recep.getRG());
@@ -45,13 +44,10 @@ public class TelaVisualizarRecep extends javax.swing.JFrame {
     private void initComponents() {
 
         campoid = new javax.swing.JTextField();
-        identityy = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        CampoIdentity = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         CampoNome = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -70,8 +66,6 @@ public class TelaVisualizarRecep extends javax.swing.JFrame {
 
         campoid.setEditable(false);
 
-        identityy.setText("jTextField1");
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Visualizar Secretário(a)");
         setResizable(false);
@@ -88,18 +82,10 @@ public class TelaVisualizarRecep extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(102, 153, 255));
-        jLabel10.setText("Identity:");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, -1, -1));
-
-        CampoIdentity.setEditable(false);
-        jPanel2.add(CampoIdentity, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 248, 30));
-
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 153, 255));
         jLabel1.setText("Nome:");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, -1, 32));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, 32));
 
         CampoNome.setEditable(false);
         CampoNome.addActionListener(new java.awt.event.ActionListener() {
@@ -107,12 +93,12 @@ public class TelaVisualizarRecep extends javax.swing.JFrame {
                 CampoNomeActionPerformed(evt);
             }
         });
-        jPanel2.add(CampoNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 248, 27));
+        jPanel2.add(CampoNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 248, 27));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 153, 255));
         jLabel2.setText("CPF:");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, -1, -1));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, -1, -1));
 
         CampoCPF.setEditable(false);
         CampoCPF.addActionListener(new java.awt.event.ActionListener() {
@@ -120,12 +106,12 @@ public class TelaVisualizarRecep extends javax.swing.JFrame {
                 CampoCPFActionPerformed(evt);
             }
         });
-        jPanel2.add(CampoCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 248, 29));
+        jPanel2.add(CampoCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 248, 29));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 153, 255));
         jLabel3.setText("RG:");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, -1, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, -1, -1));
 
         CampoRG.setEditable(false);
         CampoRG.addActionListener(new java.awt.event.ActionListener() {
@@ -133,13 +119,13 @@ public class TelaVisualizarRecep extends javax.swing.JFrame {
                 CampoRGActionPerformed(evt);
             }
         });
-        jPanel2.add(CampoRG, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 248, 28));
+        jPanel2.add(CampoRG, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 248, 28));
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 153, 255));
         jLabel4.setText("Telefone:");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, -1, -1));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, -1, -1));
 
         CampoTelefone.setEditable(false);
         CampoTelefone.addActionListener(new java.awt.event.ActionListener() {
@@ -147,12 +133,12 @@ public class TelaVisualizarRecep extends javax.swing.JFrame {
                 CampoTelefoneActionPerformed(evt);
             }
         });
-        jPanel2.add(CampoTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 248, 28));
+        jPanel2.add(CampoTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 248, 28));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 153, 255));
         jLabel5.setText("Endereço:");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, -1, -1));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, -1));
 
         CampoEndereco.setEditable(false);
         CampoEndereco.addActionListener(new java.awt.event.ActionListener() {
@@ -160,12 +146,12 @@ public class TelaVisualizarRecep extends javax.swing.JFrame {
                 CampoEnderecoActionPerformed(evt);
             }
         });
-        jPanel2.add(CampoEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 248, 26));
+        jPanel2.add(CampoEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 248, 26));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(102, 153, 255));
         jLabel7.setText("Sexo:");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, -1, -1));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, -1, -1));
 
         CheckMasculino.setBackground(new java.awt.Color(255, 255, 255));
         CheckMasculino.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -177,7 +163,7 @@ public class TelaVisualizarRecep extends javax.swing.JFrame {
                 CheckMasculinoActionPerformed(evt);
             }
         });
-        jPanel2.add(CheckMasculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, 100, -1));
+        jPanel2.add(CheckMasculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 100, -1));
 
         CheckFeminino.setBackground(new java.awt.Color(255, 255, 255));
         CheckFeminino.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -189,7 +175,7 @@ public class TelaVisualizarRecep extends javax.swing.JFrame {
                 CheckFemininoActionPerformed(evt);
             }
         });
-        jPanel2.add(CheckFeminino, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, -1, -1));
+        jPanel2.add(CheckFeminino, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(102, 153, 255));
 
@@ -215,12 +201,12 @@ public class TelaVisualizarRecep extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 490, 60));
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 490, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -345,17 +331,14 @@ public class TelaVisualizarRecep extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CampoCPF;
     private javax.swing.JTextField CampoEndereco;
-    private javax.swing.JTextField CampoIdentity;
     private javax.swing.JTextField CampoNome;
     private javax.swing.JTextField CampoRG;
     private javax.swing.JTextField CampoTelefone;
     private javax.swing.JCheckBox CheckFeminino;
     private javax.swing.JCheckBox CheckMasculino;
     private javax.swing.JTextField campoid;
-    private javax.swing.JTextField identityy;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

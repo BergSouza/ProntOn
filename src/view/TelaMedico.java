@@ -172,7 +172,7 @@ public class TelaMedico extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "ID Consulta", "Nome do Paciente", "Data de Nascimento", "Data", "Horário"
+                "Nome do Paciente", "CPF", "Data de Nascimento", "Data", "Horário"
             }
         ));
         jScrollPane1.setViewportView(Tabela);
@@ -219,7 +219,7 @@ public class TelaMedico extends javax.swing.JFrame {
         criterioPesquisa3.setBackground(new java.awt.Color(102, 153, 255));
         criterioPesquisa3.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         criterioPesquisa3.setForeground(new java.awt.Color(255, 255, 255));
-        criterioPesquisa3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Nome do Paciente", "Data de Nascimento", "Data da Consulta", "Horário da Consulta" }));
+        criterioPesquisa3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nome do Paciente", "Data de Nascimento", "Data da Consulta", "Horário da Consulta" }));
         criterioPesquisa3.setBorder(null);
         jPanel1.add(criterioPesquisa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 70, 30));
 
