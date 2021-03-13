@@ -15,12 +15,12 @@ import funcionarios.Recepcionista;
 public class RecepcionistaController {
     RecepcionistaDAO recepDAO = new RecepcionistaDAO();
     
-    public void addRecep(String identity, String nome, String cpf, String RG, 
+    public void addRecep(String nome, String cpf, String RG, 
             String telefone, String endereco, String sexo, String senha){
         
     }
     
-    public void editarRecep(String identity, String nome, String cpf, String RG, 
+    public void editarRecep(String nome, String cpf, String RG, 
             String telefone, String endereco, String sexo, String senha){
         
     }

@@ -321,7 +321,7 @@ public class TelaEditarMedico extends javax.swing.JFrame {
         }else {
             JOptionPane.showMessageDialog(null, "Selecione um Sexo!");
         }
-        medController.editarMedico(CampoIdentity.getText(), CampoNome.getText(),
+        medController.editarMedico(CampoNome.getText(),
                 CampoSobrenome.getText(), CampoEndereco.getText(), CampoTelefone.getText(), CampoCPF.getText(),
                 CampoSenha.getText(), sexo, CampoRG.getText(), CampoEsp.getText(), CampoDep.getText());  
     }//GEN-LAST:event_jButton1ActionPerformed

@@ -16,12 +16,12 @@ import java.util.List;
 public class MedicoController {
     MedicoDAO medDAO = new MedicoDAO();
     
-    public void addMedico(String identity, String nome, String sobrenome, String endereco,
+    public void addMedico(String nome, String sobrenome, String endereco,
             String telefone, String cpf, String senha, String sexo, String RG, String especialidade, String departamento){
         
     }
     
-    public void editarMedico(String identity, String nome, String sobrenome, String endereco,
+    public void editarMedico(String nome, String sobrenome, String endereco,
             String telefone, String cpf, String senha, String sexo, String RG, String especialidade, String departamento){
         
     }
@@ -36,4 +36,5 @@ public class MedicoController {
     public List<Medico> gerarTabela(){
         return medDAO.gerarTabela();
     }
+    
 }

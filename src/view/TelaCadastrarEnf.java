@@ -44,8 +44,6 @@ public class TelaCadastrarEnf extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         CampoSobrenome = new javax.swing.JTextField();
         CampoSenha = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        CampoIdentity = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         CheckFeminino = new javax.swing.JCheckBox();
@@ -91,7 +89,7 @@ public class TelaCadastrarEnf extends javax.swing.JFrame {
         });
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 120, 40));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 490, 480, 70));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 480, 70));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -101,87 +99,75 @@ public class TelaCadastrarEnf extends javax.swing.JFrame {
                 CampoNomeActionPerformed(evt);
             }
         });
-        jPanel3.add(CampoNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 250, 30));
+        jPanel3.add(CampoNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 250, 30));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 153, 255));
-        jLabel2.setText("Nome:*");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, -1, -1));
+        jLabel2.setText("Nome:");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 153, 255));
         jLabel4.setText("Endereço:");
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, -1));
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
 
         CampoEndereco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoEnderecoActionPerformed(evt);
             }
         });
-        jPanel3.add(CampoEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 247, 30));
+        jPanel3.add(CampoEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 247, 30));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 153, 255));
         jLabel3.setText("Telefone:");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, -1, -1));
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, -1));
 
         CampoTelefone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoTelefoneActionPerformed(evt);
             }
         });
-        jPanel3.add(CampoTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 247, 30));
+        jPanel3.add(CampoTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 247, 30));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 153, 255));
-        jLabel5.setText("Sexo:*");
-        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, 90, 30));
-        jPanel3.add(CampoCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 247, 30));
+        jLabel5.setText("Sexo:");
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 90, 30));
+        jPanel3.add(CampoCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 247, 30));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(102, 153, 255));
-        jLabel7.setText("Sobrenome:*");
-        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, 30));
+        jLabel7.setText("Sobrenome:");
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, 30));
 
         CampoSobrenome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoSobrenomeActionPerformed(evt);
             }
         });
-        jPanel3.add(CampoSobrenome, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 250, 30));
-        jPanel3.add(CampoSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, 247, 30));
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(102, 153, 255));
-        jLabel6.setText("Identity:*");
-        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, -1));
-
-        CampoIdentity.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoIdentityActionPerformed(evt);
-            }
-        });
-        jPanel3.add(CampoIdentity, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 250, 30));
+        jPanel3.add(CampoSobrenome, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 250, 30));
+        jPanel3.add(CampoSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 247, 30));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(102, 153, 255));
-        jLabel8.setText("CPF:*");
-        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 70, -1));
+        jLabel8.setText("CPF:");
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, 70, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(102, 153, 255));
-        jLabel9.setText("Senha:*");
-        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 90, -1));
+        jLabel9.setText("Senha:");
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 90, -1));
 
         CheckFeminino.setBackground(new java.awt.Color(255, 255, 255));
         CheckFeminino.setText("Feminino");
-        jPanel3.add(CheckFeminino, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 370, -1, -1));
+        jPanel3.add(CheckFeminino, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 330, -1, -1));
 
         CheckMasculino.setBackground(new java.awt.Color(255, 255, 255));
         CheckMasculino.setText("Masculino");
-        jPanel3.add(CheckMasculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, -1, -1));
+        jPanel3.add(CheckMasculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, -1, -1));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 480, 420));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 480, 370));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -207,7 +193,7 @@ public class TelaCadastrarEnf extends javax.swing.JFrame {
         }else {
             JOptionPane.showMessageDialog(null, "Selecione um Sexo!");
         }
-        enfermController.addEnferm(CampoIdentity.getText(), CampoNome.getText(),
+        enfermController.addEnferm(CampoNome.getText(),
                 CampoSobrenome.getText(), CampoEndereco.getText(), CampoTelefone.getText(), CampoCPF.getText(), CampoSenha.getText(), sexo);        
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -218,10 +204,6 @@ public class TelaCadastrarEnf extends javax.swing.JFrame {
     private void CampoSobrenomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoSobrenomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoSobrenomeActionPerformed
-
-    private void CampoIdentityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoIdentityActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CampoIdentityActionPerformed
 
     /**
      * @param args the command line arguments
@@ -271,7 +253,6 @@ public class TelaCadastrarEnf extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CampoCPF;
     private javax.swing.JTextField CampoEndereco;
-    private javax.swing.JTextField CampoIdentity;
     private javax.swing.JTextField CampoNome;
     private javax.swing.JTextField CampoSenha;
     private javax.swing.JTextField CampoSobrenome;
@@ -285,7 +266,6 @@ public class TelaCadastrarEnf extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

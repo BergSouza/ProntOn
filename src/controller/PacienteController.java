@@ -17,11 +17,11 @@ public class PacienteController {
     
     PacienteDAO pacDAO = new PacienteDAO();
     
-    public void addPaciente(String identity, String nome, String cpf, 
+    public void addPaciente(String nome, String cpf, 
             String rg, String telefone, String endereco, String sexo, String dataNasc, String senha){
         
     }
-    public void editarPaciente(String identity, String nome, String cpf, 
+    public void editarPaciente(String nome, String cpf, 
             String rg, String telefone, String endereco, String sexo, String dataNasc, String senha){
         
     }
@@ -33,5 +33,6 @@ public class PacienteController {
     public List<Paciente> gerarTabela(){
         return pacDAO.gerarTabela();
     }
+
     
 }
