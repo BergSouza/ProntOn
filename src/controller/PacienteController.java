@@ -17,11 +17,11 @@ public class PacienteController {
     
     PacienteDAO pacDAO = new PacienteDAO();
     
-    public void addPaciente(String identity, String nome, String cpf, 
+    public void addPaciente(String nome, String cpf, 
             String rg, String telefone, String endereco, String sexo, String dataNasc, String senha){
         
     }
-    public void editarPaciente(String identity, String nome, String cpf, 
+    public void editarPaciente(String nome, String cpf, 
             String rg, String telefone, String endereco, String sexo, String dataNasc, String senha){
         
     }
@@ -34,8 +34,5 @@ public class PacienteController {
         return pacDAO.gerarTabela();
     }
 
-    public void addPaciente(String text, String text0, String text1, String text2, String text3, String sexo, String dataNasc, String text4) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
 }

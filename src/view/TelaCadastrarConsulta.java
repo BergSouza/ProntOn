@@ -63,6 +63,10 @@ public class TelaCadastrarConsulta extends javax.swing.JFrame {
         }
     }
     
+    public void lerLinhaMed(){
+        
+    }
+    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
