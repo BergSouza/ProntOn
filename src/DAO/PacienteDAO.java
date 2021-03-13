@@ -6,6 +6,8 @@
 package DAO;
 
 import Paciente.Paciente;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -20,5 +22,12 @@ public class PacienteDAO {
         //preencher paciente com dados do DB
         
         return paciente;
+    }
+    
+    public List<Paciente> gerarTabela(){
+        List<Paciente> pacientesList = new ArrayList<>();
+        //fazer a conexao no banco
+        
+        return pacientesList;
     }
 }

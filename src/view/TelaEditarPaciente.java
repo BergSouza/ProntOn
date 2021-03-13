@@ -25,9 +25,10 @@ public class TelaEditarPaciente extends javax.swing.JFrame {
     /**
      * Creates new form tela_Sec
      */
-    public TelaEditarPaciente() throws IOException {
+    public TelaEditarPaciente(String cpf) throws IOException {
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        preencherDados(cpf);
     }
     
     public void preencherDados(String cpf){
@@ -42,6 +43,10 @@ public class TelaEditarPaciente extends javax.swing.JFrame {
         CampoSenha.setText(pac.getSenha());
         CampoTelefone.setText(pac.getTelefone());
         Nasc1.setText(pac.getDataNasc());
+        
+        if(pac.getSexo() == "M"){
+            CheckMasculino.setSelected(true);
+        }else CheckFeminino.setSelected(true);
     }
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -386,7 +391,7 @@ public class TelaEditarPaciente extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    new TelaEditarPaciente().setVisible(true);
+                    new TelaEditarPaciente("").setVisible(true);
                 } catch (IOException ex) {
                     Logger.getLogger(TelaEditarPaciente.class.getName()).log(Level.SEVERE, null, ex);
                 }

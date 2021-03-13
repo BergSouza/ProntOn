@@ -5,18 +5,24 @@
  */
 package view;
 
+import Paciente.Paciente;
+import controller.MedicoController;
+import controller.PacienteController;
+import funcionarios.Medico;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author HARDWARE
  */
 public class TelaCadastrarConsulta extends javax.swing.JFrame {
-    
+    PacienteController pacienteController = new PacienteController();
+    MedicoController medicoController = new MedicoController();
 
     /**
      * Creates new form cadastrar_medico
@@ -24,6 +30,39 @@ public class TelaCadastrarConsulta extends javax.swing.JFrame {
     public TelaCadastrarConsulta() throws Exception {
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        DefaultTableModel modeloPaciente = (DefaultTableModel) TabelaPac.getModel();
+        DefaultTableModel modeloMedico = (DefaultTableModel) TabelaMed.getModel();
+        gerarTabelaPac();
+        gerarTabelaMed();
+    }
+    
+     public void gerarTabelaMed(){
+         DefaultTableModel modeloMedico = (DefaultTableModel) TabelaMed.getModel();
+         modeloMedico.setNumRows(0);
+         
+         for(Medico med : medicoController.gerarTabela()){
+             modeloMedico.addRow(new Object[]{
+                med.getIdentity(),
+                med.getNome(),
+                med.getCpf(),
+                med.getRG(),
+                med.getTelefone()
+            });
+         }
+     }
+    
+    public void gerarTabelaPac(){
+        DefaultTableModel modeloPaciente = (DefaultTableModel) TabelaPac.getModel();
+        modeloPaciente.setNumRows(0);
+        for(Paciente pac : pacienteController.gerarTabela()){
+            modeloPaciente.addRow(new Object[]{
+                pac.getIdentity(),
+                pac.getNome(),
+                pac.getCpf(),
+                pac.getRG(),
+                pac.getTelefone()
+            });
+        }
     }
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -46,17 +85,17 @@ public class TelaCadastrarConsulta extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
+        mes = new javax.swing.JLabel();
         SelectMinuto = new javax.swing.JComboBox<>();
-        SelectCDia = new javax.swing.JComboBox<>();
+        dia = new javax.swing.JComboBox<>();
         SelectCMes = new javax.swing.JComboBox<>();
-        SelectCAno = new javax.swing.JComboBox<>();
+        ano = new javax.swing.JComboBox<>();
         SelectHora = new javax.swing.JComboBox<>();
         ScrollTab = new javax.swing.JScrollPane();
-        Tabela = new javax.swing.JTable();
+        TabelaMed = new javax.swing.JTable();
         jLabel10 = new javax.swing.JLabel();
         ScrollTab1 = new javax.swing.JScrollPane();
-        Tabela1 = new javax.swing.JTable();
+        TabelaPac = new javax.swing.JTable();
 
         jLabel8.setText("jLabel8");
 
@@ -163,21 +202,21 @@ public class TelaCadastrarConsulta extends javax.swing.JFrame {
         jLabel15.setText("/");
         jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 60, 40));
 
-        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(102, 153, 255));
-        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setText("/");
-        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, 60, 40));
+        mes.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        mes.setForeground(new java.awt.Color(102, 153, 255));
+        mes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        mes.setText("/");
+        jPanel2.add(mes, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, 60, 40));
 
         SelectMinuto.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         SelectMinuto.setForeground(new java.awt.Color(102, 153, 255));
         SelectMinuto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59" }));
         jPanel2.add(SelectMinuto, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 240, 50, 30));
 
-        SelectCDia.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        SelectCDia.setForeground(new java.awt.Color(102, 153, 255));
-        SelectCDia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
-        jPanel2.add(SelectCDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, 50, 30));
+        dia.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        dia.setForeground(new java.awt.Color(102, 153, 255));
+        dia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        jPanel2.add(dia, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, 50, 30));
 
         SelectCMes.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         SelectCMes.setForeground(new java.awt.Color(102, 153, 255));
@@ -189,121 +228,22 @@ public class TelaCadastrarConsulta extends javax.swing.JFrame {
         });
         jPanel2.add(SelectCMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, 50, 30));
 
-        SelectCAno.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        SelectCAno.setForeground(new java.awt.Color(102, 153, 255));
-        SelectCAno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2018", "2019", "2020", "2021", "2022", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "2035" }));
-        jPanel2.add(SelectCAno, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 240, 70, 30));
+        ano.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        ano.setForeground(new java.awt.Color(102, 153, 255));
+        ano.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2018", "2019", "2020", "2021", "2022", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "2035" }));
+        jPanel2.add(ano, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 240, 70, 30));
 
         SelectHora.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         SelectHora.setForeground(new java.awt.Color(102, 153, 255));
         SelectHora.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23" }));
         jPanel2.add(SelectHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 240, 50, 30));
 
-        Tabela.setModel(new javax.swing.table.DefaultTableModel(
+        TabelaMed.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, ""},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
-                "ID", "Nome", "CPF", "RG", "Telefone"
+                "Identity", "Nome", "CPF", "RG", "Telefone"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -314,8 +254,8 @@ public class TelaCadastrarConsulta extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        Tabela.setDropMode(javax.swing.DropMode.INSERT_ROWS);
-        ScrollTab.setViewportView(Tabela);
+        TabelaMed.setDropMode(javax.swing.DropMode.INSERT_ROWS);
+        ScrollTab.setViewportView(TabelaMed);
 
         jPanel2.add(ScrollTab, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 590, 100));
 
@@ -324,111 +264,12 @@ public class TelaCadastrarConsulta extends javax.swing.JFrame {
         jLabel10.setText("Paciente");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, 30));
 
-        Tabela1.setModel(new javax.swing.table.DefaultTableModel(
+        TabelaPac.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, ""},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
-                "ID", "Nome", "CPF", "RG", "Telefone"
+                "Identity", "Nome", "CPF", "RG", "Telefone"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -439,8 +280,8 @@ public class TelaCadastrarConsulta extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        Tabela1.setDropMode(javax.swing.DropMode.INSERT_ROWS);
-        ScrollTab1.setViewportView(Tabela1);
+        TabelaPac.setDropMode(javax.swing.DropMode.INSERT_ROWS);
+        ScrollTab1.setViewportView(TabelaPac);
 
         jPanel2.add(ScrollTab1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 590, 100));
 
@@ -515,15 +356,15 @@ public class TelaCadastrarConsulta extends javax.swing.JFrame {
     private javax.swing.JTextField CampoPesquisa;
     private javax.swing.JScrollPane ScrollTab;
     private javax.swing.JScrollPane ScrollTab1;
-    private javax.swing.JComboBox<String> SelectCAno;
-    private javax.swing.JComboBox<String> SelectCDia;
     private javax.swing.JComboBox<String> SelectCMes;
     private javax.swing.JComboBox<String> SelectHora;
     private javax.swing.JComboBox<String> SelectMinuto;
-    private javax.swing.JTable Tabela;
-    private javax.swing.JTable Tabela1;
+    private javax.swing.JTable TabelaMed;
+    private javax.swing.JTable TabelaPac;
+    private javax.swing.JComboBox<String> ano;
     private javax.swing.JButton btnPesquisa;
     private javax.swing.JComboBox<String> criterioPesquisa1;
+    private javax.swing.JComboBox<String> dia;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JCheckBox jCheckBox1;
@@ -532,7 +373,6 @@ public class TelaCadastrarConsulta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
@@ -540,5 +380,6 @@ public class TelaCadastrarConsulta extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel mes;
     // End of variables declaration//GEN-END:variables
 }

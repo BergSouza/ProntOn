@@ -18,13 +18,16 @@ import pronton.ProntOn;
  * @author Bergson
  */
 public class TelaPaciente extends javax.swing.JFrame {
+    
+    String cpfPac;
 
     /**
      * Creates new form Tela_Administrador
      */
-    public TelaPaciente() throws IOException {
+    public TelaPaciente(String cpf) throws IOException {
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        cpfPac = cpf;
     }
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -36,7 +39,7 @@ public class TelaPaciente extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Tabela = new javax.swing.JTable();
-        btnExcluir = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
         btnVisualizar = new javax.swing.JButton();
         txtA = new javax.swing.JLabel();
         btnPesquisa = new javax.swing.JButton();
@@ -179,15 +182,15 @@ public class TelaPaciente extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 580, 220));
 
-        btnExcluir.setBackground(new java.awt.Color(102, 153, 255));
-        btnExcluir.setForeground(new java.awt.Color(255, 255, 255));
-        btnExcluir.setText("Editar Perfil");
-        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+        btnEditar.setBackground(new java.awt.Color(102, 153, 255));
+        btnEditar.setForeground(new java.awt.Color(255, 255, 255));
+        btnEditar.setText("Editar Perfil");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExcluirActionPerformed(evt);
+                btnEditarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnExcluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, 130, 30));
+        jPanel1.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, 130, 30));
 
         btnVisualizar.setBackground(new java.awt.Color(102, 153, 255));
         btnVisualizar.setForeground(new java.awt.Color(255, 255, 255));
@@ -262,16 +265,24 @@ public class TelaPaciente extends javax.swing.JFrame {
         ProntOn pl = new ProntOn();
     }//GEN-LAST:event_btnSairActionPerformed
 
-    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-        
-    }//GEN-LAST:event_btnExcluirActionPerformed
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        try {
+            new TelaEditarPaciente(cpfPac).setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(TelaPaciente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed
         
     }//GEN-LAST:event_btnAtualizarActionPerformed
 
     private void btnVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisualizarActionPerformed
-        
+        try {
+            new TelaVisualizarPaciente(cpfPac).setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(TelaPaciente.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnVisualizarActionPerformed
 
     private void btnPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisaActionPerformed
@@ -440,7 +451,7 @@ public class TelaPaciente extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    new TelaPaciente().setVisible(true);
+                    new TelaPaciente("").setVisible(true);
                 } catch (IOException ex) {
                     Logger.getLogger(TelaPaciente.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -455,7 +466,7 @@ public class TelaPaciente extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Selecao;
     private javax.swing.JTable Tabela;
     private javax.swing.JButton btnAtualizar;
-    private javax.swing.JButton btnExcluir;
+    private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnPesquisa;
     private javax.swing.JButton btnSair;
     private javax.swing.JButton btnVisualizar;

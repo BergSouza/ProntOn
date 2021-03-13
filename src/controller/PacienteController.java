@@ -7,6 +7,7 @@ package controller;
 
 import DAO.PacienteDAO;
 import Paciente.Paciente;
+import java.util.List;
 
 /**
  *
@@ -27,6 +28,10 @@ public class PacienteController {
     
     public Paciente getPaciente(String cpf){
         return pacDAO.getPaciente(cpf);
+    }
+    
+    public List<Paciente> gerarTabela(){
+        return pacDAO.gerarTabela();
     }
     
 }

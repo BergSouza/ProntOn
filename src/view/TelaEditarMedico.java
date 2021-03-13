@@ -23,9 +23,10 @@ public class TelaEditarMedico extends javax.swing.JFrame {
     /**
      * Creates new form cadastrar_medico
      */
-    public TelaEditarMedico() throws IOException {
+    public TelaEditarMedico(String cpf) throws IOException {
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        preencherDados(cpf);
     }
     
     public void preencherDados(String cpf){
@@ -41,6 +42,10 @@ public class TelaEditarMedico extends javax.swing.JFrame {
         CampoEsp.setText(med.getEspecialidade());
         CampoRG.setText(med.getRG());
         CampoDep.setText(med.getDepartamento());
+        
+        if(med.getSexo() == "M"){
+            CheckMasculino.setSelected(true);
+        }else CheckFeminino.setSelected(true);
     }
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -371,7 +376,7 @@ public class TelaEditarMedico extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    new TelaEditarMedico().setVisible(true);
+                    new TelaEditarMedico("").setVisible(true);
                 } catch (IOException ex) {
                     Logger.getLogger(TelaEditarMedico.class.getName()).log(Level.SEVERE, null, ex);
                 }

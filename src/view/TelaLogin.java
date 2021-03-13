@@ -26,7 +26,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }
     
     public void logar(){
-        String login = Identity.getText();
+        String login = cpf.getText();
         String senhaLogin = senha.getText();
         
         
@@ -41,7 +41,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        Identity = new javax.swing.JTextField();
+        cpf = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jbtn_Logar = new javax.swing.JButton();
@@ -93,11 +93,11 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Login");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 91, 80));
-        jPanel1.add(Identity, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 180, 28));
+        jPanel1.add(cpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 180, 28));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Identity:");
+        jLabel2.setText("Cpf:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 91, 40));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -261,9 +261,9 @@ public class TelaLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Identity;
     private javax.swing.JTextPane PainelAjuda;
     private javax.swing.JTextPane PainelNovidades;
+    private javax.swing.JTextField cpf;
     private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;

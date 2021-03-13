@@ -35,7 +35,10 @@ public class TelaVisualizarRecep extends javax.swing.JFrame {
         CampoCPF.setText(recep.getCpf());
         CampoRG.setText(recep.getRG());
         CampoTelefone.setText(recep.getTelefone());
-        CampoEndereco.setText(recep.getEndereco()); 
+        CampoEndereco.setText(recep.getEndereco());
+        if(recep.getSexo() == "M"){
+            CheckMasculino.setSelected(true);
+        }else CheckFeminino.setSelected(true);
     }
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

@@ -37,6 +37,10 @@ public class TelaVisualizarEnf extends javax.swing.JFrame {
         CampoSenha.setText(enferm.getSenha());
         CampoSobrenome.setText(enferm.getSobrenome());
         CampoTelefone.setText(enferm.getTelefone());
+        
+        if(enferm.getSexo() == "M"){
+            CheckMasculino.setSelected(true);
+        }else CheckFeminino.setSelected(true);
     }
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

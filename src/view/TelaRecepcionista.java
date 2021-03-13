@@ -6,6 +6,8 @@
 package view;
 
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
@@ -555,6 +557,27 @@ public class TelaRecepcionista extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
+        String op = Selecao.getSelectedItem().toString();
+        
+        if(op == "Médicos(a)"){
+            try {
+                new TelaCadastrarMedico().setVisible(true);
+            } catch (IOException ex) {
+                Logger.getLogger(TelaRecepcionista.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }else if(op == "Enfermeiros(as)"){
+            try {
+                new TelaCadastrarEnf().setVisible(true);
+            } catch (IOException ex) {
+                Logger.getLogger(TelaRecepcionista.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }else if(op == "Consultas"){
+            try {
+                new TelaCadastrarConsulta().setVisible(true);
+            } catch (Exception ex) {
+                Logger.getLogger(TelaRecepcionista.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
         
     }//GEN-LAST:event_btnCadastrarActionPerformed
 

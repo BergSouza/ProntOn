@@ -39,6 +39,10 @@ public class TelaVisualizarMedico extends javax.swing.JFrame {
         CampoEsp.setText(med.getEspecialidade());
         CampoRG.setText(med.getRG());
         CampoDep.setText(med.getDepartamento());
+        
+        if(med.getSexo() == "M"){
+            CheckMasculino.setSelected(true);
+        }else CheckFeminino.setSelected(true);
     }
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

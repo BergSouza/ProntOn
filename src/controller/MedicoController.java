@@ -7,6 +7,7 @@ package controller;
 
 import DAO.MedicoDAO;
 import funcionarios.Medico;
+import java.util.List;
 
 /**
  *
@@ -30,5 +31,9 @@ public class MedicoController {
     
     public Medico getMedico(String cpf){
         return medDAO.getMedico(cpf);
+    }
+    
+    public List<Medico> gerarTabela(){
+        return medDAO.gerarTabela();
     }
 }

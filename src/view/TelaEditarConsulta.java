@@ -5,6 +5,10 @@
  */
 package view;
 
+import Paciente.Paciente;
+import controller.MedicoController;
+import controller.PacienteController;
+import funcionarios.Medico;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.io.IOException;
@@ -12,12 +16,15 @@ import java.sql.ResultSet;
 import java.util.InputMismatchException;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @auth
  * r HARDWARE
  */
 public class TelaEditarConsulta extends javax.swing.JFrame {
+    PacienteController pacienteController = new PacienteController();
+    MedicoController medicoController = new MedicoController();
 
     /**
      * Creates new form cadastrar_medico
@@ -25,6 +32,38 @@ public class TelaEditarConsulta extends javax.swing.JFrame {
     public TelaEditarConsulta() throws Exception {
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        DefaultTableModel modeloPaciente = (DefaultTableModel) TabelaPac.getModel();
+        DefaultTableModel modeloMedico = (DefaultTableModel) TabelaMed.getModel();
+        gerarTabelaPac();
+        gerarTabelaMed();
+    }
+    public void gerarTabelaMed(){
+         DefaultTableModel modeloMedico = (DefaultTableModel) TabelaMed.getModel();
+         modeloMedico.setNumRows(0);
+         
+         for(Medico med : medicoController.gerarTabela()){
+             modeloMedico.addRow(new Object[]{
+                med.getIdentity(),
+                med.getNome(),
+                med.getCpf(),
+                med.getRG(),
+                med.getTelefone()
+            });
+         }
+     }
+    
+    public void gerarTabelaPac(){
+        DefaultTableModel modeloPaciente = (DefaultTableModel) TabelaPac.getModel();
+        modeloPaciente.setNumRows(0);
+        for(Paciente pac : pacienteController.gerarTabela()){
+            modeloPaciente.addRow(new Object[]{
+                pac.getIdentity(),
+                pac.getNome(),
+                pac.getCpf(),
+                pac.getRG(),
+                pac.getTelefone()
+            });
+        }
     }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -58,14 +97,14 @@ public class TelaEditarConsulta extends javax.swing.JFrame {
         txtDC = new javax.swing.JLabel();
         txtDH = new javax.swing.JLabel();
         ScrollTab = new javax.swing.JScrollPane();
-        Tabela = new javax.swing.JTable();
+        TabelaMed = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         campoProntuario = new javax.swing.JTextArea();
         jLabel10 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         ScrollTab1 = new javax.swing.JScrollPane();
-        Tabela1 = new javax.swing.JTable();
+        TabelaPac = new javax.swing.JTable();
 
         jLabel8.setText("jLabel8");
 
@@ -211,108 +250,9 @@ public class TelaEditarConsulta extends javax.swing.JFrame {
         txtDH.setText("Horário Cadastrado:");
         jPanel2.add(txtDH, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 220, -1, -1));
 
-        Tabela.setModel(new javax.swing.table.DefaultTableModel(
+        TabelaMed.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, ""},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "ID", "Nome", "CPF", "RG", "Telefone"
@@ -326,8 +266,8 @@ public class TelaEditarConsulta extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        Tabela.setDropMode(javax.swing.DropMode.INSERT_ROWS);
-        ScrollTab.setViewportView(Tabela);
+        TabelaMed.setDropMode(javax.swing.DropMode.INSERT_ROWS);
+        ScrollTab.setViewportView(TabelaMed);
 
         jPanel2.add(ScrollTab, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 590, 90));
 
@@ -354,108 +294,9 @@ public class TelaEditarConsulta extends javax.swing.JFrame {
         jLabel18.setText("Paciente");
         jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, 30));
 
-        Tabela1.setModel(new javax.swing.table.DefaultTableModel(
+        TabelaPac.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, ""},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "ID", "Nome", "CPF", "RG", "Telefone"
@@ -469,8 +310,8 @@ public class TelaEditarConsulta extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        Tabela1.setDropMode(javax.swing.DropMode.INSERT_ROWS);
-        ScrollTab1.setViewportView(Tabela1);
+        TabelaPac.setDropMode(javax.swing.DropMode.INSERT_ROWS);
+        ScrollTab1.setViewportView(TabelaPac);
 
         jPanel2.add(ScrollTab1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 590, 90));
 
@@ -558,8 +399,8 @@ public class TelaEditarConsulta extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> SelectCMes;
     private javax.swing.JComboBox<String> SelectHora;
     private javax.swing.JComboBox<String> SelectMinuto;
-    private javax.swing.JTable Tabela;
-    private javax.swing.JTable Tabela1;
+    private javax.swing.JTable TabelaMed;
+    private javax.swing.JTable TabelaPac;
     private javax.swing.JButton btnPesquisa;
     private javax.swing.JTextArea campoProntuario;
     private javax.swing.JTextField campof;

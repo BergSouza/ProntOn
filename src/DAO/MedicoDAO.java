@@ -7,6 +7,8 @@ package DAO;
 
 import controller.MedicoController;
 import funcionarios.Medico;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -22,5 +24,11 @@ public class MedicoDAO {
         
         //preencher med com dados do BD
         return med;
+    }
+    public List<Medico> gerarTabela(){
+        List<Medico> pacientesList = new ArrayList<>();
+        //fazer a conexao no banco
+        
+        return pacientesList;
     }
 }
