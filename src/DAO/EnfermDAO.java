@@ -13,9 +13,6 @@ import funcionarios.Enfermeiro;
  */
 public class EnfermDAO {
     
-    
-    
-    
     public Enfermeiro getEnferm(String cpf){
         
         Enfermeiro enferm = new Enfermeiro();       

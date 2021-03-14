@@ -6,6 +6,7 @@
 package view;
 
 import Paciente.Paciente;
+import controller.ConsultaController;
 import controller.MedicoController;
 import controller.PacienteController;
 import funcionarios.Medico;
@@ -23,7 +24,7 @@ import javax.swing.table.DefaultTableModel;
 public class TelaCadastrarConsulta extends javax.swing.JFrame {
     PacienteController pacienteController = new PacienteController();
     MedicoController medicoController = new MedicoController();
-
+    ConsultaController consultaController = new ConsultaController();
     /**
      * Creates new form cadastrar_medico
      */
@@ -73,7 +74,7 @@ public class TelaCadastrarConsulta extends javax.swing.JFrame {
         String data = dia.getSelectedItem().toString() + "/" + mes.getSelectedItem().toString() + "/"+ ano.getSelectedItem().toString();
         String horario = hora.getSelectedItem().toString() + ":" + minuto.getSelectedItem().toString();
         
-        
+        consultaController.addConsulta(medNome, pacNome, pacRG, data, horario);
     }
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

@@ -175,7 +175,7 @@ public class TelaRecepcionista extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Nome do Paciente", "CPF", "Médico", "Data de Nascimento", "Data", "Horário"
+                "Nome do Paciente", "RG", "Médico", "Data de Nascimento", "Data", "Horário"
             }
         ));
         jScrollPane1.setViewportView(Tabela3);
