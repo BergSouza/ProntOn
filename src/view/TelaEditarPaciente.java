@@ -5,7 +5,7 @@
  */
 package view;
 
-import Paciente.Paciente;
+import util.classes.paciente.Paciente;
 import controller.PacienteController;
 import java.io.IOException;
 import java.util.InputMismatchException;

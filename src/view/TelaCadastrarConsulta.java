@@ -5,10 +5,10 @@
  */
 package view;
 
-import Paciente.Paciente;
+import util.classes.paciente.Paciente;
 import controller.MedicoController;
 import controller.PacienteController;
-import funcionarios.Medico;
+import util.classes.funcionarios.Medico;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.io.IOException;

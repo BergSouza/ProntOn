@@ -6,7 +6,7 @@
 package controller;
 
 import DAO.EnfermDAO;
-import funcionarios.Enfermeiro;
+import util.classes.funcionarios.Enfermeiro;
 
 /**
  *

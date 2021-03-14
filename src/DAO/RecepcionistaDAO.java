@@ -5,7 +5,7 @@
  */
 package DAO;
 
-import funcionarios.Recepcionista;
+import util.classes.funcionarios.Recepcionista;
 
 /**
  *

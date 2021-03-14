@@ -5,7 +5,7 @@
  */
 package view;
 import controller.EnfermController;
-import funcionarios.Enfermeiro;
+import util.classes.funcionarios.Enfermeiro;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.io.IOException;

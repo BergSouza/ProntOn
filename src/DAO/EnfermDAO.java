@@ -5,7 +5,7 @@
  */
 package DAO;
 
-import funcionarios.Enfermeiro;
+import util.classes.funcionarios.Enfermeiro;
 
 /**
  *

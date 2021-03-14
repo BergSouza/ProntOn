@@ -6,7 +6,7 @@
 package controller;
 
 import DAO.RecepcionistaDAO;
-import funcionarios.Recepcionista;
+import util.classes.funcionarios.Recepcionista;
 
 /**
  *

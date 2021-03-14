@@ -6,7 +6,8 @@
 package DAO;
 
 import controller.MedicoController;
-import funcionarios.Medico;
+import util.classes.funcionarios.Medico;
+
 import java.util.ArrayList;
 import java.util.List;
 

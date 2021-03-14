@@ -5,9 +5,11 @@
  */
 package DAO;
 
-import Paciente.Paciente;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import util.classes.paciente.Paciente;
 
 /**
  *

@@ -6,7 +6,7 @@
 package controller;
 
 import DAO.PacienteDAO;
-import Paciente.Paciente;
+import util.classes.paciente.Paciente;
 import java.util.List;
 
 /**

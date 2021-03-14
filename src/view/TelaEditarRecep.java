@@ -6,7 +6,7 @@
 package view;
 
 import controller.RecepcionistaController;
-import funcionarios.Recepcionista;
+import util.classes.funcionarios.Recepcionista;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.logging.Level;

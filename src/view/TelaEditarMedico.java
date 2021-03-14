@@ -6,7 +6,7 @@
 package view;
 
 import controller.MedicoController;
-import funcionarios.Medico;
+import util.classes.funcionarios.Medico;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.io.IOException;
