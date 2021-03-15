@@ -6,6 +6,8 @@
 package controller;
 
 import DAO.ConsultaDAO;
+import java.util.List;
+import util.classes.consulta.Consulta;
 
 /**
  *
@@ -15,7 +17,15 @@ public class ConsultaController {
     
     ConsultaDAO consDAO = new ConsultaDAO();
     public void addConsulta(String medNome, String pacNome, String pacRG, 
-            String data, String horario){
-        consDAO.addConsulta(medNome, pacNome, pacRG, data, horario);
+            String data, String horario, String prontuario){
+        consDAO.addConsulta(medNome, pacNome, pacRG, data, horario, prontuario);
+    }
+    
+    public Consulta getConsulta(int id){
+        return consDAO.getConsulta(id);
+    }
+    
+    public List<Consulta> gerarTabela(){
+        return consDAO.gerarTabela();
     }
 }

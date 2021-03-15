@@ -5,24 +5,37 @@
  */
 package view;
 
+import controller.ConsultaController;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import util.classes.consulta.Consulta;
 /**
  *
  * @author HARDWARE
  */
 public class TelaVisualizarConsulta extends javax.swing.JFrame {
-
+    ConsultaController consultaController = new ConsultaController();
     /**
      * Creates new form cadastrar_medico
      */
-    public TelaVisualizarConsulta() throws IOException {
+    public TelaVisualizarConsulta(int id) throws IOException {
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        preencherDados(id);
+    }
+    
+    public void preencherDados(int id){
+        Consulta con = new Consulta();
+        con = consultaController.getConsulta(id);
+        CampoNomeMed.setText(con.getMedNome());
+        CampoNome.setText(con.getPacNome());
+        CampoRG.setText(con.getPacRG());
+        CampoDataC.setText(con.getData());
+        CampoHorario.setText(con.getHorario());
     }
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -232,7 +245,7 @@ public class TelaVisualizarConsulta extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    new TelaVisualizarConsulta().setVisible(true);
+                    new TelaVisualizarConsulta(0).setVisible(true);
                 } catch (IOException ex) {
                     Logger.getLogger(TelaVisualizarConsulta.class.getName()).log(Level.SEVERE, null, ex);
                 }

@@ -5,8 +5,8 @@
  */
 package view;
 
+import util.classes.funcionarios.Medico;
 import controller.MedicoController;
-import funcionarios.Medico;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.io.IOException;

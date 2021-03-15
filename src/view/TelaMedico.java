@@ -5,27 +5,49 @@
  */
 package view;
 
+import controller.ConsultaController;
 import java.io.IOException;
+import static java.lang.Integer.parseInt;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
+import javax.swing.table.DefaultTableModel;
 import pronton.ProntOn;
+import util.classes.consulta.Consulta;
 
 /**
  *
  * @author Bergson
  */
 public class TelaMedico extends javax.swing.JFrame {
-
+    ConsultaController consultaController = new ConsultaController();
     /**
      * Creates new form Tela_Administrador
      */
     public TelaMedico() throws IOException {
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        DefaultTableModel modelo = (DefaultTableModel) Tabela.getModel();
+        gerarTabelaConsulta();
     }
+    
+    public void gerarTabelaConsulta(){
+        DefaultTableModel modelo = (DefaultTableModel) Tabela.getModel();
+        modelo.setNumRows(0);
+        
+        for(Consulta con : consultaController.gerarTabela()){
+            modelo.addRow(new Object[]{
+                con.getIdConsulta(),
+                con.getPacNome(),
+                con.getPacRG(),
+                con.getData(),
+                con.getHorario()
+            });
+        }
+    }
+    
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -73,7 +95,7 @@ public class TelaMedico extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nome do Paciente", "CPF", "Data", "Horário"
+                "ID", "Nome do Paciente", "RG", "Data", "Horário"
             }
         ));
         jScrollPane1.setViewportView(Tabela);
@@ -168,7 +190,8 @@ public class TelaMedico extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAtualizarActionPerformed
 
     private void btnVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisualizarActionPerformed
-        
+        int linha = Tabela.getSelectedRow();
+        int id = parseInt(Tabela.getValueAt(linha, 0).toString());
     }//GEN-LAST:event_btnVisualizarActionPerformed
 
     private void btnPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisaActionPerformed

@@ -11,16 +11,35 @@ package util.classes.consulta;
  */
 public class Consulta {
     
+    private int idConsulta;
     private String medNome;
     private String pacNome;
     private String pacRG; 
     private String data;
     private String horario;
-    
-    public Consulta(){}
+    private String prontuario;
 
+   
+    public Consulta(){}
+    
+    public String getProntuario() {
+        return prontuario;
+    }
+
+    public void setProntuario(String prontuario) {
+        this.prontuario = prontuario;
+    }
+    
     public String getMedNome() {
         return medNome;
+    }
+
+    public void setIdConsulta(int idConsulta) {
+        this.idConsulta = idConsulta;
+    }
+
+    public int getIdConsulta() {
+        return idConsulta;
     }
 
     public String getPacNome() {

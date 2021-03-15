@@ -5,8 +5,9 @@
  */
 package view;
 
+
+import util.classes.funcionarios.Recepcionista;
 import controller.RecepcionistaController;
-import funcionarios.Recepcionista;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
