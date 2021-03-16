@@ -17,7 +17,11 @@ import util.classes.paciente.Paciente;
  */
 public class PacienteDAO {
     
-    
+     public void addPaciente(String nome, String cpf, 
+            String rg, String telefone, String endereco, String sexo, String dataNasc, String senha) {
+         
+    }
+     
     public Paciente getPaciente(String cpf){
         Paciente paciente = new Paciente();
         
@@ -32,4 +36,6 @@ public class PacienteDAO {
         
         return pacientesList;
     }
+
+   
 }

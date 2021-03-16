@@ -13,6 +13,11 @@ import util.classes.funcionarios.Enfermeiro;
  */
 public class EnfermDAO {
     
+    public void addEnferm(String nome, String sobrenome, 
+            String endereco, String telefone, String cpf, String senha, String sexo){
+           
+    }
+    
     public Enfermeiro getEnferm(String cpf){
         
         Enfermeiro enferm = new Enfermeiro();       

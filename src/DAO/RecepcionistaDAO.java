@@ -13,6 +13,10 @@ import util.classes.funcionarios.Recepcionista;
  */
 public class RecepcionistaDAO {
     
+    public void addRecepcionista(String nome, String cpf, String RG, 
+            String telefone, String endereco, String sexo, String senha){
+        
+    }
     
     public Recepcionista getRecepcionista(String cpf){
         Recepcionista recep = new Recepcionista();

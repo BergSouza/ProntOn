@@ -6,7 +6,6 @@
 package view;
 import controller.EnfermController;
 import java.io.IOException;
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 /**
  *

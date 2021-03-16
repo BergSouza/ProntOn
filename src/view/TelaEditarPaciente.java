@@ -8,10 +8,8 @@ package view;
 import util.classes.paciente.Paciente;
 import controller.PacienteController;
 import java.io.IOException;
-import java.util.InputMismatchException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -305,7 +303,7 @@ public class TelaEditarPaciente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Selecione um Sexo!");
         }
         
-        pacienteController.editarPaciente(CampoNome.getText(), CampoCPF.getText()
+        pacienteController.addPaciente(CampoNome.getText(), CampoCPF.getText()
         , CampoRG.getText(), CampoTelefone.getText(), CampoEndereco.getText(), sexo, Nasc1.getText(), CampoSenha.getText());
     }//GEN-LAST:event_jButton1ActionPerformed
 

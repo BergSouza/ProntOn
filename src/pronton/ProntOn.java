@@ -6,14 +6,7 @@
 package pronton;
 
 import view.TelaLogin;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import javax.swing.SwingUtilities;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -24,7 +17,7 @@ import javax.swing.JOptionPane;
 public class ProntOn {
     
     public static void main(String[] args) throws Exception {   
-        
+        new TelaLogin().setVisible(true);
     }
     
 }

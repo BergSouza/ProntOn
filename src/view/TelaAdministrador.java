@@ -1,29 +1,39 @@
 package view;
 
-import java.awt.Image;
+import controller.admController;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
-import javax.swing.UIManager;
-import pronton.ProntOn;
-import view.TelaRecepcionista;
-import view.TelaCadastrarEnf;
-import view.TelaCadastrarMedico;
-import view.TelaCadastrarRecep;
-import view.TelaEditarEnf;
-import view.TelaEditarMedico;
-import view.TelaEditarRecep;
-import view.TelaVisualizarEnf;
-import view.TelaVisualizarMedico;
+import javax.swing.table.DefaultTableModel;
+import util.classes.pessoa.Pessoa;
+
 
 public class TelaAdministrador extends javax.swing.JFrame {
+    
+    admController admController = new admController();
 
     public TelaAdministrador() throws IOException {
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        DefaultTableModel modelo = (DefaultTableModel) Tabela.getModel();
+        gerarTabelaPessoa();
     }
+    
+    public void gerarTabelaPessoa(){
+         DefaultTableModel modelo = (DefaultTableModel) Tabela.getModel();
+         modelo.setNumRows(0);
+         
+         for(Pessoa pessoa : admController.gerarTabela()){
+             modelo.addRow(new Object[]{
+                 pessoa.getNome(),
+                 pessoa.getCpf(),
+                 pessoa.getRG(),
+                 pessoa.getTelefone()
+             });
+         }
+    }
+    
+    
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -58,106 +68,7 @@ public class TelaAdministrador extends javax.swing.JFrame {
 
         Tabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, ""},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Nome", "CPF", "RG", "Telefone"
@@ -423,7 +334,27 @@ public class TelaAdministrador extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
+        String op = Selecao.getSelectedItem().toString();
         
+        if(op == "Médicos(a)"){
+            try {
+                new TelaCadastrarMedico().setVisible(true);
+            } catch (IOException ex) {
+                Logger.getLogger(TelaRecepcionista.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }else if(op == "Enfermeiros(as)"){
+            try {
+                new TelaCadastrarEnf().setVisible(true);
+            } catch (IOException ex) {
+                Logger.getLogger(TelaRecepcionista.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }else if(op == "Recepcionistas"){
+            try {
+                new TelaCadastrarRecep().setVisible(true);
+            } catch (Exception ex) {
+                Logger.getLogger(TelaRecepcionista.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void SelecaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelecaoActionPerformed
@@ -431,19 +362,36 @@ public class TelaAdministrador extends javax.swing.JFrame {
     }//GEN-LAST:event_SelecaoActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        int linha = Tabela.getSelectedRow();
+        String cpf = Tabela.getValueAt(linha, 1).toString();
+        try {
+            new TelaEditarPessoa(cpf).setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(TelaAdministrador.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+        int linha = Tabela.getSelectedRow();
+        String cpf = Tabela.getValueAt(linha, 1).toString();
         
+        admController.removerPessoa(cpf);
+        gerarTabelaPessoa();
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed
-        
+        gerarTabelaPessoa();
     }//GEN-LAST:event_btnAtualizarActionPerformed
 
     private void btnVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisualizarActionPerformed
-        
+        int linha = Tabela.getSelectedRow();
+        String cpf = Tabela.getValueAt(linha, 1).toString();
+        try {
+            new TelaVisualizarPessoa(cpf).setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(TelaAdministrador.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnVisualizarActionPerformed
 
     private void btnPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisaActionPerformed

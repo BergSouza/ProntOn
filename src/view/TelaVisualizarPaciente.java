@@ -10,8 +10,6 @@ import controller.PacienteController;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
 
 /**
  *

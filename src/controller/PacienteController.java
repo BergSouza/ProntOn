@@ -19,13 +19,9 @@ public class PacienteController {
     
     public void addPaciente(String nome, String cpf, 
             String rg, String telefone, String endereco, String sexo, String dataNasc, String senha){
-        
+        pacDAO.addPaciente(nome, cpf, rg, telefone, endereco, sexo, dataNasc, senha);
     }
-    public void editarPaciente(String nome, String cpf, 
-            String rg, String telefone, String endereco, String sexo, String dataNasc, String senha){
-        
-    }
-    
+
     public Paciente getPaciente(String cpf){
         return pacDAO.getPaciente(cpf);
     }

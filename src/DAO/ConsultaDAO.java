@@ -25,6 +25,9 @@ public class ConsultaDAO {
         con.setIdConsulta(id);
         
     }
+    public void removerConsulta(int id){
+        
+    }
     
     public Consulta getConsulta(int id){
          Consulta con = new Consulta();

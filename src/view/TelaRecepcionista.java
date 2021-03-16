@@ -8,20 +8,10 @@ package view;
 
 import controller.ConsultaController;
 import java.io.IOException;
+import static java.lang.Integer.parseInt;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
-import javax.swing.UIManager;
-import javax.swing.event.DocumentListener;
-import javax.swing.event.UndoableEditListener;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.text.AttributeSet;
-import javax.swing.text.BadLocationException;
-import javax.swing.text.Document;
-import javax.swing.text.Element;
-import javax.swing.text.Position;
-import javax.swing.text.Segment;
 import pronton.ProntOn;
 import util.classes.consulta.Consulta;
 
@@ -69,7 +59,6 @@ public class TelaRecepcionista extends javax.swing.JFrame {
         ScrollTab2 = new javax.swing.JScrollPane();
         Tabela2 = new javax.swing.JTable();
         btnCadastrar = new javax.swing.JButton();
-        Selecao = new javax.swing.JComboBox<>();
         btnEditar = new javax.swing.JButton();
         btnExcluir = new javax.swing.JButton();
         btnVisualizar = new javax.swing.JButton();
@@ -77,9 +66,6 @@ public class TelaRecepcionista extends javax.swing.JFrame {
         txtA = new javax.swing.JLabel();
         btnPesquisa = new javax.swing.JButton();
         CampoPesquisa = new javax.swing.JTextField();
-        criterioPesquisa1 = new javax.swing.JComboBox<>();
-        criterioPesquisa2 = new javax.swing.JComboBox<>();
-        criterioPesquisa3 = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
         btnSair = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -353,16 +339,6 @@ public class TelaRecepcionista extends javax.swing.JFrame {
         });
         jPanel1.add(btnCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 50, 120, 30));
 
-        Selecao.setBackground(new java.awt.Color(102, 153, 255));
-        Selecao.setForeground(new java.awt.Color(255, 255, 255));
-        Selecao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Médicos(a)", "Enfermeiros(as)", "Consultas", "Consultas Concluídas" }));
-        Selecao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SelecaoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(Selecao, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 128, 30));
-
         btnEditar.setBackground(new java.awt.Color(102, 153, 255));
         btnEditar.setForeground(new java.awt.Color(255, 255, 255));
         btnEditar.setText("Editar");
@@ -418,34 +394,7 @@ public class TelaRecepcionista extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 30, 30));
-        jPanel1.add(CampoPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 140, 30));
-
-        criterioPesquisa1.setBackground(new java.awt.Color(102, 153, 255));
-        criterioPesquisa1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        criterioPesquisa1.setForeground(new java.awt.Color(255, 255, 255));
-        criterioPesquisa1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nome", "CPF", "RG", "Telefone" }));
-        criterioPesquisa1.setBorder(null);
-        criterioPesquisa1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        criterioPesquisa1.setLightWeightPopupEnabled(false);
-        criterioPesquisa1.setOpaque(false);
-        jPanel1.add(criterioPesquisa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 50, 30));
-
-        criterioPesquisa2.setBackground(new java.awt.Color(102, 153, 255));
-        criterioPesquisa2.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        criterioPesquisa2.setForeground(new java.awt.Color(255, 255, 255));
-        criterioPesquisa2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Nome", "Telefone", "CNPJ" }));
-        criterioPesquisa2.setSelectedIndex(1);
-        criterioPesquisa2.setBorder(null);
-        criterioPesquisa2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel1.add(criterioPesquisa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 50, 30));
-
-        criterioPesquisa3.setBackground(new java.awt.Color(102, 153, 255));
-        criterioPesquisa3.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        criterioPesquisa3.setForeground(new java.awt.Color(255, 255, 255));
-        criterioPesquisa3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Nome do Paciente", "Sexo", "Data de Nascimento", "Data da Consulta", "Horário da Consulta" }));
-        criterioPesquisa3.setSelectedIndex(1);
-        criterioPesquisa3.setBorder(null);
-        jPanel1.add(criterioPesquisa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 50, 30));
+        jPanel1.add(CampoPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 330, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 640, 330));
 
@@ -479,48 +428,42 @@ public class TelaRecepcionista extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-        String op = Selecao.getSelectedItem().toString();
-        
-        if(op == "Médicos(a)"){
-            try {
-                new TelaCadastrarMedico().setVisible(true);
-            } catch (IOException ex) {
-                Logger.getLogger(TelaRecepcionista.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }else if(op == "Enfermeiros(as)"){
-            try {
-                new TelaCadastrarEnf().setVisible(true);
-            } catch (IOException ex) {
-                Logger.getLogger(TelaRecepcionista.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }else if(op == "Consultas"){
-            try {
-                new TelaCadastrarConsulta().setVisible(true);
-            } catch (Exception ex) {
-                Logger.getLogger(TelaRecepcionista.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        
+        try {
+            new TelaCadastrarConsulta().setVisible(true);
+        } catch (Exception ex) {
+            Logger.getLogger(TelaRecepcionista.class.getName()).log(Level.SEVERE, null, ex);
+        }        
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
-    private void SelecaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelecaoActionPerformed
-        
-    }//GEN-LAST:event_SelecaoActionPerformed
-
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        
+        int linha = Tabela.getSelectedRow();
+        int id = parseInt(Tabela.getValueAt(linha, 0).toString());  
+        try {
+            new TelaEditarConsulta(id).setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(TelaMedico.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-        
+        int linha = Tabela.getSelectedRow();
+        int id = parseInt(Tabela.getValueAt(linha, 0).toString());
+        consultaController.removerConsulta(id);
+        gerarTabelaConsulta();
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed
-        
+        gerarTabelaConsulta();
     }//GEN-LAST:event_btnAtualizarActionPerformed
 
     private void btnVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisualizarActionPerformed
-        
+        int linha = Tabela.getSelectedRow();
+        int id = parseInt(Tabela.getValueAt(linha, 0).toString());  
+        try {
+            new TelaVisualizarConsulta(id).setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(TelaMedico.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnVisualizarActionPerformed
 
     private void btnPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisaActionPerformed
@@ -576,7 +519,6 @@ public class TelaRecepcionista extends javax.swing.JFrame {
     private javax.swing.JTextField CampoPesquisa;
     private javax.swing.JScrollPane ScrollTab;
     private javax.swing.JScrollPane ScrollTab2;
-    private javax.swing.JComboBox<String> Selecao;
     private javax.swing.JTable Tabela;
     private javax.swing.JTable Tabela2;
     private javax.swing.JTable Tabela3;
@@ -587,9 +529,6 @@ public class TelaRecepcionista extends javax.swing.JFrame {
     private javax.swing.JButton btnPesquisa;
     private javax.swing.JButton btnSair;
     private javax.swing.JButton btnVisualizar;
-    private javax.swing.JComboBox<String> criterioPesquisa1;
-    private javax.swing.JComboBox<String> criterioPesquisa2;
-    private javax.swing.JComboBox<String> criterioPesquisa3;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

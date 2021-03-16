@@ -17,18 +17,10 @@ public class RecepcionistaController {
     
     public void addRecep(String nome, String cpf, String RG, 
             String telefone, String endereco, String sexo, String senha){
-        
+        recepDAO.addRecepcionista(nome, cpf, RG, telefone, endereco, sexo, senha);
     }
-    
-    public void editarRecep(String nome, String cpf, String RG, 
-            String telefone, String endereco, String sexo, String senha){
-        
-    }
-    public void removerRecep(String cpf){
-        
-    }
-    
     public Recepcionista getRecepcionista(String cpf){
         return recepDAO.getRecepcionista(cpf);
     }
+    
 }

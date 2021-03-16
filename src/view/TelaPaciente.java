@@ -7,11 +7,9 @@ package view;
 
 import controller.ConsultaController;
 import java.io.IOException;
+import static java.lang.Integer.parseInt;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
-import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 import pronton.ProntOn;
 import util.classes.consulta.Consulta;
@@ -57,12 +55,8 @@ public class TelaPaciente extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Tabela = new javax.swing.JTable();
-        btnEditar = new javax.swing.JButton();
         btnVisualizar = new javax.swing.JButton();
         txtA = new javax.swing.JLabel();
-        btnPesquisa = new javax.swing.JButton();
-        CampoPesquisa = new javax.swing.JTextField();
-        criterioPesquisa3 = new javax.swing.JComboBox<>();
         Selecao = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
         btnSair = new javax.swing.JButton();
@@ -101,16 +95,6 @@ public class TelaPaciente extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 580, 220));
 
-        btnEditar.setBackground(new java.awt.Color(102, 153, 255));
-        btnEditar.setForeground(new java.awt.Color(255, 255, 255));
-        btnEditar.setText("Editar Perfil");
-        btnEditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, 130, 30));
-
         btnVisualizar.setBackground(new java.awt.Color(102, 153, 255));
         btnVisualizar.setForeground(new java.awt.Color(255, 255, 255));
         btnVisualizar.setText("Visualizar");
@@ -119,31 +103,13 @@ public class TelaPaciente extends javax.swing.JFrame {
                 btnVisualizarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVisualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 50, 130, 30));
+        jPanel1.add(btnVisualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, 130, 30));
 
         txtA.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txtA.setForeground(new java.awt.Color(102, 153, 255));
         txtA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtA.setText("Todas as Suas Consultas Marcadas");
         jPanel1.add(txtA, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 450, 30));
-
-        btnPesquisa.setBackground(new java.awt.Color(102, 153, 255));
-        btnPesquisa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupabranca.png"))); // NOI18N
-        btnPesquisa.setName(""); // NOI18N
-        btnPesquisa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPesquisaActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, 40, 30));
-        jPanel1.add(CampoPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 180, 30));
-
-        criterioPesquisa3.setBackground(new java.awt.Color(102, 153, 255));
-        criterioPesquisa3.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        criterioPesquisa3.setForeground(new java.awt.Color(255, 255, 255));
-        criterioPesquisa3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Nome do Paciente", "Data de Nascimento", "Data da Consulta", "Horário da Consulta" }));
-        criterioPesquisa3.setBorder(null);
-        jPanel1.add(criterioPesquisa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 70, 30));
 
         Selecao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Consultas Marcadas", "Consultas Realizadas" }));
         Selecao.addActionListener(new java.awt.event.ActionListener() {
@@ -184,33 +150,23 @@ public class TelaPaciente extends javax.swing.JFrame {
         ProntOn pl = new ProntOn();
     }//GEN-LAST:event_btnSairActionPerformed
 
-    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        try {
-            new TelaEditarPaciente(cpfPac).setVisible(true);
-        } catch (IOException ex) {
-            Logger.getLogger(TelaPaciente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_btnEditarActionPerformed
-
     private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed
         
     }//GEN-LAST:event_btnAtualizarActionPerformed
 
+    private void SelecaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelecaoActionPerformed
+
+    }//GEN-LAST:event_SelecaoActionPerformed
+
     private void btnVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisualizarActionPerformed
+        int linha = Tabela.getSelectedRow();
+        int id = parseInt(Tabela.getValueAt(linha, 0).toString());  
         try {
-            new TelaVisualizarPaciente(cpfPac).setVisible(true);
+            new TelaVisualizarConsulta(id).setVisible(true);
         } catch (IOException ex) {
-            Logger.getLogger(TelaPaciente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TelaMedico.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnVisualizarActionPerformed
-
-    private void btnPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisaActionPerformed
-        
-    }//GEN-LAST:event_btnPesquisaActionPerformed
-
-    private void SelecaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelecaoActionPerformed
-        
-    }//GEN-LAST:event_SelecaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -381,15 +337,11 @@ public class TelaPaciente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CampoID;
     private javax.swing.JTextField CampoNomeMedico;
-    private javax.swing.JTextField CampoPesquisa;
     private javax.swing.JComboBox<String> Selecao;
     private javax.swing.JTable Tabela;
     private javax.swing.JButton btnAtualizar;
-    private javax.swing.JButton btnEditar;
-    private javax.swing.JButton btnPesquisa;
     private javax.swing.JButton btnSair;
     private javax.swing.JButton btnVisualizar;
-    private javax.swing.JComboBox<String> criterioPesquisa3;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

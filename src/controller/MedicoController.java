@@ -18,21 +18,12 @@ public class MedicoController {
     
     public void addMedico(String nome, String sobrenome, String endereco,
             String telefone, String cpf, String senha, String sexo, String RG, String especialidade, String departamento){
-        
+        medDAO.addMedico(nome, sobrenome, endereco, telefone, 
+                cpf, senha, sexo, RG, especialidade, departamento);
     }
-    
-    public void editarMedico(String nome, String sobrenome, String endereco,
-            String telefone, String cpf, String senha, String sexo, String RG, String especialidade, String departamento){
-        
-    }
-    public void removerMedico(String cpf){
-        
-    }
-    
     public Medico getMedico(String cpf){
         return medDAO.getMedico(cpf);
-    }
-    
+    }   
     public List<Medico> gerarTabela(){
         return medDAO.gerarTabela();
     }

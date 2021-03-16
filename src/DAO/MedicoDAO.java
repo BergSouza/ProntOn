@@ -5,9 +5,8 @@
  */
 package DAO;
 
-import controller.MedicoController;
-import util.classes.funcionarios.Medico;
 
+import util.classes.funcionarios.Medico;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +16,10 @@ import java.util.List;
  */
 public class MedicoDAO {
     
-    MedicoController medController = new MedicoController();
+    public void addMedico(String nome, String sobrenome, String endereco,
+            String telefone, String cpf, String senha, String sexo, String RG, String especialidade, String departamento){
+        
+    }
     
     public Medico getMedico(String cpf){
         

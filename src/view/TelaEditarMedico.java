@@ -10,8 +10,6 @@ import util.classes.funcionarios.Medico;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.io.IOException;
-import java.util.InputMismatchException;
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 /**
  *
@@ -309,7 +307,7 @@ public class TelaEditarMedico extends javax.swing.JFrame {
         }else {
             JOptionPane.showMessageDialog(null, "Selecione um Sexo!");
         }
-        medController.editarMedico(CampoNome.getText(),
+        medController.addMedico(CampoNome.getText(),
                 CampoSobrenome.getText(), CampoEndereco.getText(), CampoTelefone.getText(), CampoCPF.getText(),
                 CampoSenha.getText(), sexo, CampoRG.getText(), CampoEsp.getText(), CampoDep.getText());  
     }//GEN-LAST:event_jButton1ActionPerformed

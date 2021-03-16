@@ -21,7 +21,16 @@ public class Pessoa {
     private String RG;
     private String dataNasc;
     
-    public Pessoa (){}
+    public Pessoa (Pessoa p){
+        this.nome = p.getNome();
+        this.sobrenome = p.getSobrenome();
+        this.endereco = p.getEndereco();
+        this.telefone = p.getTelefone();
+        this.cpf = p.getCpf();
+        this.sexo = p.getSexo();
+        this.RG = p.getRG();
+        this.dataNasc = p.getDataNasc();
+    }
 
     public Pessoa(String nome, String sobrenome, String endereco, String telefone, String cpf, String senha, String sexo, String RG, String dataNasc) {
         this.nome = nome;
@@ -34,6 +43,8 @@ public class Pessoa {
         this.RG = RG;
         this.dataNasc = dataNasc;
     }
+    
+    public Pessoa(){}
 
     public void setNome(String nome) {
         this.nome = nome;
