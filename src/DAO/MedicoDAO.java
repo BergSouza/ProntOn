@@ -15,9 +15,17 @@ import java.util.List;
  * @author cleit
  */
 public class MedicoDAO {
-    
+    Conexao conex = new Conexao();
     public void addMedico(String nome, String sobrenome, String endereco,
-            String telefone, String cpf, String senha, String sexo, String RG, String especialidade, String departamento){
+            String telefone, String cpf, String senha, String sexo, String nasc, String RG, String especialidade, String departamento){
+        
+         String sql = "INSERT into consulta (nome, sobrenome, endereco, telefone, cpf, senha, sexo, nasc, rg, especialidade, departamento)values("+nome+","+sobrenome+","+endereco+","+telefone+","+cpf+","+senha+","+sexo+","+nasc+","+RG+","+especialidade+","+departamento+")";
+        int res = conex.executaSQL(sql);
+        if(res > 0){
+            System.out.println("Cadastro realizado");
+        }else{
+            System.out.println("Erro ao cadastrar");
+        }
         
     }
     

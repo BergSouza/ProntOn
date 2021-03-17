@@ -13,8 +13,17 @@ import util.classes.funcionarios.Recepcionista;
  */
 public class RecepcionistaDAO {
     
-    public void addRecepcionista(String nome, String cpf, String RG, 
-            String telefone, String endereco, String sexo, String senha){
+    public void addRecepcionista(String nome, String sobrenome, String cpf, String RG, 
+            String telefone, String endereco, String sexo, String dataNasc, String senha){
+           
+        Conexao conex = new Conexao();
+        String sql = "INSERT into consulta (nome, sobrenome, cpf, rg, telefone, endereco, sexo, dataa, senha)values("+nome+","+sobrenome+","+cpf+","+RG+","+telefone+","+endereco+","+sexo+","+dataNasc+","+senha+")";
+        int res = conex.executaSQL(sql);
+        if(res > 0){
+            System.out.println("Cadastro realizado");
+        }else{
+            System.out.println("Erro ao cadastrar");
+        }
         
     }
     

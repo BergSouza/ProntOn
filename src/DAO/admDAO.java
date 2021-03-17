@@ -5,15 +5,17 @@
  */
 package DAO;
 
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import util.classes.pessoa.Pessoa;
-
+import java.sql.ResultSet;
 /**
  *
  * @author cleit
  */
 public class admDAO {
+    Conexao con = new Conexao();
     
     public List<Pessoa> gerarTabela(){
         List<Pessoa> pessoasList = new ArrayList<>();
@@ -35,5 +37,35 @@ public class admDAO {
     public void removerPessoa(String cpf) {
         
     }
+    public ResultSet verificaAdm(String sql){
+         try {
+            
+            Statement stm = con.createStatement();
+               ResultSet res = stm.executeQuery(sql);
+               con.close();
+               return res;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    //Coloca isso na view de cadastrar pra poder pegar o cpf e a senha pra poder verificar
+    
+    
+   /* Conexao conex = new Conexao();
+    String sql = "SELECT * from adm";
+    ResultSet rs = conex.verificaAdm(sql);
+    
+    try{
+        while(rs.next()){
+            String cpf = rs.getString("cpf");
+            String senha = rs.getString("senha");
+        }
+    }catch(Exception e){
+    
+}
+ */
+    
+    
     
 }

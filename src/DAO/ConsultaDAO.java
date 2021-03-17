@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Random;
 import util.classes.consulta.Consulta;
 
+
 /**
  *
  * @author cleit
@@ -17,13 +18,21 @@ import util.classes.consulta.Consulta;
 public class ConsultaDAO {
     
     Random rand = new Random();
-       
+    Conexao conex = new Conexao();
+    
     public void addConsulta(String medNome, String pacNome, String pacRG, 
         String data, String horario, String prontuario){
         int id= rand.nextInt(1000000);
         Consulta con = new Consulta();
         con.setIdConsulta(id);
         
+        String sql = "INSERT into consulta (mednome, pacnome, pacrg, dataa, horario, prontuario)values("+medNome+","+pacNome+","+pacRG+","+data+","+horario+","+ prontuario+")";
+        int res = conex.executaSQL(sql);
+        if(res > 0){
+            System.out.println("Cadastro realizado");
+        }else{
+            System.out.println("Erro ao cadastrar");
+        } 
     }
     public void removerConsulta(int id){
         

@@ -16,9 +16,17 @@ import util.classes.paciente.Paciente;
  * @author cleit
  */
 public class PacienteDAO {
-    
-     public void addPaciente(String nome, String cpf, 
+     Conexao conex = new Conexao();
+     public void addPaciente(String nome, String sobrenome, String cpf, 
             String rg, String telefone, String endereco, String sexo, String dataNasc, String senha) {
+         
+        String sql = "INSERT into consulta (nome, sobrenome, cpf, rg, telefone, endereco, sexo, dataa, senha)values("+nome+","+sobrenome+","+cpf+","+rg+","+telefone+","+endereco+","+sexo+","+dataNasc+","+senha+")";
+        int res = conex.executaSQL(sql);
+        if(res > 0){
+            System.out.println("Cadastro realizado");
+        }else{
+            System.out.println("Erro ao cadastrar");
+        }
          
     }
      
