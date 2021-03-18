@@ -5,6 +5,9 @@
  */
 package DAO;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import util.classes.funcionarios.Enfermeiro;
 
 /**
@@ -12,11 +15,12 @@ import util.classes.funcionarios.Enfermeiro;
  * @author cleit
  */
 public class EnfermDAO {
-    Conexao conex = new Conexao();
+    
     public void addEnferm(String nome, String sobrenome, 
-            String endereco, String telefone, String cpf, String senha, String sexo, String nasc, String rg){
+            String endereco, String telefone, String cpf, String senha, String sexo){
         
-        String sql = "INSERT into consulta (nome, sobrenome, endereco, telefone, cpf, senha, sexo, nasc, rg)values("+nome+","+sobrenome+","+endereco+","+telefone+","+cpf+","+senha+","+sexo+","+nasc+","+rg+")";
+        Conexao conex = new Conexao();
+        String sql = "INSERT into consulta (nome, sobrenome, endereco, telefone, cpf, senha, sexo)values("+nome+","+sobrenome+","+endereco+","+telefone+","+cpf+","+senha+","+sexo+")";
         int res = conex.executaSQL(sql);
         if(res > 0){
             System.out.println("Cadastro realizado");
@@ -25,11 +29,30 @@ public class EnfermDAO {
         }      
     }
     
-    public Enfermeiro getEnferm(String cpf){
-        
-        Enfermeiro enferm = new Enfermeiro();       
-        //preencher enferm com dados do BD
-        
-        return enferm;
+    public Enfermeiro getEnferm(String cpf) {
+        Enfermeiro enferm = new Enfermeiro(); 
+        try {
+            Conexao conex = new Conexao();
+            Statement stm = conex.createStatement();
+            String sql = "SELECT nome, sobrenome, endereco, telefone, cpf, senha, sexo FROM enfermeiro WHERE cpf ="+cpf+";";
+            ResultSet rs = stm.executeQuery(sql);
+             
+            enferm.setNome(rs.getString("nome"));
+            enferm.setSobrenome(rs.getString("sobrenome"));
+            enferm.setEndereco(rs.getString("endereco"));
+            enferm.setTelefone(rs.getString("telefone"));
+            enferm.setCpf(rs.getNString("cpf"));
+            enferm.setSenha(rs.getNString("senha"));
+            enferm.setSexo(rs.getNString("sexo"));
+           
+            conex.close();
+            return enferm;
+            
+        } catch (SQLException e) {
+            return null;
+        }    
     }
 }
+        
+        
+      

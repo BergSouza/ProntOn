@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import util.classes.pessoa.Pessoa;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 /**
  *
  * @author cleit
@@ -20,52 +21,82 @@ public class admDAO {
     public List<Pessoa> gerarTabela(){
         List<Pessoa> pessoasList = new ArrayList<>();
         
+        try {
+            Conexao conex = new Conexao();
+            Statement stm = conex.createStatement();
+            String sql = "SELECT * from medico;";
+            ResultSet rs = stm.executeQuery(sql);
+            
+            while(rs.next()){
+                
+                Pessoa pes = new Pessoa();
+                
+                pes.setNome(rs.getString("nome"));
+                pes.setSobrenome(rs.getString("sobrenome"));
+                pes.setEndereco(rs.getString("endereco"));
+                pes.setTelefone(rs.getString("telefone"));
+                pes.setCpf(rs.getNString("cpf"));
+                pes.setSenha(rs.getNString("senha"));
+                pes.setSexo(rs.getNString("sexo"));
+                
+                pessoasList.add(pes);
+                conex.close();
+            } 
+        } catch (SQLException e) { 
+        }
+        
         return pessoasList;
     }
 
     public Pessoa getPessoa(String cpf) {
         Pessoa pessoa = new Pessoa();
-        
+        try {
+            Conexao conex = new Conexao();
+            Statement stm = conex.createStatement();
+            String sql = "SELECT nome, sobrenome, endereco, telefone, cpf, senha, sexo FROM enfermeiro WHERE cpf ="+cpf+";";
+            ResultSet rs = stm.executeQuery(sql);
+             
+            pessoa.setNome(rs.getString("nome"));
+            pessoa.setSobrenome(rs.getString("sobrenome"));
+            pessoa.setEndereco(rs.getString("endereco"));
+            pessoa.setTelefone(rs.getString("telefone"));
+            pessoa.setCpf(rs.getNString("cpf"));
+            pessoa.setSenha(rs.getNString("senha"));
+            pessoa.setSexo(rs.getNString("sexo"));
+            
+            conex.close();
+            
+        } catch (SQLException e) {
+            
+        }
         return pessoa;
     }
 
     public void editarPessoa(String nome, String sobrenome, String endereco, String telefone, 
             String cpf, String senha, String sexo, String Nasc) {
         
+        try {
+            Conexao conex = new Conexao();
+            Statement stm = conex.createStatement();
+            String sql = "UPDATE pessoa (nome, sobrenome, endereco, telefone, cpf, senha, sexo) set("+nome+","+sobrenome+","+endereco+","+telefone+","+cpf+","+senha+","+sexo+")";
+            ResultSet rs = stm.executeQuery(sql);
+            conex.close();
+            
+        } catch (SQLException e) {
+          
+        }  
     }
 
     public void removerPessoa(String cpf) {
         
-    }
-    public ResultSet verificaAdm(String sql){
-         try {
+        try {
+            Conexao conex = new Conexao();
+            Statement stm = conex.createStatement();
+            String sql = "DELETE FROM pessoa WHERE cpf ="+cpf+";";
+            ResultSet rs = stm.executeQuery(sql);
+            conex.close();
             
-            Statement stm = con.createStatement();
-               ResultSet res = stm.executeQuery(sql);
-               con.close();
-               return res;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
+        } catch (SQLException e) {  
         }
-    }
-    //Coloca isso na view de cadastrar pra poder pegar o cpf e a senha pra poder verificar
-    
-    
-   /* Conexao conex = new Conexao();
-    String sql = "SELECT * from adm";
-    ResultSet rs = conex.verificaAdm(sql);
-    
-    try{
-        while(rs.next()){
-            String cpf = rs.getString("cpf");
-            String senha = rs.getString("senha");
-        }
-    }catch(Exception e){
-    
-}
- */
-    
-    
-    
+    }      
 }

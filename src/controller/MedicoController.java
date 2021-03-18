@@ -22,7 +22,9 @@ public class MedicoController {
                 cpf, senha, sexo, RG, especialidade, departamento);
     }
     public Medico getMedico(String cpf){
-        return medDAO.getMedico(cpf);
+        Medico medic = new Medico();
+        
+        return medic;
     }   
     public List<Medico> gerarTabela(){
         return medDAO.gerarTabela();

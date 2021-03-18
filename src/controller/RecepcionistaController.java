@@ -5,6 +5,7 @@
  */
 package controller;
 
+
 import DAO.RecepcionistaDAO;
 import util.classes.funcionarios.Recepcionista;
 
@@ -20,7 +21,8 @@ public class RecepcionistaController {
         recepDAO.addRecepcionista(nome, cpf, RG, telefone, endereco, sexo, senha);
     }
     public Recepcionista getRecepcionista(String cpf){
-        return recepDAO.getRecepcionista(cpf);
+        Recepcionista recep = new Recepcionista();
+     return recep;   
     }
     
 }

@@ -6,6 +6,11 @@
 package controller;
 
 import DAO.PacienteDAO;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import util.classes.paciente.Paciente;
 import java.util.List;
 
@@ -22,8 +27,9 @@ public class PacienteController {
         pacDAO.addPaciente(nome, cpf, rg, telefone, endereco, sexo, dataNasc, senha);
     }
 
-    public Paciente getPaciente(String cpf){
-        return pacDAO.getPaciente(cpf);
+    public Paciente getPaciente(String cpf) throws SQLException{
+        Paciente paciente = new Paciente();
+        return paciente;
     }
     
     public List<Paciente> gerarTabela(){

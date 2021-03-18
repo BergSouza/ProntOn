@@ -5,9 +5,12 @@
  */
 package DAO;
 
-
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import util.classes.funcionarios.Medico;
 
 import util.classes.paciente.Paciente;
 
@@ -17,10 +20,10 @@ import util.classes.paciente.Paciente;
  */
 public class PacienteDAO {
      Conexao conex = new Conexao();
-     public void addPaciente(String nome, String sobrenome, String cpf, 
+     public void addPaciente(String nome, String cpf, 
             String rg, String telefone, String endereco, String sexo, String dataNasc, String senha) {
          
-        String sql = "INSERT into consulta (nome, sobrenome, cpf, rg, telefone, endereco, sexo, dataa, senha)values("+nome+","+sobrenome+","+cpf+","+rg+","+telefone+","+endereco+","+sexo+","+dataNasc+","+senha+")";
+        String sql = "INSERT into consulta (nome, cpf, rg, telefone, endereco, sexo, dataa, senha)values("+nome+","+cpf+","+rg+","+telefone+","+endereco+","+sexo+","+dataNasc+","+senha+")";
         int res = conex.executaSQL(sql);
         if(res > 0){
             System.out.println("Cadastro realizado");
@@ -32,18 +35,55 @@ public class PacienteDAO {
      
     public Paciente getPaciente(String cpf){
         Paciente paciente = new Paciente();
-        
-        //preencher paciente com dados do DB
-        
-        return paciente;
+        try {
+            Conexao conex = new Conexao();
+            Statement stm = conex.createStatement();
+            String sql = "SELECT nome, sobrenome, endereco, telefone, cpf, senha, sexo FROM enfermeiro WHERE cpf ="+cpf+";";
+            ResultSet rs = stm.executeQuery(sql);
+             
+            paciente.setNome(rs.getString("nome"));
+            paciente.setSobrenome(rs.getString("sobrenome"));
+            paciente.setEndereco(rs.getString("endereco"));
+            paciente.setTelefone(rs.getString("telefone"));
+            paciente.setCpf(rs.getNString("cpf"));
+            paciente.setSenha(rs.getNString("senha"));
+            paciente.setSexo(rs.getNString("sexo"));
+            
+            conex.close();
+            return paciente;
+            
+        } catch (SQLException e) {
+            return null;
+        }    
     }
     
     public List<Paciente> gerarTabela(){
         List<Paciente> pacientesList = new ArrayList<>();
-        //fazer a conexao no banco
         
+        try {
+            Conexao conex = new Conexao();
+            Statement stm = conex.createStatement();
+            String sql = "SELECT * from medico;";
+            ResultSet rs = stm.executeQuery(sql);
+            
+            while(rs.next()){
+                
+                Paciente paciente = new Paciente();
+                
+                paciente.setNome(rs.getString("nome"));
+                paciente.setSobrenome(rs.getString("sobrenome"));
+                paciente.setEndereco(rs.getString("endereco"));
+                paciente.setTelefone(rs.getString("telefone"));
+                paciente.setCpf(rs.getNString("cpf"));
+                paciente.setSenha(rs.getNString("senha"));
+                paciente.setSexo(rs.getNString("sexo"));
+                
+                pacientesList.add(paciente);
+                
+            } 
+        } catch (SQLException e) {
+            
+        }
         return pacientesList;
-    }
-
-   
+    } 
 }

@@ -11,12 +11,12 @@ import java.sql.Statement;
 
 
 public class Conexao {
-    private String url;
-    private String usuario;
-    private String senha;
-    private Connection con;
+    public String url;
+    public String usuario;
+    public String senha;
+    public Connection con;
     
-    Conexao(){
+    public Conexao(){
         url = "jdbc:postgresql://localhost543/postgres";
         usuario = "postgres";
         senha = "postgres";
