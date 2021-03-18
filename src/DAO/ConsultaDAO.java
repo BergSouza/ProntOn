@@ -38,16 +38,21 @@ public class ConsultaDAO {
             System.out.println("Erro ao cadastrar");
         } 
     }
-    public void removerConsulta(String cpf){
+    public void removerConsulta(int id){
         Conexao conex = new Conexao();
-        Statement stm = conex.createStatement();
-        String sql = "DELETE FROM consulta WHERE cpf ="+cpf+";";
+        
+        try {
+            Statement stm = conex.createStatement();
+        String sql = "DELETE FROM consulta WHERE id ="+id+";";
         int res = conex.executaSQL(sql);
         if(res > 0){
             System.out.println("Removido!");
         }else{
             System.out.println("Usuario n encontrado!");
         } 
+        } catch (Exception e) {
+        }
+        
     }
     
     public Consulta getConsulta(int id){
@@ -75,15 +80,14 @@ public class ConsultaDAO {
     }
         
     
-    public List<Consulta> gerarTabela() throws SQLException{
+    public List<Consulta> gerarTabela() {
         List<Consulta> consultasList = new ArrayList<>();
         Conexao conex = new Conexao();
         
+        try {
             Statement stm = conex.createStatement();
             String sql = "SELECT * FROM consulta;";
             ResultSet rs = stm.executeQuery(sql);
-        
-        try {
                while(rs.next()){
                    Consulta consult = new Consulta();
                    

@@ -27,7 +27,7 @@ public class PacienteController {
         pacDAO.addPaciente(nome, cpf, rg, telefone, endereco, sexo, dataNasc, senha);
     }
 
-    public Paciente getPaciente(String cpf) throws SQLException{
+    public Paciente getPaciente(String cpf) {
         Paciente paciente = new Paciente();
         return paciente;
     }

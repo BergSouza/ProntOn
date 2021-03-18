@@ -23,7 +23,7 @@ public class EnfermController {
         enfermDAO.addEnferm(nome, sobrenome, endereco, 
                 telefone, cpf, senha, sexo);
     }
-    public Enfermeiro getEnferm(String cpf) throws SQLException{
+    public Enfermeiro getEnferm(String cpf) {
        Enfermeiro enferm = new Enfermeiro();
        return enferm;
     }

@@ -79,7 +79,7 @@ public class PacienteDAO {
                 paciente.setSexo(rs.getNString("sexo"));
                 
                 pacientesList.add(paciente);
-                
+                conex.close();
             } 
         } catch (SQLException e) {
             

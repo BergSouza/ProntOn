@@ -394,6 +394,12 @@ public class TelaRecepcionista extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 30, 30));
+
+        CampoPesquisa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampoPesquisaActionPerformed(evt);
+            }
+        });
         jPanel1.add(CampoPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 330, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 640, 330));
@@ -469,6 +475,10 @@ public class TelaRecepcionista extends javax.swing.JFrame {
     private void btnPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisaActionPerformed
                 
     }//GEN-LAST:event_btnPesquisaActionPerformed
+
+    private void CampoPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoPesquisaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CampoPesquisaActionPerformed
 
     /**
      * @param args the command line arguments

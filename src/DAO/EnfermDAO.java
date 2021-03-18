@@ -31,6 +31,7 @@ public class EnfermDAO {
     
     public Enfermeiro getEnferm(String cpf) {
         Enfermeiro enferm = new Enfermeiro(); 
+        
         try {
             Conexao conex = new Conexao();
             Statement stm = conex.createStatement();
