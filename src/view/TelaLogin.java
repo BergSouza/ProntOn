@@ -7,14 +7,16 @@ package view;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+import controller.LoginController;
+import java.io.IOException;
 
 /**
  *
  * @author Bergson
  */
 public class TelaLogin extends javax.swing.JFrame {
-
+    
+    LoginController loginController = new LoginController();
     /**
      * Creates new form Tela_login
      */
@@ -26,7 +28,43 @@ public class TelaLogin extends javax.swing.JFrame {
         String login = cpf.getText();
         String senhaLogin = senha.getText();
         
+        int op = loginController.loginUser(login, senhaLogin);
         
+        switch(op){
+            case 0:
+                try {
+                    this.dispose();
+                    new TelaAdministrador().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(TelaLogin.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                break;
+            case 1 :       
+                try {
+                    this.dispose();
+                    new TelaMedico().setVisible(true);
+                } catch (IOException ex) {
+                    System.out.println("Erro");
+                }
+                break;
+            case 3 :
+
+                try {
+                    this.dispose();
+                    new TelaPaciente(login).setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(TelaLogin.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                break;
+            case 4:
+                try {
+                    this.dispose();
+                    new TelaRecepcionista().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(TelaLogin.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                break;
+        }
         //parte do TORTO, fazer conexao
     }
     
