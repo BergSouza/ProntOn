@@ -303,7 +303,7 @@ public class TelaEditarPaciente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Selecione um Sexo!");
         }
         
-        pacienteController.addPaciente(CampoNome.getText(), CampoCPF.getText()
+        pacienteController.editarPaciente(CampoNome.getText(), CampoCPF.getText()
         , CampoRG.getText(), CampoTelefone.getText(), CampoEndereco.getText(), sexo, Nasc1.getText(), CampoSenha.getText());
     }//GEN-LAST:event_jButton1ActionPerformed
 

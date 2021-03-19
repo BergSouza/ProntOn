@@ -35,6 +35,10 @@ public class PacienteController {
     public List<Paciente> gerarTabela(){
         return pacDAO.gerarTabela();
     }
-
+    
+    public void editarPaciente(String nome, String cpf, 
+            String rg, String telefone, String endereco, String sexo, String dataNasc, String senha){
+        pacDAO.editarPaciente(nome, cpf, rg, telefone, endereco, sexo, dataNasc, senha);
+    }
     
 }

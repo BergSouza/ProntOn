@@ -210,7 +210,7 @@ public class TelaEditarEnf extends javax.swing.JFrame {
         }else {
             JOptionPane.showMessageDialog(null, "Selecione um Sexo!");
         }
-        enfermController.addEnferm(CampoNome.getText(),
+        enfermController.editarEnferm(CampoNome.getText(),
                 CampoSobrenome.getText(), CampoEndereco.getText(), CampoTelefone.getText(), CampoCPF.getText(), CampoSenha.getText(), sexo); 
         
     }//GEN-LAST:event_jButton1ActionPerformed

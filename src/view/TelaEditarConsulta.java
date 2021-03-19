@@ -185,7 +185,7 @@ public class TelaEditarConsulta extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        consultaController.addConsulta(CampoNomeMed.getText(), CampoNome.getText(), 
+        consultaController.editarConsulta(CampoNomeMed.getText(), CampoNome.getText(), 
                 CampoRG.getText(), CampoData.getText(), CampoHorario.getText(), campoProntuario.getText());
         
     }//GEN-LAST:event_jButton1ActionPerformed

@@ -92,4 +92,9 @@ public class MedicoDAO {
         
     return medicList;
     }
+
+    public void editarMedico(String nome, String sobrenome, String endereco, String telefone, String cpf, 
+            String senha, String sexo, String RG, String especialidade, String departamento) {
+        
+    }
 }

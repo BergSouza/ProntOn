@@ -43,13 +43,13 @@ public class ConsultaDAO {
         
         try {
             Statement stm = conex.createStatement();
-        String sql = "DELETE FROM consulta WHERE id ="+id+";";
-        int res = conex.executaSQL(sql);
+            String sql = "DELETE FROM consulta WHERE id ="+id+";";
+            int res = conex.executaSQL(sql);
         if(res > 0){
             System.out.println("Removido!");
-        }else{
-            System.out.println("Usuario n encontrado!");
-        } 
+            }else{
+                System.out.println("Usuario n encontrado!");
+            } 
         } catch (Exception e) {
         }
         
@@ -106,5 +106,10 @@ public class ConsultaDAO {
         }
         
         return consultasList;
+    }
+
+    public void editarConsulta(String medNome, String pacNome, 
+            String pacRG, String data, String horario, String prontuario) {
+        
     }
 }

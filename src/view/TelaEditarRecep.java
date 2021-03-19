@@ -282,7 +282,7 @@ public class TelaEditarRecep extends javax.swing.JFrame {
         }else {
             JOptionPane.showMessageDialog(null, "Selecione um Sexo!");
         }       
-        recepController.addRecep(CampoNome.getText(), CampoCPF.getText(),
+        recepController.editarRecep(CampoNome.getText(), CampoCPF.getText(),
                 CampoRG.getText(), CampoTelefone.getText(), CampoEndereco.getText(), sexo, CampoSenha.getText());
     }//GEN-LAST:event_jButton1ActionPerformed
 

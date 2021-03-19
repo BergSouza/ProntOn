@@ -10,7 +10,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import util.classes.funcionarios.Medico;
 
 import util.classes.paciente.Paciente;
 
@@ -86,4 +85,9 @@ public class PacienteDAO {
         }
         return pacientesList;
     } 
+
+    public void editarPaciente(String nome, String cpf, String rg, String telefone, 
+            String endereco, String sexo, String dataNasc, String senha) {
+        
+    }
 }

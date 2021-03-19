@@ -53,6 +53,11 @@ public class EnfermDAO {
             return null;
         }    
     }
+
+    public void editarEnferm(String nome, String sobrenome, String endereco, 
+            String telefone, String cpf, String senha, String sexo) {
+        
+    }
 }
         
         

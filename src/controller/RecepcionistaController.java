@@ -25,4 +25,8 @@ public class RecepcionistaController {
      return recep;   
     }
     
+    public void editarRecep(String nome, String cpf, String RG, 
+            String telefone, String endereco, String sexo, String senha){
+        recepDAO.editarRecepcionista(nome, cpf, RG, telefone, endereco, sexo, senha);
+    }
 }

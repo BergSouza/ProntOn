@@ -15,8 +15,6 @@ import util.classes.funcionarios.Recepcionista;
  * @author cleit
  */
 public class RecepcionistaDAO {
-
-    private Recepcionista paciente;
     
     public void addRecepcionista(String nome, String cpf, String RG, 
             String telefone, String endereco, String sexo, String senha){
@@ -32,7 +30,7 @@ public class RecepcionistaDAO {
         
     }
     
-    public Recepcionista getRecepcionista(String cpf) throws SQLException{
+    public Recepcionista getRecepcionista(String cpf){
         
         Recepcionista recep = new Recepcionista();
         try{
@@ -57,5 +55,10 @@ public class RecepcionistaDAO {
         } catch (SQLException e) {
             return null;
         }    
+    }
+
+    public void editarRecepcionista(String nome, String cpf, String RG, 
+            String telefone, String endereco, String sexo, String senha) {
+        
     }
 }

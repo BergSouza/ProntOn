@@ -20,6 +20,12 @@ public class ConsultaController {
             String data, String horario, String prontuario){
         consDAO.addConsulta(medNome, pacNome, pacRG, data, horario, prontuario);
     }
+    
+    public void editarConsulta(String medNome, String pacNome, String pacRG, 
+            String data, String horario, String prontuario){
+        consDAO.editarConsulta(medNome, pacNome, pacRG, data, horario, prontuario);
+    }
+    
     public void removerConsulta(int id){
         consDAO.removerConsulta(id);
     }

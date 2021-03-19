@@ -6,7 +6,6 @@
 package controller;
 
 import DAO.EnfermDAO;
-import java.sql.SQLException;
 import util.classes.funcionarios.Enfermeiro;
 
 /**
@@ -26,5 +25,11 @@ public class EnfermController {
     public Enfermeiro getEnferm(String cpf) {
        Enfermeiro enferm = new Enfermeiro();
        return enferm;
+    }
+    
+    public void editarEnferm(String nome, String sobrenome, 
+            String endereco, String telefone, String cpf, String senha, String sexo){
+        enfermDAO.editarEnferm(nome, sobrenome, endereco, 
+                telefone, cpf, senha, sexo);
     }
 }
