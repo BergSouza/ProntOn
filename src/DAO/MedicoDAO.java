@@ -21,8 +21,8 @@ public class MedicoDAO {
     Conexao conex = new Conexao();
     public void addMedico(String nome, String sobrenome, String endereco,
             String telefone, String cpf, String senha, String sexo, String RG, String especialidade, String departamento){
-        
-         String sql = "INSERT into consulta (nome, sobrenome, endereco, telefone, cpf, senha, sexo, rg, especialidade, departamento)values("+nome+","+sobrenome+","+endereco+","+telefone+","+cpf+","+senha+","+sexo+","+RG+","+especialidade+","+departamento+")";
+        int tipo =1;
+         String sql = "INSERT into consulta (nome, sobrenome, endereco, telefone, cpf, senha, sexo, rg, especialidade, departamento, tipo)values("+nome+","+sobrenome+","+endereco+","+telefone+","+cpf+","+senha+","+sexo+","+RG+","+especialidade+","+departamento+","+tipo+")";
         int res = conex.executaSQL(sql);
         if(res > 0){
             System.out.println("Cadastro realizado");
