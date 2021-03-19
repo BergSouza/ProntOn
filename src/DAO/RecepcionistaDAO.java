@@ -20,9 +20,9 @@ public class RecepcionistaDAO {
     
     public void addRecepcionista(String nome, String cpf, String RG, 
             String telefone, String endereco, String sexo, String senha){
-           
+        int tipo = 4;
         Conexao conex = new Conexao();
-        String sql = "INSERT into recpcionista (nome, cpf, rg, telefone, endereco, sexo, senha)values("+nome+","+cpf+","+RG+","+telefone+","+endereco+","+sexo+","+senha+")";
+        String sql = "INSERT into recpcionista (nome, cpf, rg, telefone, endereco, sexo, senha, tipo)values("+nome+","+cpf+","+RG+","+telefone+","+endereco+","+sexo+","+senha+","+tipo+")";
         int res = conex.executaSQL(sql);
         if(res > 0){
             System.out.println("Cadastro realizado");
@@ -32,7 +32,7 @@ public class RecepcionistaDAO {
         
     }
     
-    public Recepcionista getRecepcionista(String cpf) throws SQLException{
+    public Recepcionista getRecepcionista(String cpf) {
         
         Recepcionista recep = new Recepcionista();
         try{

@@ -122,6 +122,12 @@ public class TelaEditarConsulta extends javax.swing.JFrame {
         });
         jPanel2.add(CampoRG, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, 180, 30));
         jPanel2.add(CampoData, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 210, 30));
+
+        CampoNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampoNomeActionPerformed(evt);
+            }
+        });
         jPanel2.add(CampoNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 210, 30));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -189,6 +195,10 @@ public class TelaEditarConsulta extends javax.swing.JFrame {
                 CampoRG.getText(), CampoData.getText(), CampoHorario.getText(), campoProntuario.getText());
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void CampoNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CampoNomeActionPerformed
 
     /**
      * @param args the command line arguments

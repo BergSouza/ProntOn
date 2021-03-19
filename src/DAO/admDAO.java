@@ -20,7 +20,7 @@ public class admDAO {
     
     public List<Pessoa> gerarTabela(){
         List<Pessoa> pessoasList = new ArrayList<>();
-        
+        int tipo = 2;
         try {
             Conexao conex = new Conexao();
             Statement stm = conex.createStatement();

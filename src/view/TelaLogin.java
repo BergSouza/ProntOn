@@ -5,7 +5,6 @@
  */
 package view;
 
-import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,7 +18,7 @@ public class TelaLogin extends javax.swing.JFrame {
     /**
      * Creates new form Tela_login
      */
-    public TelaLogin() throws IOException {
+    public TelaLogin() {
         initComponents();
     }
     
@@ -91,6 +90,12 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Login");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 91, 80));
+
+        cpf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cpfActionPerformed(evt);
+            }
+        });
         jPanel1.add(cpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 180, 28));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -218,6 +223,10 @@ public class TelaLogin extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jLabel6MouseClicked
 
+    private void cpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cpfActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -251,7 +260,7 @@ public class TelaLogin extends javax.swing.JFrame {
             public void run() {
                 try {
                     new TelaLogin().setVisible(true);
-                } catch (IOException ex) {
+                } catch (Exception ex) {
                     Logger.getLogger(TelaLogin.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
