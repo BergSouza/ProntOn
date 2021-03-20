@@ -21,7 +21,7 @@ public class MedicoDAO {
     Conexao conex = new Conexao();
     public void addMedico(String nome, String sobrenome, String endereco,
             String telefone, String cpf, String senha, String sexo, String RG, String especialidade, String departamento){
-        int tipo =1;
+        int tipo = 1;
          String sql = "INSERT into consulta (nome, sobrenome, endereco, telefone, cpf, senha, sexo, rg, especialidade, departamento, tipo)values("+nome+","+sobrenome+","+endereco+","+telefone+","+cpf+","+senha+","+sexo+","+RG+","+especialidade+","+departamento+","+tipo+")";
         int res = conex.executaSQL(sql);
         if(res > 0){
@@ -37,7 +37,7 @@ public class MedicoDAO {
         try {
             Medico med = new Medico();
             Conexao conex = new Conexao();
-            Statement stm = conex.createStatement();
+            Statement stm = conex.con.createStatement();
             String sql = "SELECT nome, sobrenome, endereco, telefone, cpf, senha, sexo, nasc, rg, especialidade, departamento FROM enfermeiro WHERE cpf ="+cpf+";";
             ResultSet rs = stm.executeQuery(sql);
              
@@ -52,7 +52,7 @@ public class MedicoDAO {
             med.setRG(rs.getNString("rg"));
             med.setEspecialidade(rs.getNString("especialidade"));
             med.setDepartamento(rs.getNString("departamento"));
-            conex.close();
+            conex.con.close();
             return med;
             
         } catch (SQLException e) {
@@ -64,7 +64,7 @@ public class MedicoDAO {
        
         try {
             Conexao conex = new Conexao();
-            Statement stm = conex.createStatement();
+            Statement stm = conex.con.createStatement();
             String sql = "SELECT * from medico;";
             ResultSet rs = stm.executeQuery(sql);
             
@@ -85,7 +85,8 @@ public class MedicoDAO {
                 med.setDepartamento(rs.getNString("departamento"));
                 medicList.add(med);
                 
-          } 
+            } 
+        conex.con.close();
         } catch (SQLException e) {
             
         }

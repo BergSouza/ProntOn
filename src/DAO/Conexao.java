@@ -17,12 +17,12 @@ public class Conexao {
     public Connection con;
     
     public Conexao(){
-        url = "jdbc:postgresql://localhost543/postgres";
+        url = "jdbc:postgresql://localhost:5432/Projeto";
         usuario = "postgres";
-        senha = "postgres";
+        senha = "soares";
         
         try {
-            Class.forName("postgresql-42.2.5.jar");
+            Class.forName("org.postgresql.Driver");
             con = DriverManager.getConnection(url, usuario, senha);
             System.out.println("conequitousi!");
                       
@@ -44,12 +44,5 @@ public class Conexao {
         }
     }
 
-    Statement createStatement() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    void close() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
 }

@@ -36,7 +36,7 @@ public class PacienteDAO {
         Paciente paciente = new Paciente();
         try {
             Conexao conex = new Conexao();
-            Statement stm = conex.createStatement();
+            Statement stm = conex.con.createStatement();
             String sql = "SELECT nome, sobrenome, endereco, telefone, cpf, senha, sexo FROM enfermeiro WHERE cpf ="+cpf+";";
             ResultSet rs = stm.executeQuery(sql);
              
@@ -48,7 +48,7 @@ public class PacienteDAO {
             paciente.setSenha(rs.getNString("senha"));
             paciente.setSexo(rs.getNString("sexo"));
             
-            conex.close();
+            conex.con.close();
             return paciente;
             
         } catch (SQLException e) {
@@ -61,7 +61,7 @@ public class PacienteDAO {
         
         try {
             Conexao conex = new Conexao();
-            Statement stm = conex.createStatement();
+            Statement stm = conex.con.createStatement();
             String sql = "SELECT * from medico;";
             ResultSet rs = stm.executeQuery(sql);
             
@@ -78,8 +78,9 @@ public class PacienteDAO {
                 paciente.setSexo(rs.getNString("sexo"));
                 
                 pacientesList.add(paciente);
-                conex.close();
-            } 
+             
+            }
+        conex.con.close();
         } catch (SQLException e) {
             
         }

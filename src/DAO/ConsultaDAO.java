@@ -42,7 +42,7 @@ public class ConsultaDAO {
         Conexao conex = new Conexao();
         
         try {
-            Statement stm = conex.createStatement();
+            Statement stm = conex.con.createStatement();
             String sql = "DELETE FROM consulta WHERE id ="+id+";";
             int res = conex.executaSQL(sql);
         if(res > 0){
@@ -60,7 +60,7 @@ public class ConsultaDAO {
         Consulta consult = new Consulta();
         try{
             Conexao conex = new Conexao();
-            Statement stm = conex.createStatement();
+            Statement stm = conex.con.createStatement();
             String sql = "SELECT mednome, pacnome, pacrg, dataa, horario, prontuario, id FROM consulta WHERE id ="+id+";";
             ResultSet rs = stm.executeQuery(sql);
             
@@ -71,7 +71,7 @@ public class ConsultaDAO {
             consult.setHorario("horario");
             consult.setProntuario("prontuario");
             
-            conex.close();
+            conex.con.close();
             return consult;
             
         } catch (SQLException e) {
@@ -85,7 +85,7 @@ public class ConsultaDAO {
         Conexao conex = new Conexao();
         
         try {
-            Statement stm = conex.createStatement();
+            Statement stm = conex.con.createStatement();
             String sql = "SELECT * FROM consulta;";
             ResultSet rs = stm.executeQuery(sql);
                while(rs.next()){
@@ -98,9 +98,10 @@ public class ConsultaDAO {
                    consult.setHorario("horario");
                    consult.setProntuario("prontuario");
                    consultasList.add(consult);
-                    
+                   
+                   
                }
-               
+         conex.con.close();      
         } catch (SQLException e) {
             return null;
         }
@@ -113,10 +114,11 @@ public class ConsultaDAO {
         
          try {
             Conexao conex = new Conexao();
-            Statement stm = conex.createStatement();
+            Statement stm = conex.con.createStatement();
             String sql = "UPDATE consulta SET medNome ="+medNome+", pacNome = "+pacNome+", pscRG = "+pacRG+", dataa = "+data+", horario = "+horario+", prontuario = "+prontuario+"WHERE ID = "+id+";";
             ResultSet rs = stm.executeQuery(sql);
             
+            conex.con.close();
         } catch (Exception e) {
         }
         

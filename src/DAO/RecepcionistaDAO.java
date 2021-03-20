@@ -36,7 +36,7 @@ public class RecepcionistaDAO {
         Recepcionista recep = new Recepcionista();
         try{
             Conexao conex = new Conexao();
-            Statement stm = conex.createStatement();
+            Statement stm = conex.con.createStatement();
             String sql = "SELECT nome, sobrenome, endereco, telefone, cpf, senha, sexo, nasc, rg FROM enfermeiro WHERE cpf ="+cpf+";";
             ResultSet rs = stm.executeQuery(sql);
              
@@ -50,7 +50,7 @@ public class RecepcionistaDAO {
             recep.setDataNasc(rs.getString("nasc"));
             recep.setRG(rs.getString("rg"));
             
-            conex.close();
+            conex.con.close();
             return recep;
             
         } catch (SQLException e) {

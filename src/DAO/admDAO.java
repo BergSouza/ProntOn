@@ -20,10 +20,9 @@ public class admDAO {
     
     public List<Pessoa> gerarTabela(){
         List<Pessoa> pessoasList = new ArrayList<>();
-        int tipo = 2;
         try {
             Conexao conex = new Conexao();
-            Statement stm = conex.createStatement();
+            Statement stm = conex.con.createStatement();
             String sql = "SELECT * from medico;";
             ResultSet rs = stm.executeQuery(sql);
             
@@ -40,7 +39,7 @@ public class admDAO {
                 pes.setSexo(rs.getNString("sexo"));
                 
                 pessoasList.add(pes);
-                conex.close();
+                conex.con.close();
             } 
         } catch (SQLException e) { 
         }
@@ -52,7 +51,7 @@ public class admDAO {
         Pessoa pessoa = new Pessoa();
         try {
             Conexao conex = new Conexao();
-            Statement stm = conex.createStatement();
+            Statement stm = conex.con.createStatement();
             String sql = "SELECT nome, sobrenome, endereco, telefone, cpf, senha, sexo FROM enfermeiro WHERE cpf ="+cpf+";";
             ResultSet rs = stm.executeQuery(sql);
              
@@ -64,7 +63,7 @@ public class admDAO {
             pessoa.setSenha(rs.getNString("senha"));
             pessoa.setSexo(rs.getNString("sexo"));
             
-            conex.close();
+            conex.con.close();
             
         } catch (SQLException e) {
             
@@ -77,10 +76,10 @@ public class admDAO {
         
         try {
             Conexao conex = new Conexao();
-            Statement stm = conex.createStatement();
+            Statement stm = conex.con.createStatement();
             String sql = "UPDATE pessoa (nome, sobrenome, endereco, telefone, cpf, senha, sexo) set("+nome+","+sobrenome+","+endereco+","+telefone+","+cpf+","+senha+","+sexo+")";
             ResultSet rs = stm.executeQuery(sql);
-            conex.close();
+            conex.con.close();
             
         } catch (SQLException e) {
           
@@ -91,10 +90,10 @@ public class admDAO {
         
         try {
             Conexao conex = new Conexao();
-            Statement stm = conex.createStatement();
+            Statement stm = conex.con.createStatement();
             String sql = "DELETE FROM pessoa WHERE cpf ="+cpf+";";
             ResultSet rs = stm.executeQuery(sql);
-            conex.close();
+            conex.con.close();
             
         } catch (SQLException e) {  
         }
