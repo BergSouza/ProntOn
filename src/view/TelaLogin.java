@@ -9,6 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import controller.LoginController;
 import java.io.IOException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -32,12 +33,7 @@ public class TelaLogin extends javax.swing.JFrame {
         
         switch(op){
             case 0:
-                try {
-                    this.dispose();
-                    new TelaAdministrador().setVisible(true);
-                } catch (IOException ex) {
-                    Logger.getLogger(TelaLogin.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                JOptionPane.showMessageDialog(this, "Verifique suas credenciais.");
                 break;
             case 1 :       
                 try {
@@ -60,6 +56,14 @@ public class TelaLogin extends javax.swing.JFrame {
                 try {
                     this.dispose();
                     new TelaRecepcionista().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(TelaLogin.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                break;
+            case 5:
+                try {
+                    this.dispose();
+                    new TelaAdministrador().setVisible(true);
                 } catch (IOException ex) {
                     Logger.getLogger(TelaLogin.class.getName()).log(Level.SEVERE, null, ex);
                 }
