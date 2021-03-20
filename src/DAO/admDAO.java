@@ -34,9 +34,9 @@ public class admDAO {
                 pes.setSobrenome(rs.getString("sobrenome"));
                 pes.setEndereco(rs.getString("endereco"));
                 pes.setTelefone(rs.getString("telefone"));
-                pes.setCpf(rs.getNString("cpf"));
-                pes.setSenha(rs.getNString("senha"));
-                pes.setSexo(rs.getNString("sexo"));
+                pes.setCpf(rs.getString("cpf"));
+                pes.setSenha(rs.getString("senha"));
+                pes.setSexo(rs.getString("sexo"));
                 
                 pessoasList.add(pes);
                 conex.con.close();

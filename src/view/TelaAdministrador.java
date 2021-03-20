@@ -49,7 +49,6 @@ public class TelaAdministrador extends javax.swing.JFrame {
         btnExcluir = new javax.swing.JButton();
         btnVisualizar = new javax.swing.JButton();
         btnAtualizar = new javax.swing.JButton();
-        txtA = new javax.swing.JLabel();
         CampoPesquisa = new javax.swing.JTextField();
         btnPesquisa = new javax.swing.JButton();
         criterioPesquisa1 = new javax.swing.JComboBox<>();
@@ -68,7 +67,106 @@ public class TelaAdministrador extends javax.swing.JFrame {
 
         Tabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
                 "Nome", "CPF", "RG", "Telefone"
@@ -268,12 +366,6 @@ public class TelaAdministrador extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnAtualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 130, 30));
-
-        txtA.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        txtA.setForeground(new java.awt.Color(102, 153, 255));
-        txtA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtA.setText("Secretários(a)");
-        jPanel1.add(txtA, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 170, 30));
         jPanel1.add(CampoPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 140, 30));
 
         btnPesquisa.setBackground(new java.awt.Color(102, 153, 255));
@@ -342,7 +434,7 @@ public class TelaAdministrador extends javax.swing.JFrame {
             } catch (IOException ex) {
                 Logger.getLogger(TelaRecepcionista.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }else if(op == "Enfermeiros(as)"){
+        }else if(op == "Enfermeiros(a)"){
             try {
                 new TelaCadastrarEnf().setVisible(true);
             } catch (IOException ex) {
@@ -461,6 +553,5 @@ public class TelaAdministrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JLabel txtA;
     // End of variables declaration//GEN-END:variables
 }
