@@ -16,10 +16,12 @@ import util.classes.consulta.Consulta;
  */
 public class TelaEditarConsulta extends javax.swing.JFrame {
     ConsultaController consultaController = new ConsultaController();
+    int id;
     /**
      * Creates new form cadastrar_medico
      */
     public TelaEditarConsulta(int id) throws IOException {
+        this.id = id;
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         preencherDados(id);
@@ -192,7 +194,7 @@ public class TelaEditarConsulta extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         consultaController.editarConsulta(CampoNomeMed.getText(), CampoNome.getText(), 
-                CampoRG.getText(), CampoData.getText(), CampoHorario.getText(), campoProntuario.getText());
+                CampoRG.getText(), CampoData.getText(), CampoHorario.getText(), campoProntuario.getText(), this.id);
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

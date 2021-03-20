@@ -109,7 +109,7 @@ public class ConsultaDAO {
     }
 
     public void editarConsulta(String medNome, String pacNome, 
-            String pacRG, String data, String horario, String prontuario) {
+            String pacRG, String data, String horario, String prontuario, int id) {
         
     }
 }
