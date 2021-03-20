@@ -33,8 +33,8 @@ public class TelaLogin extends javax.swing.JFrame {
         
         switch(op){
             case 0:
-                JOptionPane.showMessageDialog(this, "Verifique suas credenciais.");
-                break;
+                //JOptionPane.showMessageDialog(this, "Verifique suas credenciais.");
+                //break;
             case 1 :       
                 try {
                     this.dispose();
