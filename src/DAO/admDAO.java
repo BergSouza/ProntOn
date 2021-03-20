@@ -23,7 +23,7 @@ public class admDAO {
         try {
             Conexao conex = new Conexao();
             Statement stm = conex.con.createStatement();
-            String sql = "SELECT * from medico;";
+            String sql = "SELECT * from pessoa;";
             ResultSet rs = stm.executeQuery(sql);
             
             while(rs.next()){

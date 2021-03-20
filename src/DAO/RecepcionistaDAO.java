@@ -20,7 +20,7 @@ public class RecepcionistaDAO {
             String telefone, String endereco, String sexo, String senha){
         int tipo = 4;
         Conexao conex = new Conexao();
-        String sql = "INSERT into recpcionista (nome, cpf, rg, telefone, endereco, sexo, senha, tipo)values("+nome+","+cpf+","+RG+","+telefone+","+endereco+","+sexo+","+senha+","+tipo+")";
+        String sql = "INSERT into recepcionista (nome, cpf, rg, telefone, endereco, sexo, senha, tipo)values("+nome+","+cpf+","+RG+","+telefone+","+endereco+","+sexo+","+senha+","+tipo+")";
         int res = conex.executaSQL(sql);
         if(res > 0){
             System.out.println("Cadastro realizado");

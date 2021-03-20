@@ -20,7 +20,7 @@ public class EnfermDAO {
             String endereco, String telefone, String cpf, String senha, String sexo){
         int tipo = 2;
         Conexao conex = new Conexao();
-        String sql = "INSERT into consulta (nome, sobrenome, endereco, telefone, cpf, senha, sexo, tipo)values("+nome+","+sobrenome+","+endereco+","+telefone+","+cpf+","+senha+","+sexo+","+tipo+")";
+        String sql = "INSERT into enfermeiro (nome, sobrenome, endereco, telefone, cpf, senha, sexo, tipo)values("+nome+","+sobrenome+","+endereco+","+telefone+","+cpf+","+senha+","+sexo+","+tipo+")";
         int res = conex.executaSQL(sql);
         if(res > 0){
             System.out.println("Cadastro realizado");
