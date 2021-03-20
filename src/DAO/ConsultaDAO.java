@@ -111,5 +111,14 @@ public class ConsultaDAO {
     public void editarConsulta(String medNome, String pacNome, 
             String pacRG, String data, String horario, String prontuario, int id) {
         
+         try {
+            Conexao conex = new Conexao();
+            Statement stm = conex.createStatement();
+            String sql = "UPDATE consulta SET medNome ="+medNome+", pacNome = "+pacNome+", pscRG = "+pacRG+", dataa = "+data+", horario = "+horario+", prontuario = "+prontuario+"WHERE ID = "+id+";";
+            ResultSet rs = stm.executeQuery(sql);
+            
+        } catch (Exception e) {
+        }
+        
     }
 }
