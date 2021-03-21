@@ -87,7 +87,7 @@ public class admDAO {
         try {
             Statement stm = conex.con.createStatement();
             String sql = "UPDATE pessoa"+
-                    "SET nome = '"+nome+"', sobrenome = '"+sobrenome+"', endereco = '"+endereco+"', telefone = '"+telefone+"', cpf = '"+cpf+"', senha = '"+senha+"', sexo = '"+sexo+"', nasc = '"+Nasc+"'"
+                    " SET nome = '"+nome+"', sobrenome = '"+sobrenome+"', endereco = '"+endereco+"', telefone = '"+telefone+"', cpf = '"+cpf+"', senha = '"+senha+"', sexo = '"+sexo+"', nasc = '"+Nasc+"'"
                     + "WHERE cpf = '"+cpfAntigo+"';";
                     
             int update = stm.executeUpdate(sql);
