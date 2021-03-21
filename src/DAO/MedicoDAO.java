@@ -12,6 +12,7 @@ import java.sql.Statement;
 import util.classes.funcionarios.Medico;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -22,9 +23,11 @@ public class MedicoDAO {
     public void addMedico(String nome, String sobrenome, String endereco,
             String telefone, String cpf, String senha, String sexo, String RG, String especialidade, String departamento){
         int tipo = 1;
-        String sql = "INSERT into medico (nome, sobrenome, endereco, telefone, cpf, senha, sexo, rg, especialidade, departamento, tipo)values("+nome+","+sobrenome+","+endereco+","+telefone+","+cpf+","+senha+","+sexo+","+RG+","+especialidade+","+departamento+","+tipo+")";
+        String sql = "INSERT into medico (nome, sobrenome, endereco, telefone, cpf, senha, sexo, rg, especialidade, departamento, tipo)values"
+                + "("+nome+","+sobrenome+","+endereco+","+telefone+","+cpf+","+senha+","+sexo+","+RG+","+especialidade+","+departamento+","+tipo+")";
         int res = conex.executaSQL(sql);
         if(res > 0){
+            JOptionPane.showMessageDialog(null, "Verifique suas credenciais.");
             System.out.println("Cadastro realizado");
         }else{
             System.out.println("Erro ao cadastrar");
