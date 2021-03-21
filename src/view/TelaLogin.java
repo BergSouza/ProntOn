@@ -32,9 +32,9 @@ public class TelaLogin extends javax.swing.JFrame {
         int op = loginController.loginUser(login, senhaLogin);
         
         switch(op){
-            //case 0:
-                //JOptionPane.showMessageDialog(this, "Verifique suas credenciais.");
-                //break;
+            case 0:
+                JOptionPane.showMessageDialog(this, "Verifique suas credenciais.");
+                break;
             case 1 :       
                 try {
                     this.dispose();
@@ -60,7 +60,7 @@ public class TelaLogin extends javax.swing.JFrame {
                     Logger.getLogger(TelaLogin.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 break;
-            case 0:
+            case 5:
                 try {
                     this.dispose();
                     new TelaAdministrador().setVisible(true);

@@ -164,6 +164,7 @@ public class TelaPaciente extends javax.swing.JFrame {
         try {
             TelaVisualizarConsulta tela = new TelaVisualizarConsulta();
             tela.preencherDados(id);
+            tela.setVisible(true);
         } catch (IOException ex) {
             Logger.getLogger(TelaMedico.class.getName()).log(Level.SEVERE, null, ex);
         }
