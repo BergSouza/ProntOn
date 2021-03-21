@@ -49,9 +49,9 @@ public class RecepcionistaDAO {
             recep.setSobrenome(rs.getString("sobrenome"));
             recep.setEndereco(rs.getString("endereco"));
             recep.setTelefone(rs.getString("telefone"));
-            recep.setCpf(rs.getNString("cpf"));
-            recep.setSenha(rs.getNString("senha"));
-            recep.setSexo(rs.getNString("sexo"));
+            recep.setCpf(rs.getString("cpf"));
+            recep.setSenha(rs.getString("senha"));
+            recep.setSexo(rs.getString("sexo"));
             recep.setDataNasc(rs.getString("nasc"));
             recep.setRG(rs.getString("rg"));
             

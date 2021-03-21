@@ -3,13 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
             <file>file:/C:/Users/vitor/Desktop/gaveta/ProntOn/src/pronton/ProntOn.java</file>
             <file>file:/C:/Users/vitor/Desktop/gaveta/ProntOn/src/DAO/MedicoDAO.java</file>
-=======
-            <file>file:/C:/Users/cleit/Documents/Université/ProntOn/src/view/TelaLogin.java</file>
-            <file>file:/C:/Users/cleit/Documents/Université/ProntOn/src/DAO/MedicoDAO.java</file>
->>>>>>> 0dffc874fcaa2c7fa7cd8441939d9d1546b9532b
+            <file>file:/C:/Users/vitor/Desktop/gaveta/ProntOn/src/view/TelaAdministrador.java</file>
+            <file>file:/C:/Users/vitor/Desktop/gaveta/ProntOn/src/view/TelaVisualizarPessoa.java</file>
         </group>
     </open-files>
 </project-private>
