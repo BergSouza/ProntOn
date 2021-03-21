@@ -135,6 +135,11 @@ public class TelaVisualizarConsulta extends javax.swing.JFrame {
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, -1, -1));
 
         CampoNomeMed.setEditable(false);
+        CampoNomeMed.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampoNomeMedActionPerformed(evt);
+            }
+        });
         jPanel2.add(CampoNomeMed, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 210, 30));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -178,6 +183,10 @@ public class TelaVisualizarConsulta extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void CampoNomeMedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoNomeMedActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CampoNomeMedActionPerformed
 
     /**
      * @param args the command line arguments

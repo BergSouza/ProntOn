@@ -71,7 +71,6 @@ public class admDAO {
                 
                 
             }    
-            System.out.println(pessoa.getDataNasc());
             conex.con.close();
             
         } catch (SQLException e) {

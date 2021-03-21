@@ -27,7 +27,6 @@ public class TelaVisualizarPessoa extends javax.swing.JFrame {
     
     public void preencherDados(String cpf){
         Pessoa pessoa = new Pessoa(admController.getPessoa(cpf));
-        System.out.println(pessoa.getNome());
         
         CampoCPF.setText(pessoa.getCpf());
         CampoEndereco.setText(pessoa.getEndereco());
