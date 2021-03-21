@@ -339,7 +339,8 @@ public class TelaAdministrador extends javax.swing.JFrame {
         int linha = Tabela.getSelectedRow();
         String cpf = Tabela.getValueAt(linha, 1).toString();
         try {
-            new TelaEditarPessoa(cpf).setVisible(true);
+            TelaEditarPessoa tela = new TelaEditarPessoa();
+            tela.preencherDados(cpf);
         } catch (IOException ex) {
             Logger.getLogger(TelaAdministrador.class.getName()).log(Level.SEVERE, null, ex);
         }

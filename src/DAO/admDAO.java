@@ -80,8 +80,7 @@ public class admDAO {
     }
 
     public void editarPessoa(String nome, String sobrenome, String endereco, String telefone, 
-            String cpf, String senha, String sexo, String Nasc){
-        String cpfAntigo = cpf;
+            String cpf, String senha, String sexo, String Nasc, String cpfAntigo){
         
         Conexao conex = new Conexao();
         

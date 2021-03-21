@@ -15,20 +15,20 @@ import util.classes.pessoa.Pessoa;
  * @author HARDWARE
  */
 public class TelaEditarPessoa extends javax.swing.JFrame {
-    
+    String cpf;
     admController admController = new admController();
     
     /**
      * Creates new form cadastrar_convenios
      */
-    public TelaEditarPessoa(String cpf) throws IOException {
+    public TelaEditarPessoa() throws IOException {
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
-        preencherDados(cpf);
     }
     
     public void preencherDados(String cpf){
         Pessoa pessoa = new Pessoa(admController.getPessoa(cpf));
+        this.cpf = pessoa.getCpf();
         CampoCPF.setText(pessoa.getCpf());
         CampoEndereco.setText(pessoa.getEndereco());
         CampoNome.setText(pessoa.getNome());
@@ -221,7 +221,7 @@ public class TelaEditarPessoa extends javax.swing.JFrame {
         }
         admController.editarPessoa(CampoNome.getText(),
                 CampoSobrenome.getText(), CampoEndereco.getText(), CampoTelefone.getText(), 
-                CampoCPF.getText(), CampoRG.getText(), sexo, Nasc.getText()); 
+                CampoCPF.getText(), CampoRG.getText(), sexo, Nasc.getText(), this.cpf); 
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -295,7 +295,7 @@ public class TelaEditarPessoa extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    new TelaEditarPessoa("").setVisible(true);
+                    new TelaEditarPessoa().setVisible(true);
                 } catch (IOException ex) {
                     Logger.getLogger(TelaEditarPessoa.class.getName()).log(Level.SEVERE, null, ex);
                 }

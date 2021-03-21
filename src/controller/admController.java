@@ -19,11 +19,11 @@ public class admController {
     
     public void editarPessoa(String nome, String sobrenome, 
             String endereco, String telefone, String cpf, 
-            String senha, String sexo, String Nasc){
+            String senha, String sexo, String Nasc, String cpfAntigo){
         
         admDAO.editarPessoa(nome, sobrenome, 
             endereco,telefone, cpf, 
-            senha, sexo, Nasc);
+            senha, sexo, Nasc, cpfAntigo);
     }
 
     public List<Pessoa> gerarTabela() {
