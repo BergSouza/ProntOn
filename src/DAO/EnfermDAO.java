@@ -8,6 +8,7 @@ package DAO;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 import util.classes.funcionarios.Enfermeiro;
 
 /**
@@ -17,16 +18,18 @@ import util.classes.funcionarios.Enfermeiro;
 public class EnfermDAO {
     
     public void addEnferm(String nome, String sobrenome, 
-            String endereco, String telefone, String cpf, String senha, String sexo){
+        String endereco, String telefone, String cpf, String senha, String sexo){
         int tipo = 2;
         Conexao conex = new Conexao();
         String sql = "INSERT into enfermeiro (nome, sobrenome, endereco, telefone, cpf, senha, sexo, tipo)values("+nome+","+sobrenome+","+endereco+","+telefone+","+cpf+","+senha+","+sexo+","+tipo+")";
         int res = conex.executaSQL(sql);
         if(res > 0){
+            JOptionPane.showMessageDialog(null, "Cadastrou");
             System.out.println("Cadastro realizado");
         }else{
+            JOptionPane.showMessageDialog(null, "Error.");
             System.out.println("Erro ao cadastrar");
-        }      
+        }     
     }
     
     public Enfermeiro getEnferm(String cpf) {

@@ -43,7 +43,7 @@ public class Pessoa {
         this.RG = RG;
         this.dataNasc = dataNasc;
     }
-    
+   
     public Pessoa(){}
 
     public void setNome(String nome) {

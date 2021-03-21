@@ -27,9 +27,10 @@ public class MedicoDAO {
                 + "("+nome+","+sobrenome+","+endereco+","+telefone+","+cpf+","+senha+","+sexo+","+RG+","+especialidade+","+departamento+","+tipo+")";
         int res = conex.executaSQL(sql);
         if(res > 0){
-            JOptionPane.showMessageDialog(null, "Verifique suas credenciais.");
+            JOptionPane.showMessageDialog(null, "Cadastrou");
             System.out.println("Cadastro realizado");
         }else{
+            JOptionPane.showMessageDialog(null, "Error.");
             System.out.println("Erro ao cadastrar");
         }
         

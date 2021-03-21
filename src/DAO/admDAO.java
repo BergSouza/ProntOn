@@ -11,6 +11,7 @@ import java.util.List;
 import util.classes.pessoa.Pessoa;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 /**
  *
  * @author cleit
@@ -80,9 +81,9 @@ public class admDAO {
             String sql = "UPDATE pessoa (nome, sobrenome, endereco, telefone, cpf, senha, sexo) set("+nome+","+sobrenome+","+endereco+","+telefone+","+cpf+","+senha+","+sexo+")";
             ResultSet rs = stm.executeQuery(sql);
             conex.con.close();
-            
+            JOptionPane.showMessageDialog(null, "Alterou");
         } catch (SQLException e) {
-          
+          JOptionPane.showMessageDialog(null, "Error.");
         }  
     }
 
@@ -94,8 +95,9 @@ public class admDAO {
             String sql = "DELETE FROM pessoa WHERE cpf ="+cpf+";";
             ResultSet rs = stm.executeQuery(sql);
             conex.con.close();
-            
-        } catch (SQLException e) {  
+            JOptionPane.showMessageDialog(null, "Removeu");
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error.");
         }
     }      
 }

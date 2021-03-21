@@ -16,7 +16,10 @@ public class Enfermeiro extends Pessoa{
     public Enfermeiro(String nome, String sobrenome, String endereco, String telefone, String cpf, String senha, String sexo, String RG, String dataNasc) {
         super(nome, sobrenome, endereco, telefone, cpf, senha, sexo, RG, dataNasc);
     }
-
+    
+    public Enfermeiro(Enfermeiro enferm){
+        
+    }
     
     public Enfermeiro(){}
     

@@ -11,6 +11,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import javax.swing.JOptionPane;
 import util.classes.consulta.Consulta;
 
 
@@ -33,8 +34,10 @@ public class ConsultaDAO {
         String sql = "INSERT into consulta (mednome, pacnome, pacrg, dataa, horario, prontuario, id)values("+medNome+","+pacNome+","+pacRG+","+data+","+horario+","+ prontuario+","+id+")";
         int res = conex.executaSQL(sql);
         if(res > 0){
+            JOptionPane.showMessageDialog(null, "Cadastrou");
             System.out.println("Cadastro realizado");
         }else{
+            JOptionPane.showMessageDialog(null, "Error.");
             System.out.println("Erro ao cadastrar");
         } 
     }
@@ -46,8 +49,10 @@ public class ConsultaDAO {
             String sql = "DELETE FROM consulta WHERE id ="+id+";";
             int res = conex.executaSQL(sql);
         if(res > 0){
+            JOptionPane.showMessageDialog(null, "Removeu.");
             System.out.println("Removido!");
             }else{
+                JOptionPane.showMessageDialog(null, "Error.");
                 System.out.println("Usuario n encontrado!");
             } 
         } catch (Exception e) {
