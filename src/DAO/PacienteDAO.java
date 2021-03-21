@@ -23,7 +23,7 @@ public class PacienteDAO {
      public void addPaciente(String nome, String cpf, 
             String rg, String telefone, String endereco, String sexo, String dataNasc, String senha) {
             int tipo = 3;
-        String sql = "INSERT into consulta (nome, cpf, rg, telefone, endereco, sexo, dataa, senha, tipo)"
+        String sql = "INSERT into paciente (nome, cpf, rg, telefone, endereco, sexo, dataa, senha, tipo)"
                 + "values('"+nome+"','"+cpf+"','"+rg+"','"+telefone+"','"+endereco+"','"+sexo+"','"+dataNasc+"','"+senha+"','"+tipo+"')";
         int res = conex.executaSQL(sql);
         if(res > 0){
@@ -44,6 +44,7 @@ public class PacienteDAO {
             String sql = "SELECT nome, sobrenome, endereco, telefone, cpf, senha, sexo"
                     + " FROM paciente WHERE cpf = '"+cpf+"';";
             ResultSet rs = stm.executeQuery(sql);
+            
             while(rs.next()){
                 paciente.setNome(rs.getString("nome"));
                 paciente.setSobrenome(rs.getString("sobrenome"));

@@ -57,7 +57,7 @@ public class admDAO {
             Conexao conex = new Conexao();
             Statement stm = conex.con.createStatement();
             String sql = "SELECT nome, sobrenome, endereco, telefone, cpf, nasc, rg"
-                    + " FROM pessoa WHERE cpf = '"+cpf+"';";
+                    + " FROM pessoa WHERE cpf = '"+cpf+"' ";
             ResultSet rs = stm.executeQuery(sql);
             
             while(rs.next()){
@@ -80,29 +80,30 @@ public class admDAO {
     }
 
     public void editarPessoa(String nome, String sobrenome, String endereco, String telefone, 
-            String cpf, String senha, String sexo, String Nasc) {
+            String cpf, String senha, String sexo, String Nasc){
         String cpfAntigo = cpf;
-        System.out.println(cpfAntigo);
+        
+        Conexao conex = new Conexao();
         
         try {
-            Conexao conex = new Conexao();
             Statement stm = conex.con.createStatement();
-            String sql = "UPDATE pessoa"
-                    + "set nome = '"+nome+"', sobrenome = '"+sobrenome+"', endereco = '"+endereco+"', "
-                    + "telefone = '"+telefone+"', cpf = '"+cpf+"', senha = '"+senha+"', sexo = '"+sexo+"'"
-                            + "WHERE cpf = '"+cpfAntigo+"';";
-            ResultSet rs = stm.executeQuery(sql);
-            conex.con.close();
-            JOptionPane.showMessageDialog(null, "Alterou!");
-        } catch (SQLException e) {
+            String sql = "UPDATE pessoa"+
+                    "SET nome = '"+nome+"', sobrenome = '"+sobrenome+"', endereco = '"+endereco+"', telefone = '"+telefone+"', cpf = '"+cpf+"', senha = '"+senha+"', sexo = '"+sexo+"', nasc = '"+Nasc+"'"
+                    + "WHERE cpf = '"+cpfAntigo+"';";
+                    
+            int update = stm.executeUpdate(sql);
             
-        }  
+            conex.con.close();
+            System.out.println("rodou");
+        } catch (Exception e) {
+        }
+        
     }
 
     public void removerPessoa(String cpf) {
-        
+        Conexao conex = new Conexao();
+            
         try {
-            Conexao conex = new Conexao();
             Statement stm = conex.con.createStatement();
             String sql = "DELETE FROM pessoa WHERE cpf = '"+cpf+"';";
             ResultSet rs = stm.executeQuery(sql);

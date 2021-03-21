@@ -29,8 +29,6 @@ public class LoginDAO {
             System.out.println(tipoConta);
             }
             
-            
-            conex.con.close();
         } catch (Exception e) {
         }        
         
