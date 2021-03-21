@@ -19,10 +19,9 @@ public class TelaVisualizarConsulta extends javax.swing.JFrame {
     /**
      * Creates new form cadastrar_medico
      */
-    public TelaVisualizarConsulta(int id) throws IOException {
+    public TelaVisualizarConsulta() throws IOException {
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
-        preencherDados(id);
     }
     
     public void preencherDados(int id){
@@ -241,7 +240,7 @@ public class TelaVisualizarConsulta extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    new TelaVisualizarConsulta(0).setVisible(true);
+                    new TelaVisualizarConsulta().setVisible(true);
                 } catch (IOException ex) {
                     Logger.getLogger(TelaVisualizarConsulta.class.getName()).log(Level.SEVERE, null, ex);
                 }
