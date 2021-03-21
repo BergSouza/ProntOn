@@ -26,8 +26,7 @@ public class TelaVisualizarConsulta extends javax.swing.JFrame {
     }
     
     public void preencherDados(int id){
-        Consulta con = new Consulta();
-        con = consultaController.getConsulta(id);
+        Consulta con = new Consulta(consultaController.getConsulta(id));
         CampoNomeMed.setText(con.getMedNome());
         CampoNome.setText(con.getPacNome());
         CampoRG.setText(con.getPacRG());

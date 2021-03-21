@@ -21,6 +21,17 @@ public class Medico extends Pessoa{
         this.especialidade = especialidade;
         this.departamento = departamento;
     }
+    public Medico(Medico med){
+        this.setNome(med.getNome());
+        this.setSobrenome(med.getSobrenome());
+        this.setEndereco(med.getEndereco());
+        this.setTelefone(med.getTelefone());
+        this.setCpf(med.getCpf());
+        this.setSexo(med.getSexo());
+        this.setRG(med.getRG());
+        this.especialidade = med.getEspecialidade();
+        this.departamento = med.getDepartamento();
+    }
     public Medico (){}
 
     public String getEspecialidade() {
@@ -38,9 +49,5 @@ public class Medico extends Pessoa{
     public void setDepartamento(String departamento) {
         this.departamento = departamento;
     }
-
-    
-
-    
     
 }

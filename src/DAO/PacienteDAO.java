@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 import util.classes.paciente.Paciente;
 
@@ -26,8 +27,10 @@ public class PacienteDAO {
                 + "values('"+nome+"','"+cpf+"','"+rg+"','"+telefone+"','"+endereco+"','"+sexo+"','"+dataNasc+"','"+senha+"','"+tipo+"')";
         int res = conex.executaSQL(sql);
         if(res > 0){
+            JOptionPane.showMessageDialog(null, "Cadastrou");
             System.out.println("Cadastro realizado");
         }else{
+            JOptionPane.showMessageDialog(null, "Error.");
             System.out.println("Erro ao cadastrar");
         }
          
