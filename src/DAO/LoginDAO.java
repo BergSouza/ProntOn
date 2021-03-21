@@ -16,14 +16,20 @@ public class LoginDAO {
     
     public int loginUser(String login, String senha){
         int tipoConta = 0;
-        
+        System.out.println(login);
+        System.out.println(senha);
         try {
             Conexao conex = new Conexao();
             Statement stm = conex.con.createStatement();
-            String sql = "SELECT tipo FROM pessoa WHERE cpf='"+login+"' AND senha = '"+senha+"';";
+            String sql = "SELECT tipo FROM pessoa WHERE cpf = '"+login+"' AND senha = '"+senha+"';";
             ResultSet rs = stm.executeQuery(sql);
             
-            tipoConta = rs.getInt("tipo");
+            if(rs.next()){
+                tipoConta = rs.getInt("tipo");
+            System.out.println(tipoConta);
+            }
+            
+            
             conex.con.close();
         } catch (Exception e) {
         }        

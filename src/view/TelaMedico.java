@@ -190,7 +190,9 @@ public class TelaMedico extends javax.swing.JFrame {
         int linha = Tabela.getSelectedRow();
         int id = parseInt(Tabela.getValueAt(linha, 0).toString());  
         try {
-            new TelaVisualizarConsulta(id).setVisible(true);
+            TelaVisualizarConsulta tela = new TelaVisualizarConsulta();
+            tela.preencherDados(id);
+            tela.setVisible(true);
         } catch (IOException ex) {
             Logger.getLogger(TelaMedico.class.getName()).log(Level.SEVERE, null, ex);
         }

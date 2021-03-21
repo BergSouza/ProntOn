@@ -49,18 +49,21 @@ public class MedicoDAO {
             String sql = "SELECT nome, sobrenome, endereco, telefone, cpf, senha, sexo, nasc, rg, especialidade, departamento "
                     + "FROM medico WHERE cpf = '"+cpf+"';";
             ResultSet rs = stm.executeQuery(sql);
-             
-            med.setNome(rs.getString("nome"));
-            med.setSobrenome(rs.getString("sobrenome"));
-            med.setEndereco(rs.getString("endereco"));
-            med.setTelefone(rs.getString("telefone"));
-            med.setCpf(rs.getNString("cpf"));
-            med.setSenha(rs.getNString("senha"));
-            med.setSexo(rs.getNString("sexo"));
-            med.setDataNasc(rs.getNString("nasc"));
-            med.setRG(rs.getNString("rg"));
-            med.setEspecialidade(rs.getNString("especialidade"));
-            med.setDepartamento(rs.getNString("departamento"));
+            
+            while(rs.next()){
+                med.setNome(rs.getString("nome"));
+                med.setSobrenome(rs.getString("sobrenome"));
+                med.setEndereco(rs.getString("endereco"));
+                med.setTelefone(rs.getString("telefone"));
+                med.setCpf(rs.getNString("cpf"));
+                med.setSenha(rs.getNString("senha"));
+                med.setSexo(rs.getNString("sexo"));
+                med.setDataNasc(rs.getNString("nasc"));
+                med.setRG(rs.getNString("rg"));
+                med.setEspecialidade(rs.getNString("especialidade"));
+                med.setDepartamento(rs.getNString("departamento"));
+                System.out.println(med.getNome());   
+            }
             conex.con.close();
             return med;
             
@@ -70,8 +73,9 @@ public class MedicoDAO {
 }
     public List<Medico> gerarTabela(){
         List<Medico> medicList = new ArrayList<>();
-       
+        
         try {
+            
             Conexao conex = new Conexao();
             Statement stm = conex.con.createStatement();
             String sql = "SELECT * from medico;";
@@ -92,12 +96,14 @@ public class MedicoDAO {
                 med.setRG(rs.getNString("rg"));
                 med.setEspecialidade(rs.getNString("especialidade"));
                 med.setDepartamento(rs.getNString("departamento"));
-                medicList.add(med);
                 
+                System.out.println(med.getNome());
+                System.out.println("23232");
+                medicList.add(med);
+                conex.con.close();
             } 
-        conex.con.close();
+        
         } catch (SQLException e) {
-            
         }
         
     return medicList;

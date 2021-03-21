@@ -81,7 +81,8 @@ public class admDAO {
 
     public void editarPessoa(String nome, String sobrenome, String endereco, String telefone, 
             String cpf, String senha, String sexo, String Nasc) {
-        
+        System.out.println("UPDATE pessoa (nome, sobrenome, endereco, telefone, cpf, senha, sexo) "
+                    + "set('"+nome+"','"+sobrenome+"','"+endereco+"','"+telefone+"','"+cpf+"','"+senha+"','"+sexo+"')");
         try {
             Conexao conex = new Conexao();
             Statement stm = conex.con.createStatement();
@@ -91,7 +92,7 @@ public class admDAO {
             conex.con.close();
             JOptionPane.showMessageDialog(null, "Alterou");
         } catch (SQLException e) {
-          JOptionPane.showMessageDialog(null, "Error.");
+         
         }  
     }
 

@@ -44,14 +44,16 @@ public class PacienteDAO {
             String sql = "SELECT nome, sobrenome, endereco, telefone, cpf, senha, sexo"
                     + " FROM paciente WHERE cpf = '"+cpf+"';";
             ResultSet rs = stm.executeQuery(sql);
-             
-            paciente.setNome(rs.getString("nome"));
-            paciente.setSobrenome(rs.getString("sobrenome"));
-            paciente.setEndereco(rs.getString("endereco"));
-            paciente.setTelefone(rs.getString("telefone"));
-            paciente.setCpf(rs.getString("cpf"));
-            paciente.setSenha(rs.getString("senha"));
-            paciente.setSexo(rs.getString("sexo"));
+            while(rs.next()){
+                paciente.setNome(rs.getString("nome"));
+                paciente.setSobrenome(rs.getString("sobrenome"));
+                paciente.setEndereco(rs.getString("endereco"));
+                paciente.setTelefone(rs.getString("telefone"));
+                paciente.setCpf(rs.getString("cpf"));
+                paciente.setSenha(rs.getString("senha"));
+                paciente.setSexo(rs.getString("sexo"));
+            } 
+            
             
             conex.con.close();
             return paciente;
@@ -67,7 +69,7 @@ public class PacienteDAO {
         try {
             Conexao conex = new Conexao();
             Statement stm = conex.con.createStatement();
-            String sql = "SELECT * from medico;";
+            String sql = "SELECT * from paciente;";
             ResultSet rs = stm.executeQuery(sql);
             
             while(rs.next()){

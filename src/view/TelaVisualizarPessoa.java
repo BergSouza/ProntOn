@@ -36,6 +36,7 @@ public class TelaVisualizarPessoa extends javax.swing.JFrame {
         CampoTelefone.setText(pessoa.getTelefone());
         Nasc.setText(pessoa.getDataNasc());
         
+        
         if(pessoa.getSexo() == "M"){
             CheckMasculino.setSelected(true);
         }else CheckFeminino.setSelected(true);
