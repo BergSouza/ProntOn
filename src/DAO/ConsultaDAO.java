@@ -28,8 +28,6 @@ public class ConsultaDAO {
         String data, String horario, String prontuario){
         Conexao conex = new Conexao();
         int id= rand.nextInt(1000000);
-        Consulta con = new Consulta();
-        con.setIdConsulta(id);
         
         String sql = "INSERT into consulta (mednome, pacnome, pacrg, dataa, horario, prontuario, id)values("+medNome+","+pacNome+","+pacRG+","+data+","+horario+","+ prontuario+","+id+")";
         int res = conex.executaSQL(sql);

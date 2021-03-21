@@ -19,8 +19,15 @@ public class Consulta {
     private String horario;
     private String prontuario;
 
-   
     public Consulta(){}
+    public Consulta(Consulta con){
+        this.medNome = con.getMedNome();
+        this.pacNome = con.getPacNome();
+        this.pacRG = con.getPacRG();
+        this.data = con.getData();
+        this.horario = con.getHorario();
+        this.prontuario = con.getProntuario();
+    }
     
     public String getProntuario() {
         return prontuario;
