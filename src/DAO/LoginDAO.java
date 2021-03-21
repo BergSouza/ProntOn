@@ -20,7 +20,7 @@ public class LoginDAO {
         try {
             Conexao conex = new Conexao();
             Statement stm = conex.con.createStatement();
-            String sql = "SELECT tipo FROM pessoa WHERE cpf="+login+"AND senha ="+senha+";";
+            String sql = "SELECT tipo FROM pessoa WHERE cpf='"+login+"' AND senha = '"+senha+"';";
             ResultSet rs = stm.executeQuery(sql);
             
             tipoConta = rs.getInt("tipo");

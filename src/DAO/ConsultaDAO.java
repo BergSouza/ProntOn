@@ -30,7 +30,8 @@ public class ConsultaDAO {
         Consulta con = new Consulta();
         con.setIdConsulta(id);
         
-        String sql = "INSERT into consulta (mednome, pacnome, pacrg, dataa, horario, prontuario, id)values("+medNome+","+pacNome+","+pacRG+","+data+","+horario+","+ prontuario+","+id+")";
+        String sql = "INSERT into consulta (mednome, pacnome, pacrg, dataa, horario, prontuario, id)"
+                + "values('"+medNome+"','"+pacNome+"','"+pacRG+"','"+data+"','"+horario+"','"+ prontuario+"','"+id+"')";
         int res = conex.executaSQL(sql);
         if(res > 0){
             System.out.println("Cadastro realizado");
@@ -61,7 +62,8 @@ public class ConsultaDAO {
         try{
             Conexao conex = new Conexao();
             Statement stm = conex.con.createStatement();
-            String sql = "SELECT mednome, pacnome, pacrg, dataa, horario, prontuario, id FROM consulta WHERE id ="+id+";";
+            String sql = "SELECT mednome, pacnome, pacrg, dataa, horario, prontuario, id"
+                    + " FROM consulta WHERE id ="+id+";";
             ResultSet rs = stm.executeQuery(sql);
             
             consult.setMedNome("mednome");
@@ -115,7 +117,8 @@ public class ConsultaDAO {
          try {
             Conexao conex = new Conexao();
             Statement stm = conex.con.createStatement();
-            String sql = "UPDATE consulta SET medNome ="+medNome+", pacNome = "+pacNome+", pscRG = "+pacRG+", dataa = "+data+", horario = "+horario+", prontuario = "+prontuario+"WHERE ID = "+id+";";
+            String sql = "UPDATE consulta"
+                    + " SET medNome = '"+medNome+"', pacNome = '"+pacNome+"', pscRG = '"+pacRG+"', dataa = '"+data+"', horario = '"+horario+"', prontuario = '"+prontuario+"' WHERE ID = "+id+";";
             ResultSet rs = stm.executeQuery(sql);
             
             conex.con.close();

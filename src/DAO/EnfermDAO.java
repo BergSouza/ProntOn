@@ -20,7 +20,8 @@ public class EnfermDAO {
             String endereco, String telefone, String cpf, String senha, String sexo){
         int tipo = 2;
         Conexao conex = new Conexao();
-        String sql = "INSERT into enfermeiro (nome, sobrenome, endereco, telefone, cpf, senha, sexo, tipo)values("+nome+","+sobrenome+","+endereco+","+telefone+","+cpf+","+senha+","+sexo+","+tipo+")";
+        String sql = "INSERT into enfermeiro (nome, sobrenome, endereco, telefone, cpf, senha, sexo, tipo)"
+                + "values('"+nome+"','"+sobrenome+"','"+endereco+"','"+telefone+"','"+cpf+"','"+senha+"','"+sexo+"','"+tipo+"')";
         int res = conex.executaSQL(sql);
         if(res > 0){
             System.out.println("Cadastro realizado");
@@ -35,7 +36,8 @@ public class EnfermDAO {
         try {
             Conexao conex = new Conexao();
             Statement stm = conex.con.createStatement();
-            String sql = "SELECT nome, sobrenome, endereco, telefone, cpf, senha, sexo FROM enfermeiro WHERE cpf ="+cpf+";";
+            String sql = "SELECT nome, sobrenome, endereco, telefone, cpf, senha, sexo "
+                    + "FROM enfermeiro WHERE cpf = '"+cpf+"';";
             ResultSet rs = stm.executeQuery(sql);
              
             enferm.setNome(rs.getString("nome"));

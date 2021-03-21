@@ -20,7 +20,8 @@ public class RecepcionistaDAO {
             String telefone, String endereco, String sexo, String senha){
         int tipo = 4;
         Conexao conex = new Conexao();
-        String sql = "INSERT into recepcionista (nome, cpf, rg, telefone, endereco, sexo, senha, tipo)values("+nome+","+cpf+","+RG+","+telefone+","+endereco+","+sexo+","+senha+","+tipo+")";
+        String sql = "INSERT into recepcionista (nome, cpf, rg, telefone, endereco, sexo, senha, tipo)"
+                + "values('"+nome+"','"+cpf+"','"+RG+"','"+telefone+"','"+endereco+"','"+sexo+"','"+senha+"','"+tipo+"')";
         int res = conex.executaSQL(sql);
         if(res > 0){
             System.out.println("Cadastro realizado");
@@ -37,7 +38,8 @@ public class RecepcionistaDAO {
         try{
             Conexao conex = new Conexao();
             Statement stm = conex.con.createStatement();
-            String sql = "SELECT nome, sobrenome, endereco, telefone, cpf, senha, sexo, nasc, rg FROM enfermeiro WHERE cpf ="+cpf+";";
+            String sql = "SELECT nome, sobrenome, endereco, telefone, cpf, senha, sexo, nasc, rg "
+                    + "FROM enfermeiro WHERE cpf = '"+cpf+"';";
             ResultSet rs = stm.executeQuery(sql);
              
             recep.setNome(rs.getString("nome"));

@@ -52,7 +52,8 @@ public class admDAO {
         try {
             Conexao conex = new Conexao();
             Statement stm = conex.con.createStatement();
-            String sql = "SELECT nome, sobrenome, endereco, telefone, cpf, senha, sexo FROM enfermeiro WHERE cpf ="+cpf+";";
+            String sql = "SELECT nome, sobrenome, endereco, telefone, cpf, senha, sexo "
+                    + "FROM enfermeiro WHERE cpf = '"+cpf+"';";
             ResultSet rs = stm.executeQuery(sql);
              
             pessoa.setNome(rs.getString("nome"));
@@ -77,7 +78,8 @@ public class admDAO {
         try {
             Conexao conex = new Conexao();
             Statement stm = conex.con.createStatement();
-            String sql = "UPDATE pessoa (nome, sobrenome, endereco, telefone, cpf, senha, sexo) set("+nome+","+sobrenome+","+endereco+","+telefone+","+cpf+","+senha+","+sexo+")";
+            String sql = "UPDATE pessoa (nome, sobrenome, endereco, telefone, cpf, senha, sexo) "
+                    + "set('"+nome+"','"+sobrenome+"','"+endereco+"','"+telefone+"','"+cpf+"','"+senha+"','"+sexo+"')";
             ResultSet rs = stm.executeQuery(sql);
             conex.con.close();
             
@@ -91,7 +93,7 @@ public class admDAO {
         try {
             Conexao conex = new Conexao();
             Statement stm = conex.con.createStatement();
-            String sql = "DELETE FROM pessoa WHERE cpf ="+cpf+";";
+            String sql = "DELETE FROM pessoa WHERE cpf = '"+cpf+"';";
             ResultSet rs = stm.executeQuery(sql);
             conex.con.close();
             

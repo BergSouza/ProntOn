@@ -22,7 +22,8 @@ public class MedicoDAO {
     public void addMedico(String nome, String sobrenome, String endereco,
             String telefone, String cpf, String senha, String sexo, String RG, String especialidade, String departamento){
         int tipo = 1;
-        String sql = "INSERT into medico (nome, sobrenome, endereco, telefone, cpf, senha, sexo, rg, especialidade, departamento, tipo)values("+nome+","+sobrenome+","+endereco+","+telefone+","+cpf+","+senha+","+sexo+","+RG+","+especialidade+","+departamento+","+tipo+")";
+        String sql = "INSERT into medico (nome, sobrenome, endereco, telefone, cpf, senha, rg, especialidade, departamento, tipo)"
+                + "values('"+nome+"','"+sobrenome+"','"+endereco+"','"+telefone+"','"+cpf+"','"+senha+"','"+RG+"','"+especialidade+"','"+departamento+"','"+tipo+"');";
         int res = conex.executaSQL(sql);
         if(res > 0){
             System.out.println("Cadastro realizado");
@@ -38,7 +39,8 @@ public class MedicoDAO {
             Medico med = new Medico();
             Conexao conex = new Conexao();
             Statement stm = conex.con.createStatement();
-            String sql = "SELECT nome, sobrenome, endereco, telefone, cpf, senha, sexo, nasc, rg, especialidade, departamento FROM enfermeiro WHERE cpf ="+cpf+";";
+            String sql = "SELECT nome, sobrenome, endereco, telefone, cpf, senha, sexo, nasc, rg, especialidade, departamento "
+                    + "FROM enfermeiro WHERE cpf = '"+cpf+"';";
             ResultSet rs = stm.executeQuery(sql);
              
             med.setNome(rs.getString("nome"));
