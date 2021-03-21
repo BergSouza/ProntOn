@@ -480,7 +480,10 @@ public class TelaAdministrador extends javax.swing.JFrame {
         int linha = Tabela.getSelectedRow();
         String cpf = Tabela.getValueAt(linha, 1).toString();
         try {
-            new TelaVisualizarPessoa(cpf).setVisible(true);
+            //new TelaVisualizarPessoa().setVisible(true);
+            TelaVisualizarPessoa tela = new TelaVisualizarPessoa();
+            tela.preencherDados(cpf);
+            tela.setVisible(true);
         } catch (IOException ex) {
             Logger.getLogger(TelaAdministrador.class.getName()).log(Level.SEVERE, null, ex);
         }

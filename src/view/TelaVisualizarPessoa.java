@@ -20,10 +20,9 @@ public class TelaVisualizarPessoa extends javax.swing.JFrame {
     /**
      * Creates new form cadastrar_convenios
      */
-    public TelaVisualizarPessoa(String cpf) throws IOException {
+    public TelaVisualizarPessoa() throws IOException {
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
-        preencherDados(cpf);
     }
     
     public void preencherDados(String cpf){
@@ -224,7 +223,7 @@ public class TelaVisualizarPessoa extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    new TelaVisualizarPessoa("").setVisible(true);
+                    new TelaVisualizarPessoa().setVisible(true);
                 } catch (IOException ex) {
                     Logger.getLogger(TelaVisualizarPessoa.class.getName()).log(Level.SEVERE, null, ex);
                 }

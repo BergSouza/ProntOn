@@ -97,9 +97,8 @@ public class admDAO {
             String sql = "DELETE FROM pessoa WHERE cpf = '"+cpf+"';";
             ResultSet rs = stm.executeQuery(sql);
             conex.con.close();
-            JOptionPane.showMessageDialog(null, "Removeu");
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error.");
+        } catch (SQLException e) {  
         }
+        JOptionPane.showMessageDialog(null, "Removeu");
     }      
 }
