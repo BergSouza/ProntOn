@@ -3,12 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/cleit/Documents/Université/Nouveau%20dossier/ProntOn/src/view/TelaAdministrador.java</file>
-            <file>file:/C:/Users/cleit/Documents/Université/Nouveau%20dossier/ProntOn/src/view/TelaVisualizarPessoa.java</file>
-            <file>file:/C:/Users/cleit/Documents/Université/Nouveau%20dossier/ProntOn/src/view/TelaRecepcionista.java</file>
-            <file>file:/C:/Users/cleit/Documents/Université/Nouveau%20dossier/ProntOn/src/view/TelaPaciente.java</file>
-            <file>file:/C:/Users/cleit/Documents/Université/Nouveau%20dossier/ProntOn/src/view/TelaVisualizarConsulta.java</file>
-            <file>file:/C:/Users/cleit/Documents/Université/Nouveau%20dossier/ProntOn/src/view/TelaMedico.java</file>
+            <file>file:/C:/Users/cleit/Documents/Université/Nouveau%20dossier/ProntOn/src/view/TelaEditarPessoa.java</file>
+            <file>file:/C:/Users/cleit/Documents/Université/Nouveau%20dossier/ProntOn/src/DAO/admDAO.java</file>
         </group>
     </open-files>
 </project-private>
