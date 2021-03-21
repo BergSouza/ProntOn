@@ -38,6 +38,7 @@ public class admDAO {
                 pes.setCpf(rs.getString("cpf"));
                 pes.setSenha(rs.getString("senha"));
                 pes.setSexo(rs.getString("sexo"));
+                pes.setRG(rs.getString("rg"));
                 
                 pessoasList.add(pes);
                 conex.con.close();
@@ -50,21 +51,27 @@ public class admDAO {
 
     public Pessoa getPessoa(String cpf) {
         Pessoa pessoa = new Pessoa();
+        
         try {
+      
             Conexao conex = new Conexao();
             Statement stm = conex.con.createStatement();
-            String sql = "SELECT nome, sobrenome, endereco, telefone, cpf, senha, sexo "
-                    + "FROM enfermeiro WHERE cpf = '"+cpf+"';";
+            String sql = "SELECT nome, sobrenome, endereco, telefone, cpf, nasc, rg"
+                    + " FROM pessoa WHERE cpf = '"+cpf+"';";
             ResultSet rs = stm.executeQuery(sql);
-             
-            pessoa.setNome(rs.getString("nome"));
-            pessoa.setSobrenome(rs.getString("sobrenome"));
-            pessoa.setEndereco(rs.getString("endereco"));
-            pessoa.setTelefone(rs.getString("telefone"));
-            pessoa.setCpf(rs.getNString("cpf"));
-            pessoa.setSenha(rs.getNString("senha"));
-            pessoa.setSexo(rs.getNString("sexo"));
             
+            while(rs.next()){
+                pessoa.setNome(rs.getString("nome"));
+                pessoa.setSobrenome(rs.getString("sobrenome"));
+                pessoa.setEndereco(rs.getString("endereco"));
+                pessoa.setTelefone(rs.getString("telefone"));
+                pessoa.setCpf(rs.getString("cpf"));
+                pessoa.setRG(rs.getString("rg"));
+                pessoa.setDataNasc(rs.getString("nasc"));
+                
+                
+            }    
+            System.out.println(pessoa.getDataNasc());
             conex.con.close();
             
         } catch (SQLException e) {

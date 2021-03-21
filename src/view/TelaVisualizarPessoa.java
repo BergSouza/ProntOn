@@ -27,10 +27,12 @@ public class TelaVisualizarPessoa extends javax.swing.JFrame {
     
     public void preencherDados(String cpf){
         Pessoa pessoa = new Pessoa(admController.getPessoa(cpf));
+        System.out.println(pessoa.getNome());
+        
         CampoCPF.setText(pessoa.getCpf());
         CampoEndereco.setText(pessoa.getEndereco());
         CampoNome.setText(pessoa.getNome());
-        CampoRG.setText(pessoa.getSenha());
+        CampoRG.setText(pessoa.getRG());
         CampoSobrenome.setText(pessoa.getSobrenome());
         CampoTelefone.setText(pessoa.getTelefone());
         Nasc.setText(pessoa.getDataNasc());
@@ -189,6 +191,11 @@ public class TelaVisualizarPessoa extends javax.swing.JFrame {
         jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 200, -1));
 
         Nasc.setEditable(false);
+        Nasc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NascActionPerformed(evt);
+            }
+        });
         jPanel3.add(Nasc, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, 180, 30));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 480, 460));
@@ -215,6 +222,10 @@ public class TelaVisualizarPessoa extends javax.swing.JFrame {
     private void CampoSobrenomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoSobrenomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoSobrenomeActionPerformed
+
+    private void NascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NascActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NascActionPerformed
 
     /**
      * @param args the command line arguments

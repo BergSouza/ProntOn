@@ -47,7 +47,7 @@ public class MedicoDAO {
             Conexao conex = new Conexao();
             Statement stm = conex.con.createStatement();
             String sql = "SELECT nome, sobrenome, endereco, telefone, cpf, senha, sexo, nasc, rg, especialidade, departamento "
-                    + "FROM enfermeiro WHERE cpf = '"+cpf+"';";
+                    + "FROM medico WHERE cpf = '"+cpf+"';";
             ResultSet rs = stm.executeQuery(sql);
              
             med.setNome(rs.getString("nome"));

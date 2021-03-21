@@ -47,9 +47,9 @@ public class EnfermDAO {
             enferm.setSobrenome(rs.getString("sobrenome"));
             enferm.setEndereco(rs.getString("endereco"));
             enferm.setTelefone(rs.getString("telefone"));
-            enferm.setCpf(rs.getNString("cpf"));
-            enferm.setSenha(rs.getNString("senha"));
-            enferm.setSexo(rs.getNString("sexo"));
+            enferm.setCpf(rs.getString("cpf"));
+            enferm.setSenha(rs.getString("senha"));
+            enferm.setSexo(rs.getString("sexo"));
            
             conex.con.close();
             return enferm;

@@ -66,7 +66,7 @@ public class ConsultaDAO {
             Conexao conex = new Conexao();
             Statement stm = conex.con.createStatement();
             String sql = "SELECT mednome, pacnome, pacrg, dataa, horario, prontuario, id"
-                    + " FROM consulta WHERE id ="+id+";";
+                    + " FROM consulta WHERE id = "+id+";";
             ResultSet rs = stm.executeQuery(sql);
             
             consult.setMedNome("mednome");
