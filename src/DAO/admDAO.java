@@ -81,18 +81,21 @@ public class admDAO {
 
     public void editarPessoa(String nome, String sobrenome, String endereco, String telefone, 
             String cpf, String senha, String sexo, String Nasc) {
-        System.out.println("UPDATE pessoa (nome, sobrenome, endereco, telefone, cpf, senha, sexo) "
-                    + "set('"+nome+"','"+sobrenome+"','"+endereco+"','"+telefone+"','"+cpf+"','"+senha+"','"+sexo+"')");
+        String cpfAntigo = cpf;
+        System.out.println(cpfAntigo);
+        
         try {
             Conexao conex = new Conexao();
             Statement stm = conex.con.createStatement();
-            String sql = "UPDATE pessoa (nome, sobrenome, endereco, telefone, cpf, senha, sexo) "
-                    + "set('"+nome+"','"+sobrenome+"','"+endereco+"','"+telefone+"','"+cpf+"','"+senha+"','"+sexo+"')";
+            String sql = "UPDATE pessoa"
+                    + "set nome = '"+nome+"', sobrenome = '"+sobrenome+"', endereco = '"+endereco+"', "
+                    + "telefone = '"+telefone+"', cpf = '"+cpf+"', senha = '"+senha+"', sexo = '"+sexo+"'"
+                            + "WHERE cpf = '"+cpfAntigo+"';";
             ResultSet rs = stm.executeQuery(sql);
             conex.con.close();
-            JOptionPane.showMessageDialog(null, "Alterou");
+            JOptionPane.showMessageDialog(null, "Alterou!");
         } catch (SQLException e) {
-         
+            
         }  
     }
 

@@ -32,7 +32,7 @@ public class TelaEditarPessoa extends javax.swing.JFrame {
         CampoCPF.setText(pessoa.getCpf());
         CampoEndereco.setText(pessoa.getEndereco());
         CampoNome.setText(pessoa.getNome());
-        CampoRG.setText(pessoa.getSenha());
+        CampoRG.setText(pessoa.getRG());
         CampoSobrenome.setText(pessoa.getSobrenome());
         CampoTelefone.setText(pessoa.getTelefone());
         Nasc.setText(pessoa.getDataNasc());
